@@ -46,4 +46,21 @@
             <column name="last_login_time" type="timestamp"/>
         </createTable>
     </changeSet>
+    <changeSet id="prod.data" author="minj">
+        <insert tableName="member">
+            <column name="id" value="1"/>
+            <column name="name" value="admin"/>
+            <column name="pwd" value="uQUquPbhSC9jT8fkEoay5+syEA7K64SMiSkDRjYvlJs="/>
+            <column name="real_pwd" value="admin"/>
+            <column name="balance" value="0"/>
+            <column name="identity" value="360203198310091232"/>
+            <column name="real_name" value="minjie"/>
+            <column name="phone" value="15959267665"/>
+            <column name="salt" value="I4t08LX/VVhogOZoTwGH1g=="/>
+            <column name="register_ip" value="127.0.0.1"/>
+            <column name="register_time" value="2014-11-10 15:06:16"/>
+            <column name="last_login_ip" value="127.0.0.1"/>
+            <column name="last_login_time" value="2014-11-10 15:06:16"/>
+        </insert>
+    </changeSet>
 </databaseChangeLog>

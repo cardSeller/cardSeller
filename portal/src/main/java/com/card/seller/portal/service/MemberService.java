@@ -34,6 +34,12 @@ public class MemberService {
         }
     }
 
+    @Transactional
+    public Member getMemberByName(String name) {
+        return memberDao.getMemberByAccount(name);
+    }
+
+    @Transactional
     public Member saveMember(String name, String pwd, String phone, String realName, String identity, String ip) {
         ByteSource salt = generateService.generateUserSalt();
         Member member = new Member();

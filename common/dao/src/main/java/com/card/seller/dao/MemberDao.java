@@ -3,6 +3,7 @@ package com.card.seller.dao;
 import com.card.seller.dao.hibernate.HibernateSupportDao;
 import com.card.seller.domain.Member;
 import com.google.common.collect.Maps;
+import org.springframework.stereotype.Repository;
 
 import java.util.Map;
 
@@ -11,6 +12,7 @@ import java.util.Map;
  * Date:14-11-10
  * Time:下午9:30
  */
+@Repository
 public class MemberDao extends HibernateSupportDao<Member, Long> {
 
     public Member getMemberByAccount(String account) {
