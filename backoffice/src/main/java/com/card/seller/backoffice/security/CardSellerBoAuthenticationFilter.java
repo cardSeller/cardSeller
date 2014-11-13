@@ -1,4 +1,4 @@
-package com.card.seller.portal.security;
+package com.card.seller.backoffice.security;
 
 import com.card.seller.domain.DealWithCookieUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -14,13 +14,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * User: rojack.min
- * Date: 14-7-29
- * Time: 上午10:33
+ * Created by minjie
+ * Date:14-11-13
+ * Time:下午3:56
  */
-public class CardSellerAuthenticationFilter extends FormAuthenticationFilter {
+public class CardSellerBoAuthenticationFilter extends FormAuthenticationFilter {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(CardSellerAuthenticationFilter.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(CardSellerBoAuthenticationFilter.class);
 
     @Override
     protected boolean onLoginSuccess(AuthenticationToken token, Subject subject, ServletRequest request, ServletResponse response) throws Exception {

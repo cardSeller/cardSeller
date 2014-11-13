@@ -1,7 +1,7 @@
 package com.card.seller.portal.service;
 
 import com.card.seller.dao.MemberDao;
-import com.card.seller.portal.domain.MemberConstants;
+import com.card.seller.domain.MemberConstants;
 import org.apache.shiro.crypto.RandomNumberGenerator;
 import org.apache.shiro.crypto.SecureRandomNumberGenerator;
 import org.apache.shiro.crypto.hash.Sha256Hash;

@@ -1,4 +1,4 @@
-package com.card.seller.portal.domain;
+package com.card.seller.domain;
 
 /**
  * Created by lumine on 13-12-25.

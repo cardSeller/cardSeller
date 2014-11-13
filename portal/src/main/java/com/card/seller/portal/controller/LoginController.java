@@ -1,7 +1,7 @@
 package com.card.seller.portal.controller;
 
-import com.card.seller.portal.util.DealWithCookieUtils;
-import com.card.seller.portal.util.SecurityContext;
+import com.card.seller.domain.DealWithCookieUtils;
+import com.card.seller.domain.SecurityContext;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

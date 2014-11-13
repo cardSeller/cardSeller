@@ -3,7 +3,7 @@ package com.card.seller.portal.controller;
 import com.card.seller.domain.AnalyzeIpUtils;
 import com.card.seller.domain.CaptchaUtils;
 import com.card.seller.domain.Member;
-import com.card.seller.portal.domain.MemberConstants;
+import com.card.seller.domain.MemberConstants;
 import com.card.seller.portal.exception.CheckMemberException;
 import com.card.seller.portal.service.MemberService;
 import com.google.common.collect.Maps;

@@ -2,7 +2,7 @@ package com.card.seller.portal.service;
 
 import com.card.seller.dao.MemberDao;
 import com.card.seller.domain.Member;
-import com.card.seller.portal.domain.MemberConstants;
+import com.card.seller.domain.MemberConstants;
 import com.card.seller.portal.exception.CheckMemberException;
 import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;

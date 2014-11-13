@@ -1,4 +1,4 @@
-package com.card.seller.portal.interceptor;
+package com.card.seller.backoffice.interceptor;
 
 import com.card.seller.domain.WebContext;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;

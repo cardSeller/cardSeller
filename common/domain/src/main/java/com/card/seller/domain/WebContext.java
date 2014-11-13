@@ -1,4 +1,4 @@
-package com.card.seller.portal.domain;
+package com.card.seller.domain;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

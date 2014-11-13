@@ -1,4 +1,4 @@
-package com.card.seller.portal.util;
+package com.card.seller.domain;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
