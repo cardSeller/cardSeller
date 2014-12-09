@@ -1,10 +1,100 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
+<head lang="zh">
     <meta charset="UTF-8">
-    <title></title>
+    <title>快充商城</title>
+    <link rel="stylesheet" href="../css/style.css"/>
 </head>
 <body>
-xxxxxx
+<div class="header">
+    <div class="wrap clearfix">
+        <h1 class="logo-box">
+            <a href="#" class="logo">快充商城</a>
+        </h1>
+        <ul class="header-nav left">
+            <li>
+                <a href="#">网站首页</a>
+            </li>
+            <li>
+                <a href="#">订单查询</a>
+            </li>
+            <li>
+                <a href="#">网站声明</a>
+            </li>
+            <li>
+                <a href="#">常见问题</a>
+            </li>
+            <li>
+                <a href="#">联系我们</a>
+            </li>
+        </ul>
+        <p class="deter-fraud">
+            <a href="#">防骗指南</a>
+        </p>
+        <div class="header-login right">
+            <a class="sign-in" href="#">登录</a>
+            <a class="sign-up" href="#">注册</a>
+        </div>
+    </div>
+</div>
+<div class="c-nav">
+    <div class="wrap">
+        <ul id="c-nav" class="clearfix">
+            <li class="hot">
+                <a href="#">热卖产品</a>
+            </li>
+            <li>
+                <a href="#">按字母检索 A--H</a>
+                <div class="drop-menu clearfix">
+                    <p class="drop-menu-item">
+                        <span class="serial-num">C</span><a href="#">畅游直充</a>
+                        <span class="serial-num">C</span><a href="#">畅游直充</a>
+                        <span class="serial-num">C</span><a href="#">畅游直充</a>
+                        <span class="serial-num">C</span><a href="#">畅游直充</a>
+                        <span class="serial-num">C</span><a href="#">畅游直充</a>
+                        <span class="serial-num">C</span><a href="#">畅游直充</a>
+                    </p>
+                    <p class="drop-menu-item">
+                        <span class="serial-num">D</span><a href="#">电魂一卡通</a>
+                    </p>
+                    <p class="drop-menu-item">
+                        <span class="serial-num">E</span><a href="#">广游直充</a>
+                        <span class="serial-num">F</span><a href="#">畅游直充</a>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <a href="#">按字母检索 I--P</a>
+                <div class="drop-menu clearfix">
+                    <p class="drop-menu-item">
+                        <span class="serial-num">C</span><a href="#">电魂一卡通</a>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <a href="#">按字母检索 Q--Z</a>
+                <div class="drop-menu clearfix">
+                    <p class="drop-menu-item">
+                        <span class="serial-num">C</span><a href="#">广游直充</a>
+                    </p>
+                    <p class="drop-menu-item">
+                        <span class="serial-num">C</span><a href="#">电魂一卡通</a>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $("#c-nav li").hover(function(){
+            $("#c-nav .drop-menu").hide();
+            $(this).find(".drop-menu").show();
+        },function(){
+            $("#c-nav .drop-menu").hide();
+        });
+    });
+</script>
 </body>
 </html>

@@ -1,0 +1,246 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font: 12px/1.4 \5FAE\8F6F\96C5\9ED1,\5b8b\4f53,Arial,Helvetica,sans-serif;
+    -webkit-text-size-adjust: 100%;
+}
+fieldset,img {
+    border: 0;
+}
+input,img {
+    vertical-align: middle;
+}
+address,cite,code,dfn,em,th,var,optgroup {
+    font-style: normal;
+    font-weight: normal;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+input,textarea,select {
+    color: #666;
+    font-family: Arial,Helvetica,sans-serif;
+}
+input,button,textarea,select,optgroup,option {
+    font-size: 100%;
+}
+ol,ul {
+    list-style: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+sup,sub {
+    font-size: 100%;
+    vertical-align: baseline;
+}
+:link,:visited,ins {
+    text-decoration: none;
+}
+a:focus {
+    outline: 0;
+    -moz-outline-style: 0;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+body {
+    background-color: #f1f1f1;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+.bold {
+    font-weight: bold;
+}
+.nowrap {
+    white-space: nowrap;
+}
+.clearfix:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+.clearfix {
+    zoom:1;
+}
+.clear {
+    clear: both;
+    line-height: 0;
+    height: 0;
+    display: block;
+    overflow: hidden;
+    width: 0;
+    font-size: 0;
+}
+.v-middle,.v-height {
+    display: table-cell;
+    *display: inline;
+    *zoom:1;vertical-align: middle;
+    text-align: center;
+    overflow: hidden;
+}
+.v-height {
+    width: 0;
+}
+.hide {
+    display: none;
+}
+.text-center {
+    text-align: center;
+}
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+.relative {
+    position: relative;
+}
+.absolute {
+    position: absolute;
+}
+.yahei {
+    font-family: \5FAE\8F6F\96C5\9ED1;
+}
+.wrap{
+    width: 1000px;
+    margin: 0 auto;
+}
+.header{
+    background-color: #335498;
+    height: 50px;
+    padding-top:16px;
+}
+.logo-box{
+    padding:4px 0 0 6px;
+    float: left;
+}
+.logo{
+    background: url(../images/logo.png) no-repeat;
+    width: 114px;
+    height: 28px;
+    text-indent: -9999px;
+    display: block;
+    overflow: hidden;
+}
+.header-nav{
+    padding-top:8px;
+}
+.header-nav li{
+    padding-left: 50px;
+    float: left;
+}
+.header-nav a{
+    color: #fff;
+    font-size: 14px;
+}
+.sign-up{
+    background-color: #f69005;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    width: 72px;
+    height: 34px;
+    line-height: 34px;
+    float: right;
+    display: block;
+}
+.sign-up:hover{
+    text-decoration: none;
+    background-color:#ff9d18;
+}
+.sign-in{
+    float: right;
+    display: block;
+    margin:8px 18px;
+    color: #fff;
+    font-size: 14px;
+}
+.deter-fraud{
+    float: right;
+    border-left: solid 1px #fff;
+    padding:0 18px;
+    margin: 8px 0;
+}
+.deter-fraud a{
+    float: right;
+    display: block;
+    color: #fff;
+    font-size: 14px;
+}
+.c-nav{
+    height: 40px;
+    box-shadow: 0 0 3px #333;
+    background-color: #fff;
+    padding: 10px 0;
+}
+.c-nav li{
+    padding-right: 40px;
+    float: left;
+    width: 120px;
+    line-height: 40px;
+    position: relative;
+}
+.c-nav a{
+    text-align: center;
+    display: block;
+    color:#666;
+    font-size: 13px;
+}
+.c-nav a:hover{
+    text-decoration: none;
+    background-color: #edefee;
+    box-shadow: inset 0 0 3px #999;
+}
+.hot a{
+    padding-left:26px;
+    background: url(../images/sprit-icon.png) 26px 8px no-repeat;
+}
+.drop-menu{
+    width: 440px;
+    box-shadow: 1px 1px 3px #666;
+    padding: 20px 20px 20px 0;
+    position: absolute;
+    left:0;
+    top: 40px;
+    background-color: #fff;
+    display: none;
+}
+.drop-menu-item{
+    float: left;
+    padding-left: 60px;
+    margin-left: 20px;
+    background: url(../images/sprit-icon.png) 0 -100px no-repeat;
+    position: relative;
+    min-height: 44px;
+}
+.drop-menu-item a{
+    border: dashed 1px #ccc;
+    padding:0 20px;
+    display: inline-block;
+    margin: 0 10px 10px 0;
+}
+.serial-num{
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+}
