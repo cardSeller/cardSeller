@@ -11,4 +11,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class UserDao extends HibernateSupportDao<User, Long> {
+    public void updatePassword(Long id, String newPassword) {
+        executeUpdate(User.UpdatePassword, newPassword, id);
+    }
 }

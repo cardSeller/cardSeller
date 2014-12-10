@@ -199,6 +199,11 @@
                 <scope>provided</scope>
                 <version>2.5</version>
             </dependency>
+            <dependency>
+                <groupId>javax.inject</groupId>
+                <artifactId>javax.inject</artifactId>
+                <version>1</version>
+            </dependency>
             <!--hibernate -->
             <dependency>
                 <groupId>org.hibernate</groupId>

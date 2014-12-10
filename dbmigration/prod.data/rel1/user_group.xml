@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9 http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+    <preConditions>
+        <dbms type="postgresql" />
+    </preConditions>
+    <changeSet id="create.table" author="minj">
+        <createTable tableName="user_group">
+            <column name="user_id" type="bigint"/>
+            <column name="group_id" type="bigint"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="create.index" author="minj">
+        <createIndex tableName="user_group" indexName="idx_user_group_user_id">
+            <column name="user_id"/>
+        </createIndex>
+        <createIndex tableName="user_group" indexName="idx_user_group_group_id">
+            <column name="group_id"/>
+        </createIndex>
+        <addForeignKeyConstraint constraintName="user_group_user_fk" baseTableName="user_group" baseColumnNames="user_id" referencedTableName="users" referencedColumnNames="ID" />
+        <addForeignKeyConstraint constraintName="user_group_group_fk" baseTableName="user_group" baseColumnNames="group_id" referencedTableName="groups" referencedColumnNames="ID" />
+    </changeSet>
+    <changeSet id="prod.data" author="minj">
+        <insert tableName="user_group">
+            <column name="user_id" value="1"/>
+            <column name="group_id" value="1"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

@@ -20,6 +20,9 @@
             <column name="status" type="smallint">
                 <constraints nullable="false"/>
             </column>
+            <column name="nickname" type="varchar(30)" defaultValue="nickname">
+                <constraints nullable="false"/>
+            </column>
             <column name="email" type="varchar(128)"/>
             <column name="salt" type="varchar(64)"/>
             <column name="create_time" type="timestamp"/>
@@ -35,11 +38,12 @@
         <insert tableName="users">
             <column name="id" value="1"/>
             <column name="name" value="admin"/>
+            <column name="nickname" value="admin"/>
             <column name="pwd" value="uQUquPbhSC9jT8fkEoay5+syEA7K64SMiSkDRjYvlJs="/>
             <column name="status" value="1"/>
-            <column name="email" value="admin@chuguoqu.com"/>
+            <column name="email" value="63989840@qq.com"/>
             <column name="salt" value="I4t08LX/VVhogOZoTwGH1g=="/>
-            <column name="create_time" value="2013-12-10 15:06:16"/>
+            <column name="create_time" value="2014-12-10 15:06:16"/>
         </insert>
     </changeSet>
 </databaseChangeLog>

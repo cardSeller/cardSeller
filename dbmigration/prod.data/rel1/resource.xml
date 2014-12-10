@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9 http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+    <preConditions>
+        <dbms type="postgresql"/>
+    </preConditions>
+    <changeSet id="create.sequence" author="minj">
+        <createSequence sequenceName="seq_resource" startValue="10000"/>
+    </changeSet>
+    <changeSet id="create.table" author="minj">
+        <createTable tableName="resource">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(128)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="type" type="varchar(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="sort" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="parent_id" type="bigint">
+                <constraints unique="false" nullable="true"/>
+            </column>
+            <column name="permission" type="varchar(128)"/>
+            <column name="url" type="varchar(128)"/>
+            <column name="remark" type="varchar(128)"/>
+            <column name="icon" type="varchar(32)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="prod.data" author="minj">
+        <!-- 一级菜单栏 -->
+        <insert tableName="resource">
+            <column name="id" value="50"/>
+            <column name="name" value="订单管理"/>
+            <column name="type" value="01"/>
+            <column name="sort" value="1"/>
+            <column name="remark" value="订单管理"/>
+            <column name="icon" value="glyphicon-shopping-cart"/>
+        </insert>
+        <insert tableName="resource">
+            <column name="id" value="56"/>
+            <column name="name" value="会员管理"/>
+            <column name="type" value="01"/>
+            <column name="sort" value="9"/>
+            <column name="remark" value="会员管理"/>
+            <column name="icon" value="glyphicon-user"/>
+        </insert>
+        <!-- 一级菜单栏 结束 -->
+
+
+
+        <!-- 订单管理 开始-->
+            <!-- 二级菜单栏 开始 -->
+
+            <!-- 二级菜单栏 结束 -->
+        <!-- 订单管理 结束-->
+
+        <!-- 会员管理 开始-->
+            <!-- 二级菜单 开始 -->
+            <insert tableName="resource">
+                <column name="id" value="700"/>
+                <column name="name" value="会员信息"/>
+                <column name="type" value="01"/>
+                <column name="sort" value="700"/>
+                <column name="parent_id" value="56"/>
+                <column name="permission" value="perms[user:view]"/>
+                <column name="url" value="/member/memberManager/**"/>
+                <column name="remark" value="用户信息"/>
+                <column name="icon" value="glyphicon-info-sign"/>
+            </insert>
+
+            <!-- 二级菜单 结束 -->
+        <!-- 会员管理 结束-->
+
+    </changeSet>
+</databaseChangeLog>

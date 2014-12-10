@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9 http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+    <preConditions>
+        <dbms type="postgresql" />
+    </preConditions>
+    <changeSet id="create.sequence" author="minj">
+        <createSequence sequenceName="seq_groups" startValue="10000" />
+    </changeSet>
+    <changeSet id="create.table" author="minj">
+        <createTable tableName="groups">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="name" type="varchar(128)">
+                <constraints nullable="false" unique="true" />
+            </column>
+            <column name="parent_id" type="bigint">
+                <constraints unique="false" nullable="true"/>
+            </column>
+            <column name="remark" type="varchar(128)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="prod.data" author="minj">
+        <insert tableName="groups">
+            <column name="id" value="1"/>
+            <column name="name" value="超级管理员"/>
+            <column name="remark" value="超级管理员"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

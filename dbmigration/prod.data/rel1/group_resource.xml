@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9 http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+    <preConditions>
+        <dbms type="postgresql"/>
+    </preConditions>
+    <changeSet id="create.table" author="minj">
+        <createTable tableName="group_resource">
+            <column name="group_id" type="bigint"/>
+            <column name="resource_id" type="bigint"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="create.index" author="minj">
+        <createIndex tableName="group_resource" indexName="idx_group_resource_group_id">
+            <column name="group_id"/>
+        </createIndex>
+        <createIndex tableName="group_resource" indexName="idx_group_resource_resource_id">
+            <column name="resource_id"/>
+        </createIndex>
+        <addForeignKeyConstraint constraintName="group_resource_group_fk" baseTableName="group_resource" baseColumnNames="group_id" referencedTableName="groups" referencedColumnNames="id"/>
+        <addForeignKeyConstraint constraintName="group_resource_resource_fk" baseTableName="group_resource" baseColumnNames="resource_id" referencedTableName="resource" referencedColumnNames="id"/>
+    </changeSet>
+    <changeSet id="prod.data" author="minj">
+        <insert tableName="group_resource">
+            <column name="group_id" value="1"/>
+            <column name="resource_id" value="50"/>
+        </insert>
+        <insert tableName="group_resource">
+            <column name="group_id" value="1"/>
+            <column name="resource_id" value="56"/>
+        </insert>
+        <insert tableName="group_resource">
+            <column name="group_id" value="1"/>
+            <column name="resource_id" value="700"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

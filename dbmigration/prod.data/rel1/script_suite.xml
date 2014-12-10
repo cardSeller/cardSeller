@@ -4,4 +4,8 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
     <include file="@target.dir@/prod.data/rel1/user.xml"/>
     <include file="@target.dir@/prod.data/rel1/member.xml"/>
+    <include file="@target.dir@/prod.data/rel1/resource.xml"/>
+    <include file="@target.dir@/prod.data/rel1/group.xml"/>
+    <include file="@target.dir@/prod.data/rel1/group_resource.xml"/>
+    <include file="@target.dir@/prod.data/rel1/user_group.xml"/>
 </databaseChangeLog>
