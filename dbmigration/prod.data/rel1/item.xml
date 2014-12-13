@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9 http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+    <preConditions>
+        <dbms type="postgresql" />
+    </preConditions>
+    <changeSet id="create.sequence" author="minj">
+        <createSequence sequenceName="seq_item" startValue="10000" />
+    </changeSet>
+
+    <changeSet id="create.table" author="minj">
+        <createTable tableName="item">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="name" type="varchar(128)">
+                <constraints nullable="false" unique="true" />
+            </column>
+            <column name="description" type="varchar(256)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="initial" type="varchar(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="image_url" type="varchar(128)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="prod.data" author="minj">
+        <insert tableName="item">
+            <column name="id" value="1"/>
+            <column name="name" value="电魂一卡通"/>
+            <column name="initial" value="D"/>
+            <column name="image_url" value="dhykt.jpg"/>
+        </insert>
+        <insert tableName="item">
+            <column name="id" value="2"/>
+            <column name="name" value="光宇一卡通"/>
+            <column name="initial" value="G"/>
+            <column name="image_url" value="gyykt.jpg"/>
+        </insert>
+        <insert tableName="item">
+            <column name="id" value="3"/>
+            <column name="name" value="汉舟一卡通"/>
+            <column name="initial" value="H"/>
+            <column name="image_url" value="hzykt.jpg"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

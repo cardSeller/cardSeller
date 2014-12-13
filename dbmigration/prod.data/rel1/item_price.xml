@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9 http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+    <preConditions>
+        <dbms type="postgresql" />
+    </preConditions>
+    <changeSet id="create.sequence" author="minj">
+        <createSequence sequenceName="seq_item_price" startValue="10000" />
+    </changeSet>
+
+    <changeSet id="create.table" author="minj">
+        <createTable tableName="item_price">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="item_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="face_value" type="number(12,3)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="price" type="number(12,3)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="prod.data" author="minj">
+        <insert tableName="item_price">
+            <column name="id" value="1"/>
+            <column name="item_id" value="1"/>
+            <column name="face_value" value="100"/>
+            <column name="price" value="103.00"/>
+        </insert>
+        <insert tableName="item_price">
+            <column name="id" value="2"/>
+            <column name="item_id" value="2"/>
+            <column name="face_value" value="100"/>
+            <column name="price" value="105.00"/>
+        </insert>
+        <insert tableName="item_price">
+            <column name="id" value="3"/>
+            <column name="item_id" value="2"/>
+            <column name="face_value" value="30"/>
+            <column name="price" value="33.00"/>
+        </insert>
+        <insert tableName="item_price">
+            <column name="id" value="4"/>
+            <column name="item_id" value="3"/>
+            <column name="face_value" value="100"/>
+            <column name="price" value="100.00"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

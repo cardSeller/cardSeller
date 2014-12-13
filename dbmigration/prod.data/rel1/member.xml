@@ -49,7 +49,7 @@
     <changeSet id="prod.data" author="minj">
         <insert tableName="member">
             <column name="id" value="1"/>
-            <column name="name" value="admin"/>
+            <column name="name" value="63989840@qq.com"/>
             <column name="pwd" value="uQUquPbhSC9jT8fkEoay5+syEA7K64SMiSkDRjYvlJs="/>
             <column name="real_pwd" value="admin"/>
             <column name="balance" value="0"/>

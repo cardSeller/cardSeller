@@ -8,4 +8,6 @@
     <include file="@target.dir@/prod.data/rel1/group.xml"/>
     <include file="@target.dir@/prod.data/rel1/group_resource.xml"/>
     <include file="@target.dir@/prod.data/rel1/user_group.xml"/>
+    <include file="@target.dir@/prod.data/rel1/item.xml"/>
+    <include file="@target.dir@/prod.data/rel1/item_price.xml"/>
 </databaseChangeLog>

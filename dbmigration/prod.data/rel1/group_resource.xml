@@ -23,15 +23,27 @@
     <changeSet id="prod.data" author="minj">
         <insert tableName="group_resource">
             <column name="group_id" value="1"/>
-            <column name="resource_id" value="50"/>
+            <column name="resource_id" value="1"/>
         </insert>
         <insert tableName="group_resource">
             <column name="group_id" value="1"/>
-            <column name="resource_id" value="56"/>
+            <column name="resource_id" value="10"/>
         </insert>
         <insert tableName="group_resource">
             <column name="group_id" value="1"/>
-            <column name="resource_id" value="700"/>
+            <column name="resource_id" value="2"/>
+        </insert>
+        <insert tableName="group_resource">
+            <column name="group_id" value="1"/>
+            <column name="resource_id" value="20"/>
+        </insert>
+        <insert tableName="group_resource">
+            <column name="group_id" value="1"/>
+            <column name="resource_id" value="3"/>
+        </insert>
+        <insert tableName="group_resource">
+            <column name="group_id" value="1"/>
+            <column name="resource_id" value="30"/>
         </insert>
     </changeSet>
 </databaseChangeLog>

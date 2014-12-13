@@ -33,39 +33,72 @@
     <changeSet id="prod.data" author="minj">
         <!-- 一级菜单栏 -->
         <insert tableName="resource">
-            <column name="id" value="50"/>
-            <column name="name" value="订单管理"/>
+            <column name="id" value="1"/>
+            <column name="name" value="产品管理"/>
             <column name="type" value="01"/>
             <column name="sort" value="1"/>
+            <column name="remark" value="产品管理"/>
+            <column name="icon" value="glyphicon-barcode"/>
+        </insert>
+
+        <insert tableName="resource">
+            <column name="id" value="2"/>
+            <column name="name" value="订单管理"/>
+            <column name="type" value="01"/>
+            <column name="sort" value="2"/>
             <column name="remark" value="订单管理"/>
             <column name="icon" value="glyphicon-shopping-cart"/>
         </insert>
         <insert tableName="resource">
-            <column name="id" value="56"/>
+            <column name="id" value="3"/>
             <column name="name" value="会员管理"/>
             <column name="type" value="01"/>
-            <column name="sort" value="9"/>
+            <column name="sort" value="3"/>
             <column name="remark" value="会员管理"/>
             <column name="icon" value="glyphicon-user"/>
         </insert>
         <!-- 一级菜单栏 结束 -->
 
-
+        <!-- 产品管理 开始-->
+            <!-- 二级菜单栏 开始 -->
+                <insert tableName="resource">
+                    <column name="id" value="10"/>
+                    <column name="name" value="产品信息"/>
+                    <column name="type" value="01"/>
+                    <column name="sort" value="10"/>
+                    <column name="parent_id" value="1"/>
+                    <column name="permission" value="perms[item:view]"/>
+                    <column name="url" value="/item/itemManager/**"/>
+                    <column name="remark" value="产品信息"/>
+                    <column name="icon" value="glyphicon-info-sign"/>
+                </insert>
+            <!-- 二级菜单栏 结束 -->
+        <!-- 产品管理 结束-->
 
         <!-- 订单管理 开始-->
             <!-- 二级菜单栏 开始 -->
-
+                <insert tableName="resource">
+                    <column name="id" value="20"/>
+                    <column name="name" value="订单信息"/>
+                    <column name="type" value="01"/>
+                    <column name="sort" value="20"/>
+                    <column name="parent_id" value="2"/>
+                    <column name="permission" value="perms[order:view]"/>
+                    <column name="url" value="/order/orderManager/**"/>
+                    <column name="remark" value="产品信息"/>
+                    <column name="icon" value="glyphicon-info-sign"/>
+                </insert>
             <!-- 二级菜单栏 结束 -->
         <!-- 订单管理 结束-->
 
         <!-- 会员管理 开始-->
             <!-- 二级菜单 开始 -->
             <insert tableName="resource">
-                <column name="id" value="700"/>
+                <column name="id" value="30"/>
                 <column name="name" value="会员信息"/>
                 <column name="type" value="01"/>
-                <column name="sort" value="700"/>
-                <column name="parent_id" value="56"/>
+                <column name="sort" value="30"/>
+                <column name="parent_id" value="3"/>
                 <column name="permission" value="perms[user:view]"/>
                 <column name="url" value="/member/memberManager/**"/>
                 <column name="remark" value="用户信息"/>
