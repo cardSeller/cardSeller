@@ -52,6 +52,9 @@ a:hover {
 body {
     background-color: #f1f1f1;
 }
+a{
+    color: #666;
+}
 .left {
     float: left;
 }
@@ -118,6 +121,39 @@ body {
     width: 1000px;
     margin: 0 auto;
 }
+.top-bar{
+    background-color: #2c4d8f;
+    height: 34px;
+    text-align: right;
+}
+.top-bar a{
+    font-size: 14px;
+}
+.sign-up{
+    background-color: #f69005;
+    text-align: center;
+    width: 72px;
+    height: 34px;
+    line-height: 34px;
+    display:inline-block;
+    color: #fff;
+}
+.sign-up:hover{
+    text-decoration: none;
+    background-color:#ff9d18;
+}
+.sign-in{
+    margin:8px 18px;
+    display:inline-block;
+    color: #8faeef;
+}
+.deter-fraud{
+    color: #8faeef;
+    border-left: solid 1px #fff;
+    padding-left:18px;
+    margin: 8px 0;
+    width: 60px;
+}
 .header{
     background-color: #335498;
     height: 50px;
@@ -135,58 +171,20 @@ body {
     display: block;
     overflow: hidden;
 }
-.header-login{
-    width: 240px;
-}
 .header-nav{
     padding-top:8px;
 }
 .header-nav li{
-    padding-left: 50px;
+    padding-left:90px;
     float: left;
 }
 .header-nav a{
     color: #fff;
-    font-size: 14px;
-}
-.sign-up{
-    background-color: #f69005;
-    color: #fff;
-    font-size: 14px;
-    text-align: center;
-    width: 72px;
-    height: 34px;
-    line-height: 34px;
-    float: right;
-    display: block;
-}
-.sign-up:hover{
-    text-decoration: none;
-    background-color:#ff9d18;
-}
-.sign-in{
-    float: right;
-    display: block;
-    margin:8px 18px;
-    color: #fff;
-    font-size: 14px;
-}
-.deter-fraud{
-    float: right;
-    border-left: solid 1px #fff;
-    padding:0 18px;
-    margin: 8px 0;
-    width: 60px;
-}
-.deter-fraud a{
-    float: right;
-    display: block;
-    color: #fff;
-    font-size: 14px;
+    font-size: 18px;
 }
 .c-nav{
     height: 40px;
-    box-shadow: 0 0 3px #333;
+    box-shadow: 0 0 3px #999;
     background-color: #fff;
     padding: 10px 0;
 }
@@ -203,14 +201,15 @@ body {
     color:#666;
     font-size: 13px;
 }
-.c-nav a:hover{
+.c-nav a:hover,
+.c-nav .selected a{
     text-decoration: none;
     background-color: #edefee;
     box-shadow: inset 0 0 3px #999;
 }
-.hot a{
+.nav-hot a{
     padding-left:26px;
-    background: url(../images/sprit-icon.png) 26px 8px no-repeat;
+    background:url(../images/sprite-icon.png) 26px 8px no-repeat;
 }
 .drop-menu{
     width: 440px;
@@ -227,7 +226,7 @@ body {
     float: left;
     padding-left: 60px;
     margin-left: 20px;
-    background: url(../images/sprit-icon.png) 0 -100px no-repeat;
+    background: url(../images/sprite-icon.png) 0 -100px no-repeat;
     position: relative;
     min-height: 44px;
 }
@@ -248,4 +247,33 @@ body {
     left: 0;
     top: 0;
     display: block;
+}
+.p-list{
+    width: 1020px;
+    overflow: hidden;
+    padding:3px 2px;
+}
+.p-item{
+    width: 238px;
+    height: 230px;
+    float: left;
+    margin-right: 16px;
+    margin-top:20px;
+    background-color: #fff;
+    box-shadow: 0 0 2px #999;
+}
+.p-pic{
+    text-align: center;
+    height: 180px;
+    overflow: hidden;
+}
+.p-name{
+    height:44px;
+    line-height:44px;
+    text-align: center;
+    border-top:solid 1px #dfdfdf;
+    font-size: 14px;
+}
+.quick-pay{
+    background-color: #8faeef;
 }
