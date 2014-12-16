@@ -187,9 +187,11 @@ a{
     box-shadow: 0 0 3px #999;
     background-color: #fff;
     padding: 10px 0;
+    position: relative;
+    z-index: 2;
 }
 .c-nav li{
-    padding-right: 40px;
+    margin-right: 40px;
     float: left;
     width: 120px;
     line-height: 40px;
@@ -261,6 +263,7 @@ a{
     margin-top:20px;
     background-color: #fff;
     box-shadow: 0 0 2px #999;
+    position: relative;
 }
 .p-pic{
     text-align: center;
@@ -274,6 +277,121 @@ a{
     border-top:solid 1px #dfdfdf;
     font-size: 14px;
 }
-.quick-pay{
+.quick-buy{
     background-color: #8faeef;
+    width: 218px;
+    height: 210px;
+    position: absolute;
+    right:-2px;
+    top:23px;
+    padding: 10px;
+}
+.quick-buy-title{
+    color: #335498;
+    font-size: 18px;
+    font-weight: bold;
+}
+.quick-kind-btn,
+.quick-value-btn{
+    padding: 4px 10px;
+    width:198px;
+    height: 32px;
+    line-height: 32px;
+    background:#fff url(../images/sprite-icon.png) 196px -182px no-repeat;
+    margin-top: 8px;
+    cursor: pointer;
+    color: #ccc;
+    font-size: 14px;
+}
+.quick-submit{
+    background-color: #335498;
+    width: 218px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 24px;
+    display: block;
+}
+.quick-submit:hover{
+    text-decoration: none;
+    background-color: #143e94;
+}
+.quick-kind-list,
+.quick-value-list{
+    position: absolute;
+    width: 216px;
+    border: solid 1px #eee;
+    border-bottom:0;
+    display: none;
+    box-shadow: 1px 2px 2px #999;
+}
+.quick-kind-list li,
+.quick-value-list li{
+    background-color: #fff;
+    height:22px;
+    line-height:22px;
+    font-size: 12px;
+    padding:6px 8px;
+    border-bottom: solid 1px #eee;
+    color: #666;
+}
+.quick-kind-list li:hover,
+.quick-value-list li:hover{
+    background-color:#eee;
+    cursor: pointer;
+}
+.quick-buy .selected{
+    color: #666;
+}
+.p-item-hover{
+    background: url(../images/p-item-hover.png) no-repeat;
+    position: absolute;
+    width: 238px;
+    height: 132px;
+    padding-top: 98px;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+}
+.bottom-banner{
+    min-height: 100px;
+    padding-top: 30px;
+}
+.footer{
+    background-color: #335498;
+    margin-top: 50px;
+    color: #8faeef;
+    font-size: 14px;
+    text-align: center;
+    padding-bottom:40px;
+}
+.footer-list{
+    padding: 36px 0;
+}
+.footer-item{
+    padding-left:88px;
+    height: 60px;
+    line-height: 60px;
+    color: #fff;
+    background: url(../images/sprite-icon.png) no-repeat;
+    float: left;
+    width:162px;
+    text-align: left;
+}
+.footer-item-1{
+    background-position: 20px -300px;
+}
+.footer-item-2{
+    background-position: 25px -400px;
+}
+.footer-item-3{
+    background-position: 25px -500px;
+}
+.footer-item-4{
+    background-position: 25px -600px;
 }
