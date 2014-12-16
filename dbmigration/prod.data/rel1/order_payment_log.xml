@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+
+    <preConditions>
+        <dbms type="postgresql"/>
+    </preConditions>
+    <changeSet id="create.sequence" author="minj">
+        <createSequence sequenceName="seq_order_payment_log" startValue="10000"/>
+    </changeSet>
+    <!--订单表-->
+    <changeSet id="create.table" author="minj">
+        <createTable tableName="order_payment_log">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="order_id" type="varchar(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="type" type="varchar(3)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="context" type="varchar(1000)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="log_date" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

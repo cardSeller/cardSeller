@@ -19,6 +19,7 @@ public class DateUtil {
     public static final String YYYY_MM_DD_HH_MM_SS = "yyyy-MM-dd HH:mm:ss";
     public static final String YYYY_MM_DD_HH_MM = "yyyy-MM-dd HH:mm";
     public static final String YYYY_MM_DD = "yyyy-MM-dd";
+    public static final String YYYYMMDDHHMMSS = "yyyyMMddHHmmss";
 
     private static final Map<Integer, String> DAY_OF_WEEK = Maps.newHashMap();
 
@@ -30,6 +31,10 @@ public class DateUtil {
         DAY_OF_WEEK.put(5, "friday");
         DAY_OF_WEEK.put(6, "saturday");
         DAY_OF_WEEK.put(7, "sunday");
+    }
+
+    public static void main(String[] args) {
+        System.out.println(dateToString(YYYYMMDDHHMMSS, new Date()));
     }
 
     /**

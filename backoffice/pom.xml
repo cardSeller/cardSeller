@@ -9,8 +9,7 @@
     <groupId>com.card.seller</groupId>
     <artifactId>backoffice</artifactId>
     <packaging>war</packaging>
-    <name>backoffice Maven Webapp</name>
-    <url>http://maven.apache.org</url>
+    <name>backoffice</name>
     <dependencies>
         <dependency>
             <groupId>com.card.seller</groupId>
@@ -169,16 +168,16 @@
             <artifactId>hibernate-proxool</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-entitymanager</artifactId>
-        </dependency>
-        <dependency>
             <groupId>proxool</groupId>
             <artifactId>proxool</artifactId>
         </dependency>
         <dependency>
             <groupId>proxool</groupId>
             <artifactId>proxool-cglib</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
         </dependency>
         <dependency>
             <groupId>javax.inject</groupId>

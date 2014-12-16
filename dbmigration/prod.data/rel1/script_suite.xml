@@ -10,4 +10,7 @@
     <include file="@target.dir@/prod.data/rel1/user_group.xml"/>
     <include file="@target.dir@/prod.data/rel1/item.xml"/>
     <include file="@target.dir@/prod.data/rel1/item_price.xml"/>
+    <include file="@target.dir@/prod.data/rel1/order_payment_log.xml"/>
+    <include file="@target.dir@/prod.data/rel1/deposit.xml"/>
+    <include file="@target.dir@/prod.data/rel1/orders.xml"/>
 </databaseChangeLog>

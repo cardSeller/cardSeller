@@ -1,6 +1,7 @@
 package com.card.seller.portal.service;
 
 import com.card.seller.dao.MemberDao;
+import com.card.seller.domain.DateUtil;
 import com.card.seller.domain.MemberConstants;
 import org.apache.shiro.crypto.RandomNumberGenerator;
 import org.apache.shiro.crypto.SecureRandomNumberGenerator;
@@ -9,6 +10,7 @@ import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.Random;
 
 /**
@@ -39,6 +41,16 @@ public class GenerateService {
             buf.append(str.charAt(num));
         }
         return buf.toString();
+    }
+
+    public String generateOrderNumber() {
+        String date = DateUtil.dateToString(DateUtil.YYYY_MM_DD_HH_MM_SS, new Date());
+        return "D" + date;
+    }
+
+    public String generateDepositNumber() {
+        String date = DateUtil.dateToString(DateUtil.YYYY_MM_DD_HH_MM_SS, new Date());
+        return "C" + date;
     }
 
 }

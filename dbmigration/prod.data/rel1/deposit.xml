@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+
+    <preConditions>
+        <dbms type="postgresql"/>
+    </preConditions>
+    <changeSet id="create.sequence" author="minj">
+        <createSequence sequenceName="seq_deposit" startValue="10000"/>
+    </changeSet>
+    <!--订单表-->
+    <changeSet id="create.table" author="minj">
+        <createTable tableName="deposit">
+            <column name="deposit_number" type="varchar(30)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="member_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="total" type="number(12,3)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deposit_date" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deposit_status" type="varchar(10)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

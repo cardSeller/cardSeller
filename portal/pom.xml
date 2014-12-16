@@ -9,8 +9,7 @@
     <groupId>com.card.seller</groupId>
     <artifactId>portal</artifactId>
     <packaging>war</packaging>
-    <name>portal Maven Webapp</name>
-    <url>http://maven.apache.org</url>
+    <name>portal</name>
     <dependencies>
         <dependency>
             <groupId>com.card.seller</groupId>
@@ -206,6 +205,12 @@
             <groupId>javax.validation</groupId>
             <artifactId>validation-api</artifactId>
         </dependency>
+        <!-- netpay start -->
+        <dependency>
+            <groupId>netpayclient</groupId>
+            <artifactId>netpayclient</artifactId>
+        </dependency>
+        <!-- netpay end -->
     </dependencies>
     <build>
         <finalName>portal</finalName>

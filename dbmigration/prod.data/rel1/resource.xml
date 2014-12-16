@@ -57,6 +57,14 @@
             <column name="remark" value="会员管理"/>
             <column name="icon" value="glyphicon-user"/>
         </insert>
+        <insert tableName="resource">
+            <column name="id" value="4"/>
+            <column name="name" value="充值记录管理"/>
+            <column name="type" value="01"/>
+            <column name="sort" value="4"/>
+            <column name="remark" value="充值记录管理"/>
+            <column name="icon" value="glyphicon-shopping-cart"/>
+        </insert>
         <!-- 一级菜单栏 结束 -->
 
         <!-- 产品管理 开始-->
@@ -107,6 +115,23 @@
 
             <!-- 二级菜单 结束 -->
         <!-- 会员管理 结束-->
+
+        <!-- 充值记录管理 开始-->
+        <!-- 二级菜单 开始 -->
+        <insert tableName="resource">
+            <column name="id" value="40"/>
+            <column name="name" value="充值记录信息"/>
+            <column name="type" value="01"/>
+            <column name="sort" value="40"/>
+            <column name="parent_id" value="4"/>
+            <column name="permission" value="perms[deposit:view]"/>
+            <column name="url" value="/deposit/depositManager/**"/>
+            <column name="remark" value="充值记录信息"/>
+            <column name="icon" value="glyphicon-info-sign"/>
+        </insert>
+
+        <!-- 二级菜单 结束 -->
+        <!-- 充值记录管理 结束-->
 
     </changeSet>
 </databaseChangeLog>
