@@ -10,7 +10,7 @@ import java.util.Date;
  * Time:下午4:03
  */
 @Entity(name = "orders")
-public class Orders {
+public class Orders extends IdEntity{
     @Id
     @Column(name = "order_number", length = 30, nullable = false)
     private String orderNumber;

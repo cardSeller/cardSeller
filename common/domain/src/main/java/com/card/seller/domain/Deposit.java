@@ -10,10 +10,8 @@ import java.util.Date;
  * Time:下午3:18
  */
 @Entity(name = "deposit")
-public class Deposit {
-    @Id
-    @Column(name = "deposit_number", length = 30, nullable = false)
-    private String depositNumber;
+@SequenceGenerator(name = "seq_gen", sequenceName = "seq_deposit", allocationSize = 1)
+public class Deposit extends IdEntity {
 
     @Column(name = "member_id")
     private Long memberId;
@@ -28,14 +26,6 @@ public class Deposit {
     @Enumerated(value = EnumType.STRING)
     @Column(name = "deposit_status", length = 10, nullable = false)
     private DepositStatus depositStatus;
-
-    public String getDepositNumber() {
-        return depositNumber;
-    }
-
-    public void setDepositNumber(String depositNumber) {
-        this.depositNumber = depositNumber;
-    }
 
     public Long getMemberId() {
         return memberId;

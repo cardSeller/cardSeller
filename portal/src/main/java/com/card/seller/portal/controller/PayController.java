@@ -47,14 +47,13 @@ public class PayController {
         String memberName = SecurityContext.getAccount();
         Member member = memberService.getMemberByName(memberName);
         Deposit deposit = new Deposit();
-        deposit.setDepositNumber(generateService.generateDepositNumber());
         deposit.setMemberId(member.getId());
         deposit.setTotal(total);
         deposit.setDepositDate(new Date());
         deposit.setDepositStatus(DepositStatus.NP);
         depositService.saveDeposit(deposit);
         PayEnum payEnum = PayEnum.getPayEnumByPayType(payType);
-        return payEnum.getPayContext().process(deposit.getDepositNumber(), total, request, paymentLog);
+        return payEnum.getPayContext().process(deposit.getId().toString(), total, request, paymentLog);
     }
 
     @RequestMapping(value = "pay", method = RequestMethod.POST)

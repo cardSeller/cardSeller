@@ -20,9 +20,9 @@
     <input type=hidden name="ChkValue" value="${paymentBean.chkValue}">
     <input type=hidden name="ClientIp" value="${paymentBean.clientIP}">
 </form>
-<#--<script type="text/javascript">-->
-    <#--document.payment.submit();-->
-<#--</script>-->
+<script type="text/javascript">
+    document.payment.submit();
+</script>
 </#if>
 </body>
 </html>
