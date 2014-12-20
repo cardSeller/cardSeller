@@ -38,7 +38,7 @@
                 <div class="register-username clearfix">
                     <label>用户名：</label>
                     <input type="text" value="请输入常用邮箱"/>
-                    <p class="reg-error">格式错误，请输入邮箱</p>
+                    <p class="reg-error">格式错误，请输入常用邮箱</p>
                 </div>
                 <div class="register-password clearfix">
                     <label for="">密码：</label>
@@ -48,7 +48,7 @@
                 <div class="register-password-affirm clearfix">
                     <label for="">确认密码：</label>
                     <input type="password" placeholder="确认密码"/>
-                    <p class="reg-error">格式错误，请输入密码</p>
+                    <p class="reg-error">请输入密码</p>
                 </div>
                 <input type="submit" class="register-btn" value="注册"/>
             </form>
@@ -60,8 +60,8 @@
             <form action="">
                 <div class="login-username clearfix">
                     <label>用户名：</label>
-                    <input type="text" value="请输入常用邮箱"/>
-                    <p class="reg-error">格式错误，请输入邮箱</p>
+                    <input type="text" value="请输入用户邮箱"/>
+                    <p class="reg-error">请输入用户邮箱</p>
                 </div>
                 <div class="login-password clearfix">
                     <label for="">密码：</label>
@@ -83,6 +83,31 @@
         });
         $(".login-close").click(function(){
             $("#login-popup,.sign-up-pop,.sign-in-pop").hide();
+        });
+        $(".register-username input").focus(function(){
+            $(this).val("");
+            $(this).next().hide();
+        }).blur(function () {
+            if (this.value === '') {
+                $(this).val("请输入常用邮箱");
+                $(this).next().show();
+            }
+        });
+        $(".register-password input,.register-password-affirm input,.login-password input").focus(function(){
+            $(this).next().hide();
+        }).blur(function () {
+            if (this.value === '') {
+                $(this).next().show();
+            }
+        });
+        $(".login-username input").focus(function(){
+            $(this).val("");
+            $(this).next().hide();
+        }).blur(function () {
+            if (this.value === '') {
+                $(this).val("请输入常用邮箱");
+                $(this).next().show();
+            }
         });
     });
 </script>

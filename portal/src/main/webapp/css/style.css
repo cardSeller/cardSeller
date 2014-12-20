@@ -469,6 +469,9 @@ a{
 .register-password{
     padding: 22px 0;
 }
+.login-password{
+    padding-top: 20px;
+}
 .register-btn{
     line-height: 52px;
     height: 52px;
@@ -489,4 +492,5 @@ a{
 .reg-error{
     color: #d83224;
     padding-left: 80px;
+    display: none;
 }
