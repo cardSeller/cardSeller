@@ -353,7 +353,6 @@
                         <version>2.1.1</version>
                         <configuration>
                             <warName>${project.build.finalName}</warName>
-                            <warSourceExcludes>js/*.js,css/*.css</warSourceExcludes>
                         </configuration>
                     </plugin>
                 </plugins>
