@@ -3,7 +3,7 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input
     padding: 0;
 }
 body {
-    font: 12px/1.4 \5FAE\8F6F\96C5\9ED1,\5b8b\4f53,Arial,Helvetica,sans-serif;
+    font: 14px/1.4 \5FAE\8F6F\96C5\9ED1,\5b8b\4f53,Arial,Helvetica,sans-serif;
     -webkit-text-size-adjust: 100%;
 }
 fieldset,img {
@@ -128,6 +128,19 @@ a{
 }
 .top-bar a{
     font-size: 14px;
+}
+.top-bar p{
+    display: inline-block;
+    color: #8faeef;
+    line-height: 34px;
+}
+.top-bar-quit{
+    border-left:solid 1px #fff;
+    padding: 0 16px 0 18px;
+    margin-left: 10px;
+}
+.top-bar-member,.top-bar-quit{
+    color: #8faeef;
 }
 .sign-up{
     background-color: #f69005;
@@ -395,3 +408,417 @@ a{
 .footer-item-4{
     background-position: 25px -600px;
 }
+.login-shade{
+    background-color: #000;
+    opacity: 0.8;
+    alpha(opacity=80);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+.login-popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    display: none;
+}
+.login-box{
+    padding: 6px;
+    background-color: #335498;
+    position: absolute;
+    z-index: 4;
+    width: 480px;
+    min-height: 200px;
+    left:50%;
+    top:50%;
+    margin-top: -200px;
+    margin-left: -240px;
+    display: none;
+}
+.login-box-title{
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 22px;
+    padding: 6px 10px;
+}
+.login-close{
+    width: 38px;
+    height: 38px;
+    display: block;
+    float: right;
+    text-indent: -9999px;
+    overflow: hidden;
+    background: url(../images/sprite-icon.png) 10px -690px no-repeat;
+    margin: -10px -10px 0 0;
+}
+.login-close:hover{
+    background-color: #8faeef;
+}
+.login-content{
+    background-color: #fff;
+    font-size: 14px;
+    padding: 22px 56px;
+}
+.login-content label{
+    float: left;
+    width: 80px;
+    height: 40px;
+    line-height: 40px;
+    text-align: right;
+}
+.login-content input{
+    float: left;
+    padding: 2px 4px;
+    height: 36px;
+    line-height: 34px;
+    width: 275px;
+    margin-bottom: 4px;
+}
+.register-password{
+    padding: 22px 0;
+}
+.login-password{
+    padding-top: 20px;
+}
+.register-btn{
+    line-height: 52px;
+    height: 52px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    background-color: #f69006;
+    border: 0;
+    margin-top: 26px;
+    cursor: pointer;
+}
+.login-content .register-btn{
+    width: 100%;
+}
+.register-btn:hover{
+    text-decoration:none;
+}
+.reg-error{
+    color: #d83224;
+    padding-left: 80px;
+    display: none;
+}
+
+/*会员中心*/
+.member{
+    background-color: #fff;
+    border: solid 1px #ccc;
+    margin-top: 30px;
+}
+.member-nav{
+    border-right: solid 1px #ccc;
+    width: 247px;
+    padding-bottom: 60px;
+}
+.member-info{
+    height: 200px;
+    padding:50px 30px 0 30px;
+    text-align: center;
+}
+.member-nav ul{
+    border-top: solid 1px #ccc;
+}
+.member-nav li{
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    border-bottom: solid 1px #ccc;
+}
+.member-nav a{
+    color: #333;
+}
+.member-nav a:hover,
+.member-nav .selected{
+    color: #f69005;
+}
+.member-id{
+    padding: 20px 0 10px 0;
+}
+.member-balance strong{
+    color: #d83224;
+    padding: 0 4px 0 2px;
+}
+.member-nav-recharge{
+    padding:16px 60px 0 60px;
+}
+.member-nav-recharge a{
+    background-color: #f69005;
+    padding: 6px 10px;
+    margin: 0 auto;
+    display: block;
+    color: #fff;
+}
+.member-nav-recharge a:hover{
+    color: #fff;
+    text-decoration: none;
+}
+.member-container{
+    width: 750px;
+}
+.member-title{
+    padding: 20px 0 20px 40px;
+    color: #335498;
+    font-size: 18px;
+    border-bottom: solid 1px #ccc;
+}
+.select-time{
+    padding: 30px 0 30px 40px;
+}
+.time-form,
+.time-to{
+    padding:6px 8px;
+    border: solid 1px #aaa;
+    margin: 0 6px;
+}
+.search-btn{
+    background-color: #f69005;
+    color: #fff;
+    padding:7px 20px;
+}
+.search-btn:hover{
+    text-decoration: none;
+}
+.w100{
+    width: 100%;
+}
+.recharge-history th{
+    background-color: #ededed;
+    height: 40px;
+    line-height: 40px;
+    padding: 2px 4px 2px 10px;
+    text-align: left;
+}
+.recharge-history td{
+    font-size: 12px;
+    padding: 10px 4px 10px 10px;
+    border-bottom: dashed 1px #ccc;
+}
+.recharge-history-pay{
+    color: #f69005;
+}
+.recharge-history-wait{
+    color: #d83224;
+}
+.recharge-history-success{
+    color: #335498;
+}
+
+
+
+
+
+/*翻页样式*/
+.pager-box{
+    padding: 20px 10px 0 0;
+}
+.pagination-list li {
+    float: left;
+    padding-left: 10px
+}
+
+.pagination-list a {
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    display: block;
+    text-align: center;
+    border: solid 1px #888;
+    color: #888;
+    font-size: 14px;
+    font-family: arial;
+    border-radius: 3px
+}
+
+.pagination-list a:hover {
+    border-color: #ffa257;
+    color: #ff7f19;
+    text-decoration: none
+}
+
+.pagination-list .selected a {
+    border-color: #ffa257;
+    color: #fff;
+    background-color: #ffa257
+}
+
+.pagination-list-prev,.pagination-list-next {
+    position: relative
+}
+
+.pagination-list-prev span,.pagination-list-next span {
+    width: 0;
+    height: 0;
+    font-size: 0;
+    display: block;
+    border-top: 5px solid transparent;
+    border-right: 8px solid #888;
+    border-bottom: 5px solid transparent;
+    vertical-align: middle;
+    position: absolute;
+    left: 21px;
+    top: 10px
+}
+
+.pagination-list-next span {
+    border-left: 8px solid #888;
+    border-right: 0
+}
+
+.pagination-list-prev a:hover span {
+    border-right-color: #ffa257
+}
+
+.pagination-list-next a:hover span {
+    border-left-color: #ffa257
+}.pagination-jump {
+     border: solid 1px #ffa257;
+     border-radius: 3px;
+     margin-left: 20px
+ }
+
+.pagination-jump input {
+    width: 40px;
+    height: 20px;
+    line-height: 20px;
+    padding: 4px 8px;
+    border: 0;
+    float: left;
+    font-size: 14px
+}
+
+.pagination-jump a {
+    font-size: 14px;
+    height: 28px;
+    line-height: 28px;
+    width: 50px;
+    text-align: center;
+    display: block;
+    float: left;
+    color: #fff;
+    background-color: #ffa257
+}
+
+.pagination-jump a:hover {
+    text-decoration: none
+}
+
+.pagination-disabled a,.pagination-disabled a:hover {
+    color: #cbcbcb;
+    border-color: #cbcbcb
+}
+
+.pagination-disabled a:hover,.pagination-disabled a:hover span {
+    cursor: default
+}
+/*日期控件样式*/
+.ui-datepicker {
+    width: 246px;
+    height: 250px;
+    background-color: #3b3b3b;
+    color: #fff;
+    border-radius: 5px;
+    display: none
+}
+
+.ui-datepicker-header {
+    height: 30px;
+    position: relative
+}
+
+.ui-datepicker-prev,.ui-datepicker-next {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    left: 70px;
+    top: 6px;
+    color: #fff;
+}
+
+.ui-datepicker-next {
+    left: auto;
+    right: 6px;
+}
+
+.ui-datepicker-header .ui-state-disabled {
+    display: none
+}
+
+.ui-datepicker-year {
+    position: absolute;
+    width: 60px;
+    height: 30px;
+    left: 12px;
+    top: 2px;
+    font-family: arial;
+    font-size: 18px
+}
+
+.ui-datepicker-month {
+    border: 0;
+    background: 0;
+    font-size: 14px;
+    color: #fff;
+    position: absolute;
+    left: 120px;
+    top: 6px;
+    font-family: \5FAE\8F6F\96C5\9ED1
+}
+
+.ui-datepicker-calendar {
+    width: 100%
+}
+
+.ui-datepicker-calendar th {
+    color: #ff9669;
+    height: 26px;
+    line-height: 26px;
+    background-color: #606060
+}
+
+.ui-datepicker-calendar td {
+    padding: 2px 3px
+}
+
+.ui-datepicker-calendar a,.ui-datepicker-calendar tbody span {
+    width: 24px;
+    height: 24px;
+    margin: 0 2px;
+    line-height: 24px;
+    color: #fff;
+    font-family: arial;
+    display: block;
+    text-align: center
+}
+
+.ui-datepicker-calendar a:hover,.ui-state-active {
+    text-decoration: none;
+    background-color: #f69005;
+    color: #fff;
+}
+
+.ui-state-active {
+    background-position: -30px -160px
+}
+
+.ui-datepicker-calendar span.ui-state-default {
+    color: #666;
+    cursor: default
+}
+
+
+
+
+
+
+
+
+

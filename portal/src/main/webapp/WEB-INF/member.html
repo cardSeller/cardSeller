@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <title>会员中心</title>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../js/datepicker-cn.js"></script>
+</head>
+<body>
+<div class="top-bar">
+    <div class="wrap">
+        <p><span class="member-mail">2495127574@qq.com</span> ，您好！</p>
+        <a class="top-bar-member" href="#">用户中心</a>
+        <a class="top-bar-quit" href="#">退出</a>
+        <a class="deter-fraud" href="#">防骗指南</a>
+    </div>
+</div>
+<div class="header">
+    <div class="wrap clearfix">
+        <h1 class="logo-box">
+            <a href="#" class="logo">快充商城</a>
+        </h1>
+        <ul class="header-nav right">
+            <li>
+                <a href="#">首页</a>
+            </li>
+            <li>
+                <a href="#">订单查询</a>
+            </li>
+            <li>
+                <a href="#">网站声明</a>
+            </li>
+            <li>
+                <a href="#">常见问题</a>
+            </li>
+            <li>
+                <a href="#">联系我们</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="wrap">
+    <div class="member clearfix">
+        <div class="member-nav left">
+            <div class="member-info">
+                <div class="member-avatar">
+                    <img src="../images/avatar.jpg" alt=""/>
+                </div>
+                <p class="member-id">2495127574@qq.com</p>
+                <p class="member-balance">我的余额：<strong>25.00</strong>元</p>
+                <p class="member-nav-recharge">
+                    <a href="#">充值</a>
+                </p>
+            </div>
+            <ul>
+                <li>
+                    <a href="#">购买记录查询</a>
+                </li>
+                <li>
+                    <a href="#">登录日志</a>
+                </li>
+                <li>
+                    <a href="#">修改个人信息</a>
+                </li>
+                <li>
+                    <a href="#">修改密码</a>
+                </li>
+                <li>
+                    <a href="#">用户充值</a>
+                </li>
+                <li>
+                    <a href="#">充值记录</a>
+                </li>
+            </ul>
+        </div>
+        <div class="member-container left">
+            <p class="member-title">
+                购买充值记录
+            </p>
+            <div class="select-time clearfix">
+                <label for="from">时间区间</label>
+                <input class="time-form" type="text" id="from" name="from" placeholder="选择时间">
+                <label for="to">-</label>
+                <input class="time-to" type="text" id="to" name="to" placeholder="选择时间">
+                <a class="search-btn" href="#">搜索</a>
+            </div>
+            <table class="w100 recharge-history">
+                <thead>
+                    <tr>
+                        <th>订单号</th>
+                        <th>商品名称</th>
+                        <th>面值(￥)</th>
+                        <th>商品单价</th>
+                        <th>数量</th>
+                        <th>实付总金额(￥)</th>
+                        <th>交易日期</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1412131725122219</td>
+                        <td>盛大直冲</td>
+                        <td>100</td>
+                        <td>108.00</td>
+                        <td>1</td>
+                        <td>108.00</td>
+                        <td>2014-12-20</td>
+                        <td><p class="recharge-history-wait">未支付</p></td>
+                        <td><a class="recharge-history-pay" href="#">付款</a></td>
+                    </tr>
+                    <tr>
+                        <td>1412131725122200</td>
+                        <td>盛大直冲</td>
+                        <td>500</td>
+                        <td>508.00</td>
+                        <td>5</td>
+                        <td>108.00</td>
+                        <td>2014-12-21</td>
+                        <td><p class="recharge-history-success">已支付</p></td>
+                        <td></td>
+                    </tr>
+                <tr>
+                    <td>1412131725122219</td>
+                    <td>盛大直冲</td>
+                    <td>100</td>
+                    <td>108.00</td>
+                    <td>1</td>
+                    <td>108.00</td>
+                    <td>2014-12-20</td>
+                    <td><p class="recharge-history-wait">未支付</p></td>
+                    <td><a class="recharge-history-pay" href="#">付款</a></td>
+                </tr>
+                <tr>
+                    <td>1412131725122200</td>
+                    <td>盛大直冲</td>
+                    <td>500</td>
+                    <td>508.00</td>
+                    <td>5</td>
+                    <td>108.00</td>
+                    <td>2014-12-21</td>
+                    <td><p class="recharge-history-success">已支付</p></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="pager-box">
+                <div class="right" id="pager">
+                    <ul class="pagination-list left">
+                        <li class="selected"><a href="javascript:void(0)">1</a></li>
+                        <li><a href="javascript:void(0)" onclick="currentPage(2)">2</a></li>
+                        <li><a href="javascript:void(0)" onclick="currentPage(3)">3</a></li>
+                        <li><a href="javascript:void(0)" onclick="currentPage(4)">4</a></li>
+                        <li class="pagination-disabled"><a href="javascript:void(0)">···</a></li>
+                        <li><a href="javascript:void(0)" onclick="currentPage(10)">10</a></li>
+                        <li class="pagination-list-next"><a href="javascript:void(0)" onclick="next()"><span class="pagination-list-next"></span></a></li>
+                    </ul>
+                    <div class="pagination-jump left">
+                        <input class="yahei" type="text" id="inputSearchNumber">
+                        <a class="btn btn-primary" href="javascript:inputSearch(10);">确&nbsp;定</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function() {
+        $( "#from" ).datepicker({
+            defaultDate: "+1w",
+            changeMonth: true,
+            numberOfMonths: 1,
+            onClose: function( selectedDate ) {
+                $( "#to" ).datepicker( "option", "minDate", selectedDate );
+            }
+        });
+        $( "#to" ).datepicker({
+            defaultDate: "+1w",
+            changeMonth: true,
+            numberOfMonths: 1,
+            onClose: function( selectedDate ) {
+                $( "#from" ).datepicker( "option", "maxDate", selectedDate );
+            }
+        });
+    });
+</script>
+<div class="footer">
+    <div class="wrap">
+        <ul class="footer-list clearfix">
+            <li class="footer-item footer-item-1">支持多种，支付方式</li>
+            <li class="footer-item footer-item-2">安全服务，保障资金</li>
+            <li class="footer-item footer-item-3">7*24小时，专属客服</li>
+            <li class="footer-item footer-item-4">权威认证，安全可信</li>
+        </ul>
+        <p>Copyright(C) 2014-2014 快充商城 版权所有，并保留所有权利。</p>
+        <p>ICP备案证书号：闽ICP备14016293号</p>
+    </div>
+</div>
+</body>
+</html>
