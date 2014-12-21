@@ -153,7 +153,7 @@ a{
 }
 .sign-up:hover{
     text-decoration: none;
-    background-color:#ff9d18;
+    background-color:#ffa000;
 }
 .sign-in{
     margin:8px 18px;
@@ -310,7 +310,7 @@ a{
     width:198px;
     height: 32px;
     line-height: 32px;
-    background:#fff url(../images/sprite-icon.png) 196px -182px no-repeat;
+    background:#fff url(../images/sprite-icon.png) 196px -782px no-repeat;
     margin-top: 8px;
     cursor: pointer;
     color: #ccc;
@@ -560,6 +560,7 @@ a{
 .member-nav-recharge a:hover{
     color: #fff;
     text-decoration: none;
+    background-color: #ffa000;
 }
 .member-container{
     width: 750px;
@@ -586,6 +587,7 @@ a{
 }
 .search-btn:hover{
     text-decoration: none;
+    background-color: #ffa000;
 }
 .w100{
     width: 100%;
@@ -611,7 +613,6 @@ a{
 .recharge-history-success{
     color: #335498;
 }
-
 
 
 
@@ -806,7 +807,7 @@ a{
 }
 
 .ui-state-active {
-    background-position: -30px -160px
+    background-color: #ffa000;
 }
 
 .ui-datepicker-calendar span.ui-state-default {
@@ -814,7 +815,47 @@ a{
     cursor: default
 }
 
-
+/*个人资料修改*/
+.member-change{
+    padding-top: 40px;
+}
+.member-change table{
+    width: 100%;
+}
+.member-change-label{
+    text-align: right;
+    width:30%
+}
+.member-change td{
+    padding: 10px 6px;
+}
+.member-change input{
+    padding: 4px 6px;
+    height: 22px;
+    line-height: 22px;
+    width: 200px;
+}
+.member-change label input{
+    padding: 0;
+    width: 20px;
+}
+.member-change .member-change-save{
+    width:100px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    background-color: #f69005;
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+}
+.member-change .member-change-save:hover{
+    color: #fff;
+    text-decoration: none;
+    background-color: #ffa000;
+}
 
 
 
