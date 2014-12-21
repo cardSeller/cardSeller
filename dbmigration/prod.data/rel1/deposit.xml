@@ -30,4 +30,13 @@
             </column>
         </createTable>
     </changeSet>
+    <changeSet id="prod.data" author="minj">
+        <insert tableName="deposit">
+            <column name="id" value="1"/>
+            <column name="member_id" value="1"/>
+            <column name="total" value="1000"/>
+            <column name="deposit_date" value="2014-11-10 15:06:16"/>
+            <column name="deposit_status" value="DS"/>
+        </insert>
+    </changeSet>
 </databaseChangeLog>

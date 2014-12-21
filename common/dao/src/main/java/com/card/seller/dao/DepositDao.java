@@ -3,6 +3,7 @@ package com.card.seller.dao;
 import com.card.seller.dao.hibernate.HibernateSupportDao;
 import com.card.seller.domain.Deposit;
 import org.springframework.stereotype.Repository;
+import sun.rmi.runtime.Log;
 
 /**
  * Created by minjie
@@ -10,5 +11,5 @@ import org.springframework.stereotype.Repository;
  * Time:下午4:29
  */
 @Repository
-public class DepositDao extends HibernateSupportDao<Deposit, String> {
+public class DepositDao extends HibernateSupportDao<Deposit, Long> {
 }

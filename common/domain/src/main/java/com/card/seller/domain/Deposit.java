@@ -9,7 +9,8 @@ import java.util.Date;
  * Date:14-12-15
  * Time:下午3:18
  */
-@Entity(name = "deposit")
+@Entity
+@Table(name = "deposit")
 @SequenceGenerator(name = "seq_gen", sequenceName = "seq_deposit", allocationSize = 1)
 public class Deposit extends IdEntity {
 
@@ -23,9 +24,9 @@ public class Deposit extends IdEntity {
     @Column(name = "deposit_date", length = 30, nullable = false)
     private Date depositDate;
 
-    @Enumerated(value = EnumType.STRING)
-    @Column(name = "deposit_status", length = 10, nullable = false)
     private DepositStatus depositStatus;
+
+    private Member member;
 
     public Long getMemberId() {
         return memberId;
@@ -51,11 +52,22 @@ public class Deposit extends IdEntity {
         this.depositDate = depositDate;
     }
 
+    @Enumerated(value = EnumType.STRING)
+    @Column(name = "deposit_status", length = 10, nullable = false)
     public DepositStatus getDepositStatus() {
         return depositStatus;
     }
 
     public void setDepositStatus(DepositStatus depositStatus) {
         this.depositStatus = depositStatus;
+    }
+
+    @Transient
+    public Member getMember() {
+        return member;
+    }
+
+    public void setMember(Member member) {
+        this.member = member;
     }
 }

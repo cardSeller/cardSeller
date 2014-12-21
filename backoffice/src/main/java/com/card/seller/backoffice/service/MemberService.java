@@ -23,4 +23,9 @@ public class MemberService {
     public List<Member> getAllMembers() {
         return memberDao.getAll();
     }
+
+    @Transactional
+    public Member getMemberById(Long memberId) {
+        return memberDao.get(memberId);
+    }
 }

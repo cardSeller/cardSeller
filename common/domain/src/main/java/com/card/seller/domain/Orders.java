@@ -31,8 +31,6 @@ public class Orders extends IdEntity{
     @Column(name = "order_date", length = 30, nullable = false)
     private Date orderDate;
 
-    @Enumerated(value = EnumType.STRING)
-    @Column(name = "order_status", length = 10, nullable = false)
     private OrderStatus orderStatus;
 
     public String getOrderNumber() {
@@ -83,6 +81,8 @@ public class Orders extends IdEntity{
         this.orderDate = orderDate;
     }
 
+    @Enumerated(value = EnumType.STRING)
+    @Column(name = "order_status", length = 10, nullable = false)
     public OrderStatus getOrderStatus() {
         return orderStatus;
     }

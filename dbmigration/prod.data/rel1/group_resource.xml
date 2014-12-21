@@ -45,5 +45,13 @@
             <column name="group_id" value="1"/>
             <column name="resource_id" value="30"/>
         </insert>
+        <insert tableName="group_resource">
+            <column name="group_id" value="1"/>
+            <column name="resource_id" value="4"/>
+        </insert>
+        <insert tableName="group_resource">
+            <column name="group_id" value="1"/>
+            <column name="resource_id" value="40"/>
+        </insert>
     </changeSet>
 </databaseChangeLog>
