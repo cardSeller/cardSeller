@@ -26,7 +26,7 @@ public class ItemController {
     private ItemService itemService;
 
     @RequestMapping(value = "/itemManager", method = RequestMethod.GET)
-    public String memberManager(Map<String, Object> viewObject) {
+    public String itemManager(Map<String, Object> viewObject) {
         List<Item> items = itemService.getAllItems();
         for (Item item : items) {
             item.setItemPriceList(itemService.getItemPricesByItemId(item.getId()));

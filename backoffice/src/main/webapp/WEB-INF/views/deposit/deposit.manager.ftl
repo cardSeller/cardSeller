@@ -13,7 +13,7 @@
         <div class="alert alert-yellow">
             <p  class="alert-text">总充值纪录数：<strong>${total!}</strong></p>
         </div>
-        <div class="clearfix" id="membersList" style="<#if deposits?exists&&deposits?size!=0>display: block<#else>display: none</#if>">
+        <div class="clearfix" id="depositsList" style="<#if deposits?exists&&deposits?size!=0>display: block<#else>display: none</#if>">
             <div class="panel panel-default member-manager-list">
                 <table class="table table-hover">
                     <thead>

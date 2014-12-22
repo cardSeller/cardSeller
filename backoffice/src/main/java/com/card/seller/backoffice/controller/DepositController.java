@@ -28,7 +28,7 @@ public class DepositController {
     private MemberService memberService;
 
     @RequestMapping(value = "/depositManager", method = RequestMethod.GET)
-    public String memberManager(Map<String, Object> viewObject) {
+    public String depositManager(Map<String, Object> viewObject) {
         List<Deposit> deposits = depositService.getAllDeposits();
         for (Deposit deposit : deposits) {
             deposit.setMember(memberService.getMemberById(deposit.getMemberId()));

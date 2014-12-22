@@ -22,6 +22,9 @@
             <column name="item_id" type="bigint">
                 <constraints nullable="false"/>
             </column>
+            <column name="item_price_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
             <column name="total" type="number(12,3)">
                 <constraints nullable="false"/>
             </column>

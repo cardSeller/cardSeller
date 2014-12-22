@@ -3,7 +3,6 @@ package com.card.seller.dao;
 import com.card.seller.dao.hibernate.HibernateSupportDao;
 import com.card.seller.domain.Deposit;
 import org.springframework.stereotype.Repository;
-import sun.rmi.runtime.Log;
 
 /**
  * Created by minjie

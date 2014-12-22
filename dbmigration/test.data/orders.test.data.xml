@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+
+    <preConditions>
+        <dbms type="postgresql"/>
+    </preConditions>
+
+    <changeSet id="test.data" author="minj">
+        <insert tableName="orders">
+            <column name="order_number" value="D20141221112000"/>
+            <column name="member_id" value="1"/>
+            <column name="item_id" value="1"/>
+            <column name="item_price_id" value="1"/>
+            <column name="item_count" value="1"/>
+            <column name="total" value="103"/>
+            <column name="order_date" value="2014-12-21 11:20:00"/>
+            <column name="order_status" value="NP"/>
+        </insert>
+        <insert tableName="orders">
+            <column name="order_number" value="D20141221112100"/>
+            <column name="member_id" value="1"/>
+            <column name="item_id" value="1"/>
+            <column name="item_price_id" value="1"/>
+            <column name="item_count" value="1"/>
+            <column name="total" value="103"/>
+            <column name="order_date" value="2014-12-21 11:21:00"/>
+            <column name="order_status" value="NP"/>
+        </insert>
+        <insert tableName="orders">
+            <column name="order_number" value="D20141221112200"/>
+            <column name="member_id" value="1"/>
+            <column name="item_id" value="1"/>
+            <column name="item_price_id" value="1"/>
+            <column name="item_count" value="1"/>
+            <column name="total" value="103"/>
+            <column name="order_date" value="2014-12-21 11:22:00"/>
+            <column name="order_status" value="HP"/>
+        </insert>
+        <insert tableName="orders">
+            <column name="order_number" value="D20141221112300"/>
+            <column name="member_id" value="1"/>
+            <column name="item_id" value="1"/>
+            <column name="item_price_id" value="1"/>
+            <column name="item_count" value="1"/>
+            <column name="total" value="103"/>
+            <column name="order_date" value="2014-12-21 11:23:00"/>
+            <column name="order_status" value="TS"/>
+        </insert>
+        <insert tableName="orders">
+            <column name="order_number" value="D20141221112400"/>
+            <column name="member_id" value="1"/>
+            <column name="item_id" value="1"/>
+            <column name="item_price_id" value="1"/>
+            <column name="item_count" value="1"/>
+            <column name="total" value="103"/>
+            <column name="order_date" value="2014-12-21 11:24:00"/>
+            <column name="order_status" value="TC"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

@@ -13,7 +13,7 @@
         <div class="alert alert-yellow">
             <p  class="alert-text">总产品数：<strong>${total!}</strong></p>
         </div>
-        <div class="clearfix" id="membersList" style="<#if items?exists&&items?size!=0>display: block<#else>display: none</#if>">
+        <div class="clearfix" id="itemsList" style="<#if items?exists&&items?size!=0>display: block<#else>display: none</#if>">
             <div class="panel panel-default member-manager-list">
                 <table class="table table-hover">
                     <thead>

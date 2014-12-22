@@ -44,7 +44,7 @@ public class GenerateService {
     }
 
     public String generateOrderNumber() {
-        String date = DateUtil.dateToString(DateUtil.YYYY_MM_DD_HH_MM_SS, new Date());
+        String date = DateUtil.dateToString(DateUtil.YYYYMMDDHHMMSS, new Date());
         return "D" + date;
     }
 

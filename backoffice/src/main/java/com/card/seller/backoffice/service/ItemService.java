@@ -39,4 +39,13 @@ public class ItemService {
         return itemPriceDao.getItemPriceListByItemId(itemId);
     }
 
+    @Transactional
+    public ItemPrice getItemPriceById(Long itemPriceId) {
+        return itemPriceDao.get(itemPriceId);
+    }
+
+    @Transactional
+    public Item getItemById(Long itemId) {
+        return itemDao.get(itemId);
+    }
 }

@@ -22,6 +22,7 @@
     <script type="text/javascript" src="${absoluteContextPath}/js/respond.min.js"></script>
     <![endif]-->
     <script type="text/javascript" src="${absoluteContextPath}/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="${absoluteContextPath}/js/common.js"></script>
     <!--[if lt IE 9]>
     <script type="text/javascript">
         $(function () {
@@ -41,6 +42,7 @@
     <script type="text/javascript" src="${absoluteContextPath}/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="${absoluteContextPath}/js/jquery.validate.min.js"></script>
     <script type="text/javascript" src="${absoluteContextPath}/js/jquery-ui-1.10.4.custom.js"></script>
+    <script type="text/javascript" src="${absoluteContextPath}/js/form.js"></script>
     <script language="JavaScript">
         var golbalRootUrl = "${absoluteContextPath}";
         var golbalPerssions =[];

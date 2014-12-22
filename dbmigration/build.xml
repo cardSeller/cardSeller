@@ -93,10 +93,10 @@
     </target>
 
 
-    <!--<target name="6.refresh.test.data" depends="5.rebuild.schema" description="Rebuild schema and refresh test data.">-->
-        <!--<echo message="add test data ...."/>-->
-        <!--<migrateDb script.dir="${target.dir}/test.data" dropfirst="false"/>-->
-    <!--</target>-->
+    <target name="6.refresh.test.data" depends="5.rebuild.schema" description="Rebuild schema and refresh test data.">
+        <echo message="add test data ...."/>
+        <migrateDb script.dir="${target.dir}/test.data" dropfirst="false"/>
+    </target>
 
     <!--<target name="7.refresh.prod.data" depends="5.rebuild.schema" description="Rebuild schema and refresh prod data."/>-->
 
