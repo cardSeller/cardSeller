@@ -150,6 +150,8 @@ a{
     line-height: 34px;
     display:inline-block;
     color: #fff;
+    vertical-align: top;
+    overflow: hidden;
 }
 .sign-up:hover{
     text-decoration: none;
@@ -166,6 +168,7 @@ a{
     padding-left:18px;
     margin: 8px 0;
     width: 60px;
+    display: inline-block;
 }
 .header{
     background-color: #335498;
@@ -765,15 +768,17 @@ a{
 
 .ui-datepicker-month {
     border: 0;
-    background: 0;
     font-size: 14px;
-    color: #fff;
+    color: #333;
+    background-color: #fff;
     position: absolute;
     left: 120px;
     top: 6px;
     font-family: \5FAE\8F6F\96C5\9ED1
 }
-
+.ui-datepicker-month option{
+    color: #333;
+}
 .ui-datepicker-calendar {
     width: 100%
 }
