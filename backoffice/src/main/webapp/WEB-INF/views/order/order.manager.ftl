@@ -33,7 +33,7 @@
                         <input class="form-control" type="text" id="memberName" name="memberName"/>
                     </div>
                     <input type="hidden" id="pageIndex" name="pageIndex" value="1"/>
-                    <input type="hidden" id="pageSize" name="pageSize" value="20"/>
+                    <input type="hidden" id="pageSize" name="pageSize" value="2"/>
 
                     <div class="btn-group search-btn-box">
                         <a href="javascript:searchOrders();" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span>&nbsp;查&nbsp;找</a>

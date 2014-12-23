@@ -65,3 +65,24 @@ function getOrdersCallBack(data) {
         $("#noOrdersList").show();
     }
 }
+
+function search() {
+    var data = {};
+    data.memberName = $("#searchOrdersForm").find("input[name='memberName']").val();
+    data.orderTimeFrom = $("#searchOrdersForm").find("input[name='orderTimeFrom']").val();
+    data.orderTimeTo = $("#searchOrdersForm").find("input[name='orderTimeTo']").val();
+    data.pageIndex = $("#pageIndex").val();
+    data.pageSize = $("#pageSize").val();
+    $.ajax({
+        type: "POST",
+        contentType: "application/json; charset=utf-8",
+        url: golbalRootUrl + "/order/search",
+        data: JSON.stringify(data),
+        success: function (result) {
+            getOrdersCallBack(result);
+        },
+        error: function (xhr) {
+            alertErrorMsgPopups("查询订单出错");
+        }
+    });
+}

@@ -51,7 +51,7 @@
         </insert>
         <insert tableName="orders">
             <column name="order_number" value="D20141221112400"/>
-            <column name="member_id" value="1"/>
+            <column name="member_id" value="2"/>
             <column name="item_id" value="1"/>
             <column name="item_price_id" value="1"/>
             <column name="item_count" value="1"/>

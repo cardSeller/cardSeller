@@ -68,7 +68,7 @@ public class OrderService {
         StringBuilder builder = new StringBuilder();
         if (StringUtils.isNotBlank(request.getMemberName())) {
             builder.append(" AND UPPER(m.name) like :memberName");
-            params.put("memberName", request.getMemberName().toUpperCase());
+            params.put("memberName", "%" + request.getMemberName().toUpperCase() + "%");
         }
         if (request.getOrderTimeFrom() != null) {
             builder.append(" AND o.order_date>=:orderTimeFrom");
