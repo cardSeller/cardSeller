@@ -56,4 +56,9 @@ public class MemberService {
         memberDao.save(member);
         return member;
     }
+
+    @Transactional
+    public Member getMemberById(Long memberId) {
+        return memberDao.get(memberId);
+    }
 }

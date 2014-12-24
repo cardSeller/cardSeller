@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<#assign shiro=JspTaglibs["/WEB-INF/taglib/shiro.tld"] />
 <html>
 <head lang="zh">
     <meta charset="UTF-8">

@@ -1,3 +1,4 @@
+<@shiro.guest>
 <div class="top-bar">
     <div class="wrap">
         <a class="sign-up" href="#">注册</a>
@@ -5,6 +6,17 @@
         <a class="deter-fraud" href="#">防骗指南</a>
     </div>
 </div>
+</@shiro.guest>
+<@shiro.user>
+<div class="top-bar">
+    <div class="wrap">
+        <p><span class="member-mail"><#if Session["sv"]??>${Session["sv"].name!}</#if></span> ，您好！</p>
+        <a class="top-bar-member" href="${absoluteContextPath}/member/manage">用户中心</a>
+        <a class="top-bar-quit" href="${absoluteContextPath}/logout">退出</a>
+        <a class="deter-fraud" href="#">防骗指南</a>
+    </div>
+</div>
+</@shiro.user>
 <div class="header">
     <div class="wrap clearfix">
         <h1 class="logo-box">
@@ -57,15 +69,15 @@
     <div class="login-box sign-in-pop">
         <p class="login-box-title">登录<a class="login-close" href="javascript:;">关闭</a></p>
         <div class="login-content clearfix">
-            <form action="">
+            <form action="${absoluteContextPath}/login" method='post'>
                 <div class="login-username clearfix">
                     <label>用户名：</label>
-                    <input type="text" value="请输入用户邮箱"/>
+                    <input id='username' name='username' type="text" value="请输入用户邮箱"/>
                     <p class="reg-error">请输入用户邮箱</p>
                 </div>
                 <div class="login-password clearfix">
                     <label for="">密码：</label>
-                    <input type="password" placeholder="密码"/>
+                    <input id='password' name='password'  type="password" placeholder="密码"/>
                     <p class="reg-error">请输入密码</p>
                 </div>
                 <input type="submit" class="register-btn" value="登录"/>

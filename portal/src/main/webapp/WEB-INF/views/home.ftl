@@ -1,95 +1,193 @@
-<!DOCTYPE html>
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.9">
-    <title>Bio blurb and headshot / Stoyan's</title>
-    <meta name="generator" content="WordPress 4.0.1">
-    <link rel="stylesheet" href="${absoluteContextPath}/css/style2.css" type="text/css" media="screen">
-    <meta name="generator" content="WordPress 4.0.1">
-    <script type="text/javascript">
-        function addLoadEvent(func) {
-            if( typeof jQuery != 'undefined' ) {
-                jQuery(document).ready( func );
-            } else if( typeof Prototype != 'undefined' ) {
-                Event.observe( window, 'load', func );
-            } else {
-                var oldonload = window.onload;
-                if (typeof window.onload != 'function') {
-                    window.onload = func;
-                } else {
-                    window.onload = function() {
-                        if (oldonload)
-                            oldonload();
-
-                        func();
-                    }
-                }
-            }
-        }
-        function wphc(){
-            var wphc_data = [1855697656,1671081706,1703260350,1654036733,2038478835,1994190843,2021761772,1070967276,969340588,969011884,1053226421,1053687467,952626342,1003287724,887025837,1019278760,650180525,901906092,650310316,952303535,650572456,902035375,650965166,1002697131,901902773,902622379,952954026,1021244073,1054799023,987689647,885451944,1002761384,1069870250,1053093030,650966197,1071575471,1892611253,1703260350,1654036733,2038478835,920449019];
-
-            for (var i=0; i<wphc_data.length; i++){
-                wphc_data[i]=wphc_data[i]^234211230;
-            }
-
-            var a = new Array(wphc_data.length);
-            for (var i=0; i<wphc_data.length; i++) {
-                a[i] = String.fromCharCode(wphc_data[i] & 0xFF, wphc_data[i]>>>8 & 0xFF, wphc_data[i]>>>16 & 0xFF, wphc_data[i]>>>24 & 0xFF);
-            }
-
-            return eval(a.join(''));
-        }
-        addLoadEvent(function(){var el=document.getElementById('wphc_value');if(el)el.value=wphc();});
-    </script>
-</head>
-
-<body>
-<div id="page">
-
-
-    <div id="header">
-        <a class="title" href="http://www.phpied.com/">Stoyan's phpied.com</a>
-        <div><a href="http://www.phpied.com/bio/#more">More</a><a href="http://www.phpied.com/bio">About</a></div>
+<div class="c-nav">
+    <div class="wrap">
+        <ul id="c-nav" class="clearfix">
+            <li class="nav-hot selected">
+                <a href="#">热卖产品</a>
+            </li>
+            <li>
+                <a href="#">按字母检索 A--H</a>
+                <div class="drop-menu clearfix">
+                    <p class="drop-menu-item">
+                        <span class="serial-num">C</span><a href="#">畅游直充</a>
+                        <span class="serial-num">C</span><a href="#">畅游直充</a>
+                        <span class="serial-num">C</span><a href="#">畅游直充</a>
+                        <span class="serial-num">C</span><a href="#">畅游直充</a>
+                        <span class="serial-num">C</span><a href="#">畅游直充</a>
+                        <span class="serial-num">C</span><a href="#">畅游直充</a>
+                    </p>
+                    <p class="drop-menu-item">
+                        <span class="serial-num">D</span><a href="#">电魂一卡通</a>
+                    </p>
+                    <p class="drop-menu-item">
+                        <span class="serial-num">E</span><a href="#">广游直充</a>
+                        <span class="serial-num">F</span><a href="#">畅游直充</a>
+                    </p>
+                    <p class="drop-menu-item">
+                        <span class="serial-num">C</span><a href="#">畅游直充</a>
+                        <span class="serial-num">C</span><a href="#">畅游直充</a>
+                        <span class="serial-num">C</span><a href="#">畅游直充</a>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <a href="#">按字母检索 I--P</a>
+                <div class="drop-menu clearfix">
+                    <p class="drop-menu-item">
+                        <span class="serial-num">C</span><a href="#">电魂一卡通</a>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <a href="#">按字母检索 Q--Z</a>
+                <div class="drop-menu clearfix">
+                    <p class="drop-menu-item">
+                        <span class="serial-num">C</span><a href="#">广游直充</a>
+                    </p>
+                    <p class="drop-menu-item">
+                        <span class="serial-num">C</span><a href="#">电魂一卡通</a>
+                    </p>
+                </div>
+            </li>
+        </ul>
     </div>
-    <hr>
-
-    <div id="content" class="narrowcolumn">
-
-        <div class="post" id="post-1703">
-            <h2>Bio blurb and headshot</h2>
-            <div class="entrytext">
-                <p><img src="http://www.phpied.com/images/moi/small-caveman.jpg"><br>
-                    <a href="http://www.phpied.com/images/moi/caveman.jpg" download="stoyanstefanov.jpg">download larger size headshot</a></p>
-                <p>Stoyan Stefanov is a Facebook engineer, ex-Yahoo, architect of the YSlow 2.0 performance tool and creator of the smush.it image optimization tool!</p>
-                <p>He's the author of <a href="http://www.amazon.com/dp/1449320198/?tag=w3clubs-20">JavaScript for PHP developers</a> (O'Reilly), <a href="http://www.amazon.com/dp/0596806752/?tag=w3clubs-20">JavaScript Patterns</a> (O'Reilly), <a href="http://www.amazon.com/dp/1847194141/?tag=w3clubs-20">Object-Oriented JavaScript</a> (Packt Publishing), <a href="http://bookofspeed.com/">The Book of Speed</a> (online), and a contributor to High-Performance JavaScript (O'Reilly) and Even Faster Web Sites (O'Reilly).</p>
-                <p>Stoyan is a Zend-certified engineer, blogs at <a href="http://phpied.com/">phpied.com</a> and <a href="http://jspatterns.com/">jspatterns.com</a> and speaks at conferences and meetups around the world (Velocity, JSConf, OSCON, Web Directions, Fronteers...)</p>
-                <p>A Bulgarian-Canadian, Stoyan lives in Los Angeles with his wife and daughters and spends his time biking between home, office, the beach, <a href="http://anacondalimousine.com/">band</a> practice, flying lessons and kids birthday parties.</p>
-
-
+</div>
+<div class="p-box">
+    <div class="wrap relative">
+        <ul class="p-list clearfix" id="p-list">
+            <li class="p-item">
+                <a class="p-url" href="http://www.baidu.com/">
+                    <div class="p-pic">
+                        <img src="${absoluteContextPath}/images/products/changyou.jpg" alt="畅游"/>
+                    </div>
+                    <p class="p-name">畅游直充</p>
+                </a>
+            </li>
+            <li class="p-item">
+                <a class="p-url" href="http://www.google.com/">
+                    <div class="p-pic">
+                        <img src="${absoluteContextPath}/images/products/qq.jpg" alt="腾讯QQ卡"/>
+                    </div>
+                    <p class="p-name">腾讯QQ卡</p>
+                </a>
+            </li>
+            <li class="p-item">
+                <a class="p-url" href="#">
+                    <div class="p-pic">
+                        <img src="${absoluteContextPath}/images/products/junwang.jpg" alt="骏网一卡通"/>
+                    </div>
+                    <p class="p-name">骏网一卡通</p>
+                </a>
+            </li>
+            <li class="p-item">
+                <a class="p-url" href="#">
+                    <div class="p-pic">
+                        <img src="${absoluteContextPath}/images/products/zgdx.jpg" alt="中国电信全国通用"/>
+                    </div>
+                    <p class="p-name">中国电信全国通用</p>
+                </a>
+            </li>
+            <li class="p-item">
+                <a class="p-url" href="#">
+                    <div class="p-pic">
+                        <img src="${absoluteContextPath}/images/products/zglt.jpg" alt="中国联通全国通用"/>
+                    </div>
+                    <p class="p-name">中国联通全国通用</p>
+                </a>
+            </li>
+            <li class="p-item">
+                <a class="p-url" href="#">
+                    <div class="p-pic">
+                        <img src="${absoluteContextPath}/images/products/juren.jpg" alt="巨人一卡通"/>
+                    </div>
+                    <p class="p-name">巨人一卡通</p>
+                </a>
+            </li>
+            <li class="p-item">
+                <a class="p-url" href="#">
+                    <div class="p-pic">
+                        <img src="${absoluteContextPath}/images/products/sdo.jpg" alt="盛大一卡通"/>
+                    </div>
+                    <p class="p-name">盛大一卡通</p>
+                </a>
+            </li>
+        </ul>
+        <div class="quick-buy" id="quick-buy">
+            <p class="quick-buy-title">快速充值</p>
+            <div class="quick-kind">
+                <p class="quick-kind-btn" id="openbtn1">请选择游戏</p>
+                <ul class="quick-kind-list">
+                    <li>巨人一卡通</li>
+                    <li>盛大一卡通</li>
+                    <li>中国联通全国通用</li>
+                    <li>中国电信全国通用</li>
+                    <li>巨人一卡通</li>
+                    <li>盛大一卡通</li>
+                    <li>中国联通全国通用</li>
+                    <li>中国电信全国通用</li>
+                </ul>
             </div>
+            <div class="quick-value">
+                <p class="quick-value-btn" id="openbtn2">请选择面值</p>
+                <ul class="quick-value-list">
+                    <li>50元</li>
+                    <li>100元</li>
+                    <li>150元</li>
+                    <li>200元</li>
+                    <li>250</li>
+                    <li>300</li>
+                    <li>350</li>
+                    <li>400</li>
+                </ul>
+            </div>
+            <a class="quick-submit" href="#">购买</a>
         </div>
     </div>
-
-
 </div>
-<hr>
-<div id="more"><div id="footer">
-
-    <p class="buyme">
-        <a title="Object-Oriented JavaScript" href="http://www.amazon.com/dp/1847194141/?tag=w3clubs-20"><img src="${absoluteContextPath}/images/oojs.jpg" alt="Object-Oriented JavaScript"></a>
-        <a title="JavaScript Patterns on Amazon" href="http://www.amazon.com/dp/0596806752/?tag=w3clubs-20"><img width="100" alt="JavaScript Patterns book cover" src="${absoluteContextPath}/images/cat.gif"></a>
-        <a title="JavaScript for PHP Developers" href="http://www.amazon.com/dp/1449320198/?tag=w3clubs-20"><img width="100" alt="JS4PHP book cover" src="${absoluteContextPath}/images/cat(1).gif"></a>
-        <a title="Web Performance Daybook on Amazon" href="http://www.amazon.com/dp/1449332919/?tag=w3clubs-20"><img width="100" alt="perfplanet&#39;s book" src="${absoluteContextPath}/images/cat(2).gif"></a>
-        <br style="clear: left;">
-        &nbsp;
-    </p>
-
-
-    <p class="moar">
-        phpied.com is powered by <a href="http://wordpress.org/">WordPress</a>, <a href="http://www.dreamhost.com/r.cgi?447675">hosted by DH</a>, <a href="feed:http://www.phpied.com/feed/">RSS feed</a>
-    </p>
-    <p></p>
-</div></div>
-</body>
-</html>
+<div class="bottom-banner wrap">
+    <img src="${absoluteContextPath}/images/bottom-banner.jpg" alt="不刷信誉!!不招兼职!!"/>
+</div>
+<script type="text/javascript">
+    var openbtn1 = document.getElementById("openbtn1");
+    var openbtn2 = document.getElementById("openbtn2")
+    document.onclick = function (event) {
+        var e = event || window.event; //兼容ie和非ie的event
+        var aim = e.srcElement || e.target; //兼容ie和非ie的事件源
+        if (aim != openbtn1 && aim != openbtn2) {
+            $(".quick-kind-list,.quick-value-list").hide();
+        }
+    }
+    $(function(){
+        $("#c-nav li").hover(function(){
+            $("#c-nav .drop-menu").hide();
+            $(this).find(".drop-menu").show();
+        },function(){
+            $("#c-nav .drop-menu").hide();
+        });
+        $("#p-list").find(".p-item").eq(2).css({"margin-right":"100px"});
+        $(".quick-kind-btn").click(function(){
+            $(".quick-value-list").hide();
+            $(this).next().toggle();
+        });
+        $(".quick-value-btn").click(function(){
+            $(".quick-kind-list").hide();
+            $(this).next().toggle();
+        });
+        $(".quick-kind-list").find("li").click(function(){
+            var thisVal = $(this).text();
+            $(".quick-kind-btn").text(thisVal).addClass("selected");
+            $(this).parent().hide();
+        });
+        $(".quick-value-list").find("li").click(function(){
+            var thisVal = $(this).text();
+            $(".quick-value-btn").text(thisVal).addClass("selected");
+            $(this).parent().hide();
+        });
+        $(".p-item").hover(function(){
+            var thisName = $(this).find(".p-name").text();
+            var thisUrl = $(this).find(".p-url").attr("href");
+            $(this).append("<div class=\"p-item-hover\" onclick="+"javascript:window.open("+"\""+thisUrl+""+"\")><p>"+thisName+"</p><p>查看详情</p></div>");
+        },function(){
+            $(this).find(".p-item-hover").remove();
+        });
+    });
+</script>

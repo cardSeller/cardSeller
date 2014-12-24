@@ -23,6 +23,7 @@
                 /user/** = authc
                 /order/** = authc
                 /payment/** = authc
+                /member/** = authc
                 /** = anon
             </value>
         </property>
