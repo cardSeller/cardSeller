@@ -1,54 +1,64 @@
-<!doctype html>
+<!DOCTYPE html>
+<#assign shiro=JspTaglibs["/WEB-INF/taglib/shiro.tld"] />
 <html>
-<head>
+<head lang="zh">
     <meta charset="UTF-8">
     <title>登录</title>
+    <link rel="stylesheet" href="${absoluteContextPath}/css/style.css"/>
 </head>
 <script type="text/javascript" src="${absoluteContextPath}/js/jquery-1.11.0.min.js"></script>
-<body class="transparent">
-<form id='login-form' class="login-form left pl67" action='${absoluteContextPath}/login' method='post'>
-    <fieldset>
-        <legend class="hide">登录</legend>
-        <p class="login-form-title yahei"><span>*</span>账号</p>
-        <div class="login-form-userID clearfix">
-            <input type="text" id='username' name='username' placeholder="请输入邮箱" class="long-text-input left" value='<#if username?exists>${username}</#if>'>
-            <div id='loginErrorUserName' class="prompt-box left">
-                <span class="triangle-left left"></span>
-                <div class="prompt-msg left"></div>
-            </div>
+<body>
+<#include "decorators/head.ftl"/>
+<div class="container">
+<div class="wrap">
+    <div class="login-box clearfix">
+        <form id='login-form' class="login-form left" action='${absoluteContextPath}/login' method='post'>
+            <fieldset>
+                <legend class="hide">登录</legend>
+                <p class="login-title"><span>*</span>账号</p>
+                <div class="login-user">
+                    <input type="text" id='username' name='username' placeholder="请输入邮箱" class="long-text-input" value='<#if username?exists>${username}</#if>'>
+                    <div id='loginErrorUserName' class="prompt-msg"></div>
+                </div>
+                <p class="login-title"><span>*</span>密码</p>
+                <div class="login-password">
+                    <input onkeypress="passwordEnter();" type="password" id='password' name='password' placeholder="密码" class="long-text-input" value='<#if password?exists>${password}</#if>'>
+                    <div id='loginErrorPwd' class="prompt-msg"></div>
+                </div>
+                <div class="clearfix">
+                    <div class="login-submit left">
+                        <a href="javascript:validateLoginSubmit();">登&nbsp;录</a>
+                    </div>
+                    <a class="login-forget left" href="#">忘记密码?</a>
+                </div>
+            </fieldset>
+        </form>
+        <div class="login-reg left">
+            <p>还没有账号？<a href="#">立即注册</a></p>
         </div>
-        <p class="login-form-title yahei"><span>*</span>密码</p>
-        <div class="login-form-pw relative clearfix">
-            <input onkeypress="passwordEnter();" type="password" id='password' name='password' placeholder="密码" class="password-value-tip long-text-input left" value='<#if password?exists>${password}</#if>'>
-            <div id='loginErrorPwd' class="prompt-box left">
-                <span class="triangle-left left"></span>
-                <div class="prompt-msg left"></div>
-            </div>
-        </div>
-        <div class="clearfix">
-            <div class="login-form-submit yahei left">
-                <a href="javascript:validateLoginSubmit();">登&nbsp;录</a>
-            </div>
-        </div>
-    </fieldset>
-</form>
+    </div>
+</div>
+</div>
+<#include "decorators/footer.ftl"/>
 <script type="text/javascript">
 	var golbalRootUrl = "${absoluteContextPath}";
-	$("body").removeClass("transparent");
 	$("#password").focus(function () {
-        $(this).removeClass("password-value-tip");
-		$("#loginErrorPwd").hide();
+		$("#loginErrorPwd").html("");
 	}).blur(function () {
-				if (this.value === '') {
-                    $(this).addClass("password-value-tip");
-				}
-			});
+        if (this.value === '') {
+            $("#loginErrorPwd").html("<p>请输入密码</p>");
+        }
+    });
 	$('#username').focus(function () {
 		if (this.value == "邮箱或手机号") {
 			this.value = "";
 		}
-		$("#loginErrorUserName").hide();
-	});
+		$("#loginErrorUserName").html("");
+	}).blur(function () {
+        if (this.value === '') {
+            $("#loginErrorUserName").html("<p>请输入邮箱</p>");
+        }
+    });
         <#if shiroLoginFailure??>
             <#if shiroLoginFailure?contains('UnknownAccountException')>
 			$('#loginErrorUserName').show();
@@ -73,14 +83,14 @@
     function validateLogin() {
         if ($('#username').val() == "" || $('#username').val() == "请输入邮箱") {
             $('#loginErrorUserName').html("");
-            $('#loginErrorUserName').html("<p class=\"popups-login-prompt-msg left\">请输入邮箱</p>");
+            $('#loginErrorUserName').html("<p>请输入邮箱</p>");
             return false;
         } else {
             $('#loginErrorUserName').html("");
         }
         if ($('#password').val() == "" || $("#password").val() == "请输入密码") {
             $('#loginErrorPwd').html("");
-            $('#loginErrorPwd').html("<p class=\"popups-login-prompt-msg left\">请输入密码</p>");
+            $('#loginErrorPwd').html("<p>请输入密码</p>");
             return false;
         } else {
             $('#loginErrorPwd').html("");

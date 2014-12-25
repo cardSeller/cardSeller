@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+</head>
+<body>
+<div class="top-bar">
+    <div class="wrap">
+        <p><span class="member-mail">2495127574@qq.com</span> ，您好！</p>
+        <a class="top-bar-member" href="#">用户中心</a>
+        <a class="top-bar-quit" href="#">退出</a>
+        <a class="deter-fraud" href="#">防骗指南</a>
+    </div>
+</div>
+<div class="header">
+    <div class="wrap clearfix">
+        <h1 class="logo-box">
+            <a href="#" class="logo">快充商城</a>
+        </h1>
+        <ul class="header-nav right">
+            <li>
+                <a href="#">首页</a>
+            </li>
+            <li>
+                <a href="#">订单查询</a>
+            </li>
+            <li>
+                <a href="#">网站声明</a>
+            </li>
+            <li>
+                <a href="#">常见问题</a>
+            </li>
+            <li>
+                <a href="#">联系我们</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="container">
+    <div class="wrap">
+        <div class="register-box clearfix">
+            <form id='register-form' class="register-form left" action='' method='post'>
+                <fieldset>
+                    <legend class="hide">注册</legend>
+                    <p class="reg-title"><span>*</span>用户名</p>
+                    <div class="register-username">
+                        <input class="long-text-input" type="text" value="邮箱/手机号"/>
+                        <div id="regErrorUserName" class="prompt-msg"></div>
+                    </div>
+                    <p class="reg-title"><span>*</span>密码</p>
+                    <div class="register-password">
+                        <input class="long-text-input" type="password" placeholder="密码"/>
+                        <div id="regErrorUserPW" class="prompt-msg"></div>
+                    </div>
+                    <p class="reg-title"><span>*</span>确认密码</p>
+                    <div class="register-password-affirm">
+                        <input class="long-text-input" type="password" placeholder="确认密码"/>
+                        <div id="regErrorUserAffirm" class="prompt-msg"></div>
+                    </div>
+                    <div class="register-btn">
+                        <a href="javascript:;">注&nbsp;册</a>
+                    </div>
+                </fieldset>
+            </form>
+            <div class="login-reg left">
+                <p>已有账号？<a href="#">立即登录</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="wrap">
+        <ul class="footer-list clearfix">
+            <li class="footer-item footer-item-1">支持多种，支付方式</li>
+            <li class="footer-item footer-item-2">安全服务，保障资金</li>
+            <li class="footer-item footer-item-3">7*24小时，专属客服</li>
+            <li class="footer-item footer-item-4">权威认证，安全可信</li>
+        </ul>
+        <p>Copyright(C) 2014-2014 快充商城 版权所有，并保留所有权利。</p>
+        <p>ICP备案证书号：闽ICP备14016293号</p>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        $(".register-username input").focus(function(){
+            $(this).val("");
+            $("#regErrorUserName").html("");
+        }).blur(function () {
+            if (this.value === '') {
+                $(this).val("邮箱/手机号");
+                $("#regErrorUserName").html("<p>邮箱/手机号</p>");
+            }
+        });
+        $(".register-password input").focus(function(){
+            $("#regErrorUserPW").html("");
+        }).blur(function () {
+            if (this.value === '') {
+                $("#regErrorUserPW").html("<p>请输入密码</p>");
+            }
+        });
+        $(".register-password-affirm input").focus(function(){
+            $("#regErrorUserAffirm").html("");
+        }).blur(function () {
+            if (this.value === '') {
+                $("#regErrorUserAffirm").html("<p>请输入密码</p>");
+            }
+        });
+    });
+</script>
+</body>
+</html>
