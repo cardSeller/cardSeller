@@ -11,7 +11,7 @@
         <legend class="hide">登录</legend>
         <p class="login-form-title yahei"><span>*</span>账号</p>
         <div class="login-form-userID clearfix">
-            <input type="text" id='username' name='username' placeholder="邮箱或手机号" class="long-text-input left" value='<#if username?exists>${username}<#else>邮箱或手机号</#if>'>
+            <input type="text" id='username' name='username' placeholder="请输入邮箱" class="long-text-input left" value='<#if username?exists>${username}</#if>'>
             <div id='loginErrorUserName' class="prompt-box left">
                 <span class="triangle-left left"></span>
                 <div class="prompt-msg left"></div>
@@ -19,7 +19,7 @@
         </div>
         <p class="login-form-title yahei"><span>*</span>密码</p>
         <div class="login-form-pw relative clearfix">
-            <input type="password" id='password' name='password' placeholder="密码" class="password-value-tip long-text-input left" value='<#if password?exists>${password}</#if>'>
+            <input onkeypress="passwordEnter();" type="password" id='password' name='password' placeholder="密码" class="password-value-tip long-text-input left" value='<#if password?exists>${password}</#if>'>
             <div id='loginErrorPwd' class="prompt-box left">
                 <span class="triangle-left left"></span>
                 <div class="prompt-msg left"></div>
@@ -27,7 +27,7 @@
         </div>
         <div class="clearfix">
             <div class="login-form-submit yahei left">
-                <input type="submit" value="登录"/>
+                <a href="javascript:validateLoginSubmit();">登&nbsp;录</a>
             </div>
         </div>
     </fieldset>
@@ -70,43 +70,28 @@
 			return false;
 		}
 	}
-	$(function () {
-		var currentTab = $("#select-tab").attr("data-selected-tab");
-		$("#" + currentTab).addClass("selected");
-
-		function userControlHide(){
-			$("#headerUserControl,.header-user-arrow").hide();
-		}
-		var hoverTimer, outTimer;
-		$("#headerUserInfo,#headerUserArrow,#headerUserControl").hover(function(){
-			clearTimeout(outTimer);
-			$("#headerUserControl,.header-user-arrow").show();
-		},function(){
-			clearTimeout(hoverTimer);
-			outTimer = setTimeout(userControlHide, 300);
-		});
-		$("#headerUserControl").find("li:first").hover(function(){
-			$("#headerUserInfo").find(".header-user-arrow").addClass("header-user-arrow-hover");
-		},function(){
-			$("#headerUserInfo").find(".header-user-arrow").removeClass("header-user-arrow-hover");
-		});
-		$('#headerSearch').focus(function () {
-			if (this.value == "目的地/行程/产品名称") {
-				this.value = "";
-			}
-			$(this).addClass("focus");
-		});
-		$('#headerSearch').blur(function () {
-			if (this.value == "目的地/行程/产品名称" || this.value == "") {
-				this.value = "目的地/行程/产品名称";
-				$(this).removeClass("focus");
-			}
-		});
-		$(".footer-to-top").click(function(){
-			$("body,html").animate({scrollTop:0},500);
-			return false;
-		});
-	});
+    function validateLogin() {
+        if ($('#username').val() == "" || $('#username').val() == "请输入邮箱") {
+            $('#loginErrorUserName').html("");
+            $('#loginErrorUserName').html("<p class=\"popups-login-prompt-msg left\">请输入邮箱</p>");
+            return false;
+        } else {
+            $('#loginErrorUserName').html("");
+        }
+        if ($('#password').val() == "" || $("#password").val() == "请输入密码") {
+            $('#loginErrorPwd').html("");
+            $('#loginErrorPwd').html("<p class=\"popups-login-prompt-msg left\">请输入密码</p>");
+            return false;
+        } else {
+            $('#loginErrorPwd').html("");
+        }
+        return true;
+    }
+    function validateLoginSubmit() {
+        if (validateLogin()) {
+            $('#login-form').submit();
+        }
+    }
 </script>
 </body>
 </html>

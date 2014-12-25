@@ -2,6 +2,7 @@
     <mapping path="/" decorator="/WEB-INF/views/decorators/home_decorator.ftl"/>
     <!--<mapping path="/" exclude="true"/>-->
     <mapping path="/*" decorator="/WEB-INF/views/decorators/home_decorator.ftl"/>
+    <mapping path="/member/*" decorator="/WEB-INF/views/decorators/member_decorator.ftl"/>
     <mapping path="/js/*" exclude="true"/>
     <mapping path="/img/*" exclude="true"/>
     <mapping path="/css/*" exclude="true"/>

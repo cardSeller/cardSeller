@@ -3,7 +3,10 @@ package com.card.seller.portal.service;
 import com.card.seller.dao.MemberDao;
 import com.card.seller.domain.Member;
 import com.card.seller.domain.MemberConstants;
+import com.card.seller.domain.User;
 import com.card.seller.portal.exception.CheckMemberException;
+import org.apache.shiro.codec.Base64;
+import org.apache.shiro.crypto.hash.Sha256Hash;
 import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -60,5 +63,18 @@ public class MemberService {
     @Transactional
     public Member getMemberById(Long memberId) {
         return memberDao.get(memberId);
+    }
+
+    @Transactional
+    public void modifyPwd(Member member, String newPwd) {
+        ByteSource bytes = ByteSource.Util.bytes(Base64.decode(member.getSalt()));
+        newPwd = new Sha256Hash(newPwd, bytes, 1024).toBase64();
+        member.setPwd(newPwd);
+        memberDao.update(member);
+    }
+
+    @Transactional
+    public void updateMember(Member member) {
+        memberDao.update(member);
     }
 }

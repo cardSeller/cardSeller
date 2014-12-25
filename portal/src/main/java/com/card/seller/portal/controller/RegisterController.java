@@ -88,12 +88,9 @@ public class RegisterController {
 
     @RequestMapping(value = "regist", method = RequestMethod.POST)
     @ResponseBody
-    public Map<String, Object> regist(HttpServletRequest request, @RequestParam(value = "name", required = true) String name, @RequestParam(value = "pwd", required = true) String pwd, @RequestParam(value = "phone", required = true) String phone, @RequestParam(value = "realName", required = true) String realName, @RequestParam(value = "identity", required = true) String identity) {
-        Map<String, Object> jsonMap = Maps.newHashMap();
+    public int regist(HttpServletRequest request, @RequestParam(value = "name", required = true) String name, @RequestParam(value = "pwd", required = true) String pwd, @RequestParam(value = "phone", required = true) String phone, @RequestParam(value = "realName", required = true) String realName, @RequestParam(value = "identity", required = true) String identity) {
         String ip = AnalyzeIpUtils.getIpAddr(request);
-        Member member = memberService.saveMember(name, pwd, phone, realName, identity, ip);
-        jsonMap.put("name", member.getName());
-        jsonMap.put("phone", member.getPhone());
-        return jsonMap;
+        memberService.saveMember(name, pwd, phone, realName, identity, ip);
+        return MemberConstants.SUCCESS;
     }
 }

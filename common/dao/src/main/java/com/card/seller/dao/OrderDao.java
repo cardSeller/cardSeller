@@ -21,7 +21,7 @@ public class OrderDao extends HibernateSupportDao<Orders, String> {
     public List<Orders> getOrdersByMemberId(Long memberId) {
         Map<String, Object> map = Maps.newHashMap();
         map.put("memberId", memberId);
-        return findUniqueByQuery("from " + Orders.class.getName() + " where memberId=:memberId", map);
+        return findByQuery("from " + Orders.class.getName() + " where memberId=:memberId", map);
     }
 
     public List<OrdersManageSearch> getOrders(String queryString, Map<String, Object> params, int offset, int fetchSize) {

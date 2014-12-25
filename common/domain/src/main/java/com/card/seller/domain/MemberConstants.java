@@ -18,5 +18,6 @@ public final class MemberConstants {
 
     public static final int EMAIL_IS_SAME = -10;
     public static final int PWD_CONFIRM_IS_NOT_SAME = -11;
+    public static final int PWD_ERROR = -12;
 
 }

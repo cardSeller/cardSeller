@@ -1,5 +1,6 @@
 package com.card.seller.backoffice.service;
 
+import com.card.seller.backoffice.exception.ServiceException;
 import com.card.seller.dao.UserDao;
 import com.card.seller.dao.GroupDao;
 import com.card.seller.dao.ResourceDao;
@@ -12,7 +13,6 @@ import org.apache.shiro.crypto.hash.Sha256Hash;
 import org.apache.shiro.util.ByteSource;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Restrictions;
-import org.hibernate.service.spi.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

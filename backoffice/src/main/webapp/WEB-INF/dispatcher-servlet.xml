@@ -25,6 +25,15 @@
         <property name="defaultEncoding" value="UTF-8"/>
     </bean>
 
+    <!-- 启动异常Resolver -->
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionMappings">
+            <map>
+                <entry key="com.card.seller.backoffice.exception.ServiceException" value="exception/service-exception"/>
+            </map>
+        </property>
+    </bean>
+
     <bean id="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
         <property name="prefix" value=""/>
         <property name="suffix" value=".ftl"/>
