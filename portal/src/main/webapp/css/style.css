@@ -995,8 +995,28 @@ a{
 .buy-affirm-info .buy-affirm-balance{
     color: #d83224;
 }
-
-
-
+.pw-forgot{
+    padding: 40px 20px;
+}
+.pw-forgot-title{
+    color: #f69006;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+.pw-forgot-btn{
+    margin-top: 14px;
+    width: 140px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    font-size: 18px;
+    background-color: #ffa257;
+    display: block;
+}
+.pw-forgot-btn:hover{
+    text-decoration: none;
+    background-color:#ffa000;
+}
 
 
