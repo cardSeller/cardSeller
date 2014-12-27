@@ -51,100 +51,103 @@
         </ul>
     </div>
 </div>
-<div class="p-box">
-    <div class="wrap relative">
-        <ul class="p-list clearfix" id="p-list">
-            <li class="p-item">
-                <a class="p-url" href="http://www.baidu.com/">
-                    <div class="p-pic">
-                        <img src="${absoluteContextPath}/images/products/changyou.jpg" alt="畅游"/>
-                    </div>
-                    <p class="p-name">畅游直充</p>
-                </a>
-            </li>
-            <li class="p-item">
-                <a class="p-url" href="http://www.google.com/">
-                    <div class="p-pic">
-                        <img src="${absoluteContextPath}/images/products/qq.jpg" alt="腾讯QQ卡"/>
-                    </div>
-                    <p class="p-name">腾讯QQ卡</p>
-                </a>
-            </li>
-            <li class="p-item">
-                <a class="p-url" href="#">
-                    <div class="p-pic">
-                        <img src="${absoluteContextPath}/images/products/junwang.jpg" alt="骏网一卡通"/>
-                    </div>
-                    <p class="p-name">骏网一卡通</p>
-                </a>
-            </li>
-            <li class="p-item">
-                <a class="p-url" href="#">
-                    <div class="p-pic">
-                        <img src="${absoluteContextPath}/images/products/zgdx.jpg" alt="中国电信全国通用"/>
-                    </div>
-                    <p class="p-name">中国电信全国通用</p>
-                </a>
-            </li>
-            <li class="p-item">
-                <a class="p-url" href="#">
-                    <div class="p-pic">
-                        <img src="${absoluteContextPath}/images/products/zglt.jpg" alt="中国联通全国通用"/>
-                    </div>
-                    <p class="p-name">中国联通全国通用</p>
-                </a>
-            </li>
-            <li class="p-item">
-                <a class="p-url" href="#">
-                    <div class="p-pic">
-                        <img src="${absoluteContextPath}/images/products/juren.jpg" alt="巨人一卡通"/>
-                    </div>
-                    <p class="p-name">巨人一卡通</p>
-                </a>
-            </li>
-            <li class="p-item">
-                <a class="p-url" href="#">
-                    <div class="p-pic">
-                        <img src="${absoluteContextPath}/images/products/sdo.jpg" alt="盛大一卡通"/>
-                    </div>
-                    <p class="p-name">盛大一卡通</p>
-                </a>
-            </li>
-        </ul>
-        <div class="quick-buy" id="quick-buy">
-            <p class="quick-buy-title">快速充值</p>
-            <div class="quick-kind">
-                <p class="quick-kind-btn" id="openbtn1">请选择游戏</p>
-                <ul class="quick-kind-list">
-                    <li>巨人一卡通</li>
-                    <li>盛大一卡通</li>
-                    <li>中国联通全国通用</li>
-                    <li>中国电信全国通用</li>
-                    <li>巨人一卡通</li>
-                    <li>盛大一卡通</li>
-                    <li>中国联通全国通用</li>
-                    <li>中国电信全国通用</li>
-                </ul>
+<div class="container">
+
+    <div class="p-box">
+        <div class="wrap relative">
+            <ul class="p-list clearfix" id="p-list">
+                <li class="p-item">
+                    <a class="p-url" href="http://www.baidu.com/">
+                        <div class="p-pic">
+                            <img src="${absoluteContextPath}/images/products/changyou.jpg" alt="畅游"/>
+                        </div>
+                        <p class="p-name">畅游直充</p>
+                    </a>
+                </li>
+                <li class="p-item">
+                    <a class="p-url" href="http://www.google.com/">
+                        <div class="p-pic">
+                            <img src="${absoluteContextPath}/images/products/qq.jpg" alt="腾讯QQ卡"/>
+                        </div>
+                        <p class="p-name">腾讯QQ卡</p>
+                    </a>
+                </li>
+                <li class="p-item">
+                    <a class="p-url" href="#">
+                        <div class="p-pic">
+                            <img src="${absoluteContextPath}/images/products/junwang.jpg" alt="骏网一卡通"/>
+                        </div>
+                        <p class="p-name">骏网一卡通</p>
+                    </a>
+                </li>
+                <li class="p-item">
+                    <a class="p-url" href="#">
+                        <div class="p-pic">
+                            <img src="${absoluteContextPath}/images/products/zgdx.jpg" alt="中国电信全国通用"/>
+                        </div>
+                        <p class="p-name">中国电信全国通用</p>
+                    </a>
+                </li>
+                <li class="p-item">
+                    <a class="p-url" href="#">
+                        <div class="p-pic">
+                            <img src="${absoluteContextPath}/images/products/zglt.jpg" alt="中国联通全国通用"/>
+                        </div>
+                        <p class="p-name">中国联通全国通用</p>
+                    </a>
+                </li>
+                <li class="p-item">
+                    <a class="p-url" href="#">
+                        <div class="p-pic">
+                            <img src="${absoluteContextPath}/images/products/juren.jpg" alt="巨人一卡通"/>
+                        </div>
+                        <p class="p-name">巨人一卡通</p>
+                    </a>
+                </li>
+                <li class="p-item">
+                    <a class="p-url" href="#">
+                        <div class="p-pic">
+                            <img src="${absoluteContextPath}/images/products/sdo.jpg" alt="盛大一卡通"/>
+                        </div>
+                        <p class="p-name">盛大一卡通</p>
+                    </a>
+                </li>
+            </ul>
+            <div class="quick-buy" id="quick-buy">
+                <p class="quick-buy-title">快速充值</p>
+                <div class="quick-kind">
+                    <p class="quick-kind-btn" id="openbtn1">请选择游戏</p>
+                    <ul class="quick-kind-list">
+                        <li>巨人一卡通</li>
+                        <li>盛大一卡通</li>
+                        <li>中国联通全国通用</li>
+                        <li>中国电信全国通用</li>
+                        <li>巨人一卡通</li>
+                        <li>盛大一卡通</li>
+                        <li>中国联通全国通用</li>
+                        <li>中国电信全国通用</li>
+                    </ul>
+                </div>
+                <div class="quick-value">
+                    <p class="quick-value-btn" id="openbtn2">请选择面值</p>
+                    <ul class="quick-value-list">
+                        <li>50元</li>
+                        <li>100元</li>
+                        <li>150元</li>
+                        <li>200元</li>
+                        <li>250</li>
+                        <li>300</li>
+                        <li>350</li>
+                        <li>400</li>
+                    </ul>
+                </div>
+                <a class="quick-submit" href="#">购买</a>
             </div>
-            <div class="quick-value">
-                <p class="quick-value-btn" id="openbtn2">请选择面值</p>
-                <ul class="quick-value-list">
-                    <li>50元</li>
-                    <li>100元</li>
-                    <li>150元</li>
-                    <li>200元</li>
-                    <li>250</li>
-                    <li>300</li>
-                    <li>350</li>
-                    <li>400</li>
-                </ul>
-            </div>
-            <a class="quick-submit" href="#">购买</a>
         </div>
     </div>
-</div>
-<div class="bottom-banner wrap">
-    <img src="${absoluteContextPath}/images/bottom-banner.jpg" alt="不刷信誉!!不招兼职!!"/>
+    <div class="bottom-banner wrap">
+        <img src="${absoluteContextPath}/images/bottom-banner.jpg" alt="不刷信誉!!不招兼职!!"/>
+    </div>
 </div>
 <script type="text/javascript">
     var openbtn1 = document.getElementById("openbtn1");
