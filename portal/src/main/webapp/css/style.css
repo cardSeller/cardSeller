@@ -861,6 +861,9 @@ a{
     background-position: -4px -100px;
     text-align: center;
 }
+.buy-step-2.current{
+    background-position: -4px -300px;
+}
 .buy-step-3{
     width: 140px;
     background-position:-20px -200px;
@@ -897,6 +900,7 @@ a{
 }
 .p-options li{
     padding: 10px 0;
+    line-height: 32px;
 }
 .p-detail-num span,
 .p-detail-value span{
@@ -926,19 +930,24 @@ a{
     float: left;
     text-align: center;
 }
-.p-detail-value input{
+.p-detail-value a{
     margin-right: 12px;
     border: solid 1px #ccc;
     padding:1px 2px;
     text-align: center;
+    height: 32px;
     line-height: 32px;
     float: left;
     width: 60px;
     cursor: pointer;
 }
+.p-detail-value a:hover{
+    text-decoration: none;
+}
 .p-detail-value .selected{
     border:solid 2px #f69006;
     padding: 0 1px;
+    color: #f69006;
 }
 .buy-btn-box{
     padding: 10px 0;
@@ -964,7 +973,28 @@ a{
     line-height: 40px;
     padding-left: 40px;
 }
-
+.buy-affirm-info{}
+.buy-affirm-info li{
+    padding: 6px 0;
+    line-height: 22px;
+    color: #666;
+}
+.buy-affirm{
+    padding-left: 30px;
+}
+.buy-affirm-title{
+    color: #f69006;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+.buy-affirm-price span,
+.buy-affirm-info .buy-affirm-tips{
+    font-size: 16px;
+    color: #d83224;
+}
+.buy-affirm-info .buy-affirm-balance{
+    color: #d83224;
+}
 
 
 
