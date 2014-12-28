@@ -383,7 +383,7 @@ a{
 }
 .bottom-banner{
     min-height: 100px;
-    padding-top: 30px;
+    padding-top:10px;
 }
 .footer{
     background-color: #335498;
@@ -768,6 +768,7 @@ a{
     text-decoration: none;
     background-color: #ffa000;
 }
+/*登录，注册*/
 .login-box,
 .register-box{
     padding:40px;
@@ -830,6 +831,195 @@ a{
 }
 .login-forget{
     margin: 24px 0 0 20px;
+}
+
+/*产品详情*/
+.p-detail{
+    padding: 14px;
+    background-color: #fff;
+    border: solid 1px #ccc;
+}
+.buy-step-box{
+    border-bottom: dashed 1px #666;
+    height: 110px;
+    padding-top: 40px;
+}
+.buy-step-box ul{
+    width:550px;
+    margin:0 auto;
+}
+.buy-step{
+    background: url(../images/step.png) no-repeat;
+    float: left;
+    overflow: hidden;
+    padding-top:55px;
+    color: #999;
+}
+.buy-step-1{
+    width: 156px;
+    background-position: 18px 0;
+}
+.buy-step-2{
+    width: 194px;
+    background-position: -4px -100px;
+    text-align: center;
+}
+.buy-step-2.current{
+    background-position: -4px -300px;
+}
+.buy-step-3{
+    width: 140px;
+    background-position:-20px -200px;
+    padding-left: 40px;
+}
+.p-detail-box{
+    padding: 50px 30px 80px 30px;
+}
+.p-detail-img{
+    width: 240px;
+    overflow: hidden;
+}
+.p-detail-img img{
+    max-width: 240px;
+}
+.p-detail-content{
+    padding-left: 30px;
+    width: 600px;
+    color: #666;
+}
+.p-detail-title{
+    color: #335498;
+    font-size: 18px;
+    font-weight: bold;
+}
+.p-detail-describe{
+    font-size: 12px;
+    padding-top:10px;
+}
+.p-detail-price{
+    font-size: 30px;
+    color: #f69006;
+    padding:10px 0;
+}
+.p-options li{
+    padding: 10px 0;
+    line-height: 32px;
+}
+.p-detail-num span,
+.p-detail-value span{
+    display: block;
+    height: 32px;
+    line-height: 32px;
+}
+.p-detail-num a{
+    float: left;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    border: solid 1px #ccc;
+}
+.p-detail-num a:hover{
+    text-decoration: none;
+}
+.p-detail-num input{
+    border-style: solid;
+    border-color: #ccc;
+    border-width: 1px 0 1px 0;
+    width: 50px;
+    height: 24px;
+    line-height: 24px;
+    padding: 4px;
+    float: left;
+    text-align: center;
+}
+.p-detail-value a{
+    margin-right: 12px;
+    border: solid 1px #ccc;
+    padding:1px 2px;
+    text-align: center;
+    height: 32px;
+    line-height: 32px;
+    float: left;
+    width: 60px;
+    cursor: pointer;
+}
+.p-detail-value a:hover{
+    text-decoration: none;
+}
+.p-detail-value .selected{
+    border:solid 2px #f69006;
+    padding: 0 1px;
+    color: #f69006;
+}
+.buy-btn-box{
+    padding: 10px 0;
+}
+.buy-btn{
+    width: 140px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    font-size: 18px;
+    background-color: #ffa257;
+    display: block;
+    float: left;
+}
+.buy-btn:hover{
+    text-decoration: none;
+    background-color:#ffa000;
+}
+.p-total{
+    float: left;
+    color: #d83224;
+    line-height: 40px;
+    padding-left: 40px;
+}
+.buy-affirm-info{}
+.buy-affirm-info li{
+    padding: 6px 0;
+    line-height: 22px;
+    color: #666;
+}
+.buy-affirm{
+    padding-left: 30px;
+}
+.buy-affirm-title{
+    color: #f69006;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+.buy-affirm-price span,
+.buy-affirm-info .buy-affirm-tips{
+    font-size: 16px;
+    color: #d83224;
+}
+.buy-affirm-info .buy-affirm-balance{
+    color: #d83224;
+}
+.pw-forgot{
+    padding: 40px 20px;
+}
+.pw-forgot-title{
+    color: #f69006;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+.pw-forgot-btn{
+    margin-top: 14px;
+    width: 140px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    font-size: 18px;
+    background-color: #ffa257;
+    display: block;
+}
+.pw-forgot-btn:hover{
+    text-decoration: none;
+    background-color:#ffa000;
 }
 
 
