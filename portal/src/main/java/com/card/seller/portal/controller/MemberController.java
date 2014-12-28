@@ -1,21 +1,18 @@
 package com.card.seller.portal.controller;
 
 
-import com.card.seller.domain.Member;
-import com.card.seller.domain.MemberConstants;
-import com.card.seller.domain.Orders;
-import com.card.seller.domain.SecurityContext;
+import com.card.seller.domain.*;
+import com.card.seller.portal.domain.SearchPortalOrderRequest;
+import com.card.seller.portal.service.DepositService;
 import com.card.seller.portal.service.ItemService;
 import com.card.seller.portal.service.MemberService;
 import com.card.seller.portal.service.OrderService;
+import com.google.common.collect.Maps;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -41,18 +38,42 @@ public class MemberController {
     @Autowired
     private ItemService itemService;
 
+    @Autowired
+    private DepositService depositService;
+
     @RequestMapping(value = "/orderManage", method = RequestMethod.GET)
     public String orderManage(Map<String, Object> viewObject) {
+        SearchPortalOrderRequest searchPortalOrderRequest = new SearchPortalOrderRequest();
         String memberName = SecurityContext.getAccount();
         Member member = memberService.getMemberByName(memberName);
-        List<Orders> orders = orderService.getOrdersByMemberId(member.getId());
-        for (Orders order : orders) {
+        searchPortalOrderRequest.setMemberId(member.getId());
+        Long total = orderService.getOrdersTotal(searchPortalOrderRequest);
+        List<OrdersManageSearch> orders = orderService.getOrdersByMemberId(searchPortalOrderRequest);
+        for (OrdersManageSearch order : orders) {
             order.setMember(memberService.getMemberById(order.getMemberId()));
             order.setItemPrice(itemService.getItemPriceById(order.getItemPriceId()));
             order.setItem(itemService.getItemById(order.getItemId()));
         }
+        viewObject.put("total", total);
         viewObject.put("orders", orders);
         return "member/orderManage";
+    }
+
+    @RequestMapping(value = "/search", method = RequestMethod.POST)
+    @ResponseBody
+    public Map<String, Object> search(@RequestBody SearchPortalOrderRequest request) {
+        Map<String, Object> jsonObject = Maps.newHashMap();
+        List<OrdersManageSearch> ordersList = orderService.getOrdersByMemberId(request);
+        for (OrdersManageSearch orders : ordersList) {
+            orders.setMember(memberService.getMemberById(orders.getMemberId()));
+            orders.setItemPrice(itemService.getItemPriceById(orders.getItemPriceId()));
+            orders.setItem(itemService.getItemById(orders.getItemId()));
+        }
+        jsonObject.put("ordersList", ordersList);
+        Long totalNumber = orderService.getOrdersTotal(request);
+        jsonObject.put("totalNumber", totalNumber);
+        jsonObject.put("fetchSize", request.getPageSize());
+        return jsonObject;
     }
 
     @RequestMapping(value = "/profile", method = RequestMethod.GET)
@@ -103,6 +124,20 @@ public class MemberController {
         Member member = memberService.getMemberByName(memberName);
         memberService.modifyPwd(member, newPwd);
         return "redirect:/logout";
+    }
+
+    @RequestMapping(value = "/toDeposit", method = RequestMethod.GET)
+    public String toDeposit() {
+        return "member/toDeposit";
+    }
+
+    @RequestMapping(value = "/depositManage", method = RequestMethod.GET)
+    public String depositManage(Map<String, Object> viewObject) {
+        String memberName = SecurityContext.getAccount();
+        Member member = memberService.getMemberByName(memberName);
+        List<Deposit> deposits = depositService.getDepositsByMemberId(member.getId());
+        viewObject.put("deposits", deposits);
+        return "member/depositManage";
     }
 
 }

@@ -1,7 +1,7 @@
 <@shiro.guest>
 <div class="top-bar">
     <div class="wrap">
-        <a class="sign-up" href="${absoluteContextPath}/reg.html">注册</a>
+        <a class="sign-up" href="${absoluteContextPath}/toRegister">注册</a>
         <a class="sign-in" href="${absoluteContextPath}/login">登录</a>
         <a class="deter-fraud" href="#">防骗指南</a>
     </div>
@@ -11,7 +11,7 @@
 <div class="top-bar">
     <div class="wrap">
         <p><span class="member-mail"><#if Session["sv"]??>${Session["sv"].name!}</#if></span> ，您好！</p>
-        <a class="top-bar-member" href="${absoluteContextPath}/member/manage">用户中心</a>
+        <a class="top-bar-member" href="${absoluteContextPath}/member/orderManage">用户中心</a>
         <a class="top-bar-quit" href="${absoluteContextPath}/logout">退出</a>
         <a class="deter-fraud" href="#">防骗指南</a>
     </div>

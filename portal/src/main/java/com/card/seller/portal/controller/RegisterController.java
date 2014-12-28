@@ -4,6 +4,7 @@ import com.card.seller.domain.AnalyzeIpUtils;
 import com.card.seller.domain.CaptchaUtils;
 import com.card.seller.domain.Member;
 import com.card.seller.domain.MemberConstants;
+import com.card.seller.portal.domain.AddMemberRequest;
 import com.card.seller.portal.exception.CheckMemberException;
 import com.card.seller.portal.service.MemberService;
 import com.google.common.collect.Maps;
@@ -15,10 +16,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -86,11 +84,11 @@ public class RegisterController {
         return MemberConstants.CAPTCHA_ERROR;
     }
 
-    @RequestMapping(value = "regist", method = RequestMethod.POST)
+    @RequestMapping(value = "/regist", method = RequestMethod.POST)
     @ResponseBody
-    public int regist(HttpServletRequest request, @RequestParam(value = "name", required = true) String name, @RequestParam(value = "pwd", required = true) String pwd, @RequestParam(value = "phone", required = true) String phone, @RequestParam(value = "realName", required = true) String realName, @RequestParam(value = "identity", required = true) String identity) {
+    public int regist(HttpServletRequest request, @Valid @RequestBody AddMemberRequest addMemberRequest) {
         String ip = AnalyzeIpUtils.getIpAddr(request);
-        memberService.saveMember(name, pwd, phone, realName, identity, ip);
+        memberService.saveMember(addMemberRequest.getRegName(), addMemberRequest.getPwd(), addMemberRequest.getPhone(), addMemberRequest.getRealName(), addMemberRequest.getIdentity(), ip);
         return MemberConstants.SUCCESS;
     }
 }

@@ -11,6 +11,7 @@
     </div>
     <div class="col-md-12">
         <div class="alert alert-yellow">
+            <input type="hidden" id="total" value="${total?c}"/>
             <p  class="alert-text">总订单数：<strong>${total!}</strong></p>
         </div>
         <div class="search-options-box">
@@ -60,6 +61,9 @@
                             产品面值
                         </th>
                         <th>
+                            产品单价
+                        </th>
+                        <th>
                             产品数量
                         </th>
                         <th>
@@ -90,6 +94,9 @@
                         </td>
                         <td>
                         ${orders.itemPrice.faceValue?c}
+                        </td>
+                        <td>
+                        ${orders.itemPrice.price?c}
                         </td>
                         <td>
                         ${orders.itemCount?c}

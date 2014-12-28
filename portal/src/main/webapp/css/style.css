@@ -2,6 +2,9 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input
     margin: 0;
     padding: 0;
 }
+.displayNone{
+    display: none;
+}
 body {
     font: 14px/1.4 \5FAE\8F6F\96C5\9ED1,\5b8b\4f53,Arial,Helvetica,sans-serif;
     -webkit-text-size-adjust: 100%;

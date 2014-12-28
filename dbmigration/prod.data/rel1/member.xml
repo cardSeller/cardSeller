@@ -19,13 +19,13 @@
                 <constraints nullable="false"/>
             </column>
             <column name="phone" type="varchar(20)">
-                <constraints nullable="false"/>
+                <constraints nullable="true"/>
             </column>
             <column name="real_name" type="varchar(30)">
-                <constraints nullable="false"/>
+                <constraints nullable="true"/>
             </column>
             <column name="identity" type="varchar(30)">
-                <constraints nullable="false"/>
+                <constraints nullable="true"/>
             </column>
             <column name="balance" type="number(12,3)">
                 <constraints nullable="false"/>

@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * Created by minjie
  * Date:14-12-15
@@ -20,5 +22,10 @@ public class DepositService {
     @Transactional
     public void saveDeposit(Deposit deposit) {
         depositDao.save(deposit);
+    }
+
+    @Transactional
+    public List<Deposit> getDepositsByMemberId(Long memberId) {
+        return depositDao.getDepositsByMemberId(memberId);
     }
 }

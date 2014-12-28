@@ -1,19 +1,20 @@
-package com.card.seller.backoffice.domain;
+package com.card.seller.portal.domain;
 
 import java.util.Date;
 
 /**
  * Created by minjie
- * Date:14-12-21
- * Time:下午6:20
+ * Date:14-12-28
+ * Time:上午10:58
  */
-public class SearchOrderRequest {
+public class SearchPortalOrderRequest {
+
 
     private Date orderTimeFrom;
 
     private Date orderTimeTo;
 
-    private String memberName;
+    private Long memberId;
 
     private int pageIndex = 1;
 
@@ -35,12 +36,12 @@ public class SearchOrderRequest {
         this.orderTimeTo = orderTimeTo;
     }
 
-    public String getMemberName() {
-        return memberName;
+    public Long getMemberId() {
+        return memberId;
     }
 
-    public void setMemberName(String memberName) {
-        this.memberName = memberName;
+    public void setMemberId(Long memberId) {
+        this.memberId = memberId;
     }
 
     public int getPageIndex() {
