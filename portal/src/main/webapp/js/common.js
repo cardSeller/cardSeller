@@ -314,3 +314,8 @@ function viewFile(fileName, fileUrl) {
         alertErrorMsgPopups("不能预览 " + suffix + " 类型文件");
     }
 }
+
+function isPhone(input) {
+    var phoneRegex = /^(13[0-9]|14[7]|15[0|1|2|3|5|6|7|8|9]|18[0|2|3|5|6|7|8|9]|170)\d{8}$/;
+    return phoneRegex.test(input);
+}

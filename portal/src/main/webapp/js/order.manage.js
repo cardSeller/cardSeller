@@ -48,7 +48,7 @@ function search() {
     $.ajax({
         type: "POST",
         contentType: "application/json; charset=utf-8",
-        url: golbalRootUrl + "/member/search",
+        url: golbalRootUrl + "/member/searchOrder",
         data: JSON.stringify(data),
         success: function (result) {
             getOrdersCallBack(result);

@@ -3,23 +3,14 @@
         修改个人信息
     </p>
     <div class="member-change">
-        <form action="">
+        <form action="${absoluteContextPath}/member/saveProfile" method="post">
             <table>
                 <tr>
                     <td class="member-change-label">
                         会员名：
                     </td>
                     <td>
-                        2495127574@qq.com
-                    </td>
-                </tr>
-                <tr>
-                    <td class="member-change-label">
-                        性别：
-                    </td>
-                    <td>
-                        <label><input type="radio"/>男</label>
-                        <label><input type="radio"/>女</label>
+                    <#if member??>${member.name!}</#if>
                     </td>
                 </tr>
                 <tr>
@@ -27,23 +18,16 @@
                         真实姓名：
                     </td>
                     <td>
-                        <input type="text"/>
+                        <input id="realName" name="realName" type="text" value="<#if member??>${member.realName!}</#if>"/>
                     </td>
                 </tr>
                 <tr>
                     <td class="member-change-label">
-                        联系地址：
+                        身份证：
                     </td>
                     <td>
-                        <input type="text"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="member-change-label">
-                        邮政编码：
-                    </td>
-                    <td>
-                        <input type="text"/>
+                        <input id="identity" name="identity" type="text" value="<#if member??>${member.identity!}</#if>"/>
+                        <div id="profileErrorIdentity"></div>
                     </td>
                 </tr>
                 <tr>
@@ -51,24 +35,19 @@
                         手机号码：
                     </td>
                     <td>
-                        <input type="text"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="member-change-label">
-                        QQ：
-                    </td>
-                    <td>
-                        <input type="text"/>
+                        <input id="phone" name="phone" type="text" value="<#if member??>${member.phone!}</#if>"/>
+                        <div id="profileErrorPhone"></div>
                     </td>
                 </tr>
                 <tr>
                     <td class="member-change-label"></td>
                     <td>
-                        <input class="member-change-save" type="submit" value="保存"/>
+                        <a class="member-change-save" href="javascript:saveProfile();">保存</a>
+                        <div id="profileMessage"></div>
                     </td>
                 </tr>
             </table>
         </form>
     </div>
 </div>
+<script type="text/javascript" src="${absoluteContextPath}/js/profile.js"></script>

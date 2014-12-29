@@ -3,14 +3,15 @@
         修改密码
     </p>
     <div class="member-change">
-        <form action="">
+        <form id="modifyPwdForm" action="${absoluteContextPath}/member/modifyPwd" method="post">
             <table>
                 <tr>
                     <td class="member-change-label">
                         原始密码：
                     </td>
                     <td>
-                        <input type="password"/>
+                        <input id="pwd" name="pwd" type="password"/>
+                        <div id="errorPwd"></div>
                     </td>
                 </tr>
                 <tr>
@@ -18,7 +19,8 @@
                         新密码：
                     </td>
                     <td>
-                        <input type="password"/>
+                        <input id="newPwd" name="newPwd" type="password"/>
+                        <div id="errorNewPwd"></div>
                     </td>
                 </tr>
                 <tr>
@@ -26,16 +28,18 @@
                         密码确认：
                     </td>
                     <td>
-                        <input type="password"/>
+                        <input id="confirmNewPwd" name="confirmNewPwd" type="password"/>
+                        <div id="errorConfirmNewPwd"></div>
                     </td>
                 </tr>
                 <tr>
                     <td class="member-change-label"></td>
                     <td>
-                        <input class="member-change-save" type="submit" value="保存"/>
+                        <a class="member-change-save" href="javascript:savePwd();">保存</a>
                     </td>
                 </tr>
             </table>
         </form>
     </div>
 </div>
+<script type="text/javascript" src="${absoluteContextPath}/js/modifyPwd.js"></script>

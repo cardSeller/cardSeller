@@ -3,7 +3,7 @@
         购买记录
     </p>
     <div class="select-time clearfix">
-        <form id="searchOrdersForm" class="search-providers-form clearfix" method="POST" action="${absoluteContextPath}/member/search" data-callback="getOrdersCallBack">
+        <form id="searchOrdersForm" class="search-providers-form clearfix" method="POST" action="${absoluteContextPath}/member/searchOrder" data-callback="getOrdersCallBack">
             <label for="from">时间区间</label>
             <input class="time-form" type="text" id="from" name="orderTimeFrom" placeholder="选择时间">
             <label for="to">-</label>
@@ -12,7 +12,7 @@
             <input type="hidden" id="pageSize" name="pageSize" value="2"/>
             <input type="hidden" id="memberId" name="memberId" value="<#if Session["sv"]??>${Session["sv"].id!}</#if>">
             <input type="hidden" id="total" value="${total?c}"/>
-            <a href="javascript:searchOrders()"; class="search-btn" href="#">搜索</a>
+            <a href="javascript:searchOrders();" class="search-btn" href="#">搜索</a>
         </form>
     </div>
     <div id="orderList">

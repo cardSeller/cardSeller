@@ -61,16 +61,17 @@
     });
         <#if shiroLoginFailure??>
             <#if shiroLoginFailure?contains('UnknownAccountException')>
+            alert("aaaa");
 			$('#loginErrorUserName').show();
-			$('#loginErrorUserName .prompt-msg').html("<p>用户不存在</p>");
+			$('#loginErrorUserName').html("<p>用户不存在</p>");
 			$("#password").val("");
             <#elseif shiroLoginFailure?contains("IncorrectCredentialsException")>
 			$('#loginErrorUserName').show();
-			$('#loginErrorUserName .prompt-msg').html("<p>用户名密码不正确</p>");
+			$('#loginErrorUserName').html("<p>用户名密码不正确</p>");
 			$("#password").val("");
             <#elseif shiroLoginFailure?contains("DisabledAccountException")>
 			$('#loginErrorUserName').show();
-			$('#loginErrorUserName .prompt-msg').html("<p>你的账户未激活,点此<a href='javascript:activeEmail();'>激活</a></p>");
+			$('#loginErrorUserName').html("<p>你的账户未激活,点此<a href='javascript:activeEmail();'>激活</a></p>");
 			$("#password").val("");
             </#if>
         </#if>

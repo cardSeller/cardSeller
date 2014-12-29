@@ -9,6 +9,7 @@
     <script type="text/javascript" src="${absoluteContextPath}/js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="${absoluteContextPath}/js/form.js"></script>
     <script type="text/javascript" src="${absoluteContextPath}/js/common.js"></script>
+    <script type="text/javascript" src="${absoluteContextPath}/js/validator.js"></script>
     <script language="JavaScript">
         var golbalRootUrl = "${absoluteContextPath}";
         Array.prototype.contains = function(item){

@@ -3,60 +3,49 @@
         充值记录
     </p>
     <div class="select-time clearfix">
-        <label for="from">时间区间</label>
-        <input class="time-form" type="text" id="from" name="from" placeholder="选择时间">
-        <label for="to">-</label>
-        <input class="time-to" type="text" id="to" name="to" placeholder="选择时间">
-        <a class="search-btn" href="#">搜索</a>
+        <form id="searchDepositsForm" class="search-providers-form clearfix" method="POST" action="${absoluteContextPath}/member/searchDeposit" data-callback="getDepositsCallBack">
+            <label for="from">时间区间</label>
+            <input class="time-form" type="text" id="from" name="depositTimeFrom" placeholder="选择时间">
+            <label for="to">-</label>
+            <input class="time-to" type="text" id="to" name="depositTimeTo" placeholder="选择时间">
+            <input type="hidden" id="pageIndex" name="pageIndex" value="1"/>
+            <input type="hidden" id="pageSize" name="pageSize" value="2"/>
+            <input type="hidden" id="memberId" name="memberId" value="<#if Session["sv"]??>${Session["sv"].id!}</#if>">
+            <input type="hidden" id="total" value="${total?c}"/>
+            <a class="search-btn" href="javascript:searchDeposits();">搜索</a>
+        </form>
     </div>
-    <table class="w100 recharge-history">
-        <thead>
-        <tr>
-            <th>订单号</th>
-            <th>充值金额（元）</th>
-            <th>交易日期</th>
-            <th>状态</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>1412131725122219</td>
-            <td>108.00</td>
-            <td>2014-12-20</td>
-            <td><p class="recharge-history-wait">已完成</p></td>
-        </tr>
-        <tr>
-            <td>1412131725122219</td>
-            <td>108.00</td>
-            <td>2014-12-20</td>
-            <td><p class="recharge-history-wait">已完成</p></td>
-        </tr>
-        <tr>
-            <td>1412131725122219</td>
-            <td>108.00</td>
-            <td>2014-12-20</td>
-            <td><p class="recharge-history-wait">已完成</p></td>
-        </tr>
-        </tbody>
-    </table>
-    <div class="pager-box">
-        <div class="right" id="pager">
-            <ul class="pagination-list left">
-                <li class="selected"><a href="javascript:void(0)">1</a></li>
-                <li><a href="javascript:void(0)" onclick="currentPage(2)">2</a></li>
-                <li><a href="javascript:void(0)" onclick="currentPage(3)">3</a></li>
-                <li><a href="javascript:void(0)" onclick="currentPage(4)">4</a></li>
-                <li class="pagination-disabled"><a href="javascript:void(0)">···</a></li>
-                <li><a href="javascript:void(0)" onclick="currentPage(10)">10</a></li>
-                <li class="pagination-list-next"><a href="javascript:void(0)" onclick="next()"><span class="pagination-list-next"></span></a></li>
-            </ul>
-            <div class="pagination-jump left">
-                <input class="yahei" type="text" id="inputSearchNumber">
-                <a class="btn btn-primary" href="javascript:inputSearch(10);">确&nbsp;定</a>
-            </div>
+    <div id="depositList">
+        <table class="w100 recharge-history">
+            <thead>
+            <tr>
+                <th>订单号</th>
+                <th>充值金额（元）</th>
+                <th>交易日期</th>
+                <th>状态</th>
+            </tr>
+            </thead>
+            <tbody id="resultList">
+            <#list deposits as deposit>
+            <tr>
+                <td>${deposit.id?c}</td>
+                <td>${deposit.total?c}</td>
+                <td>${deposit.depositDate}</td>
+                <td><p class="recharge-history-wait">${deposit.depositStatus}</p></td>
+            </tr>
+            </#list>
+            </tbody>
+        </table>
+        <div class="pager-box right">
+            <div id="pager" class="pager-control"></div>
         </div>
     </div>
+    <div id="noDepositList" class="alert alert-danger displayNone">
+        没有符合条件的记录，请重试。
+    </div>
 </div>
+<script type="text/javascript" src="${absoluteContextPath}/js/pagination.js"></script>
+<script type="text/javascript" src="${absoluteContextPath}/js/deposit.manage.js"></script>
 <script type="text/javascript">
     $(function() {
         $( "#from" ).datepicker({

@@ -2,12 +2,16 @@ package com.card.seller.portal.controller;
 
 
 import com.card.seller.domain.*;
+import com.card.seller.portal.domain.SearchPortalDepositRequest;
 import com.card.seller.portal.domain.SearchPortalOrderRequest;
 import com.card.seller.portal.service.DepositService;
 import com.card.seller.portal.service.ItemService;
 import com.card.seller.portal.service.MemberService;
 import com.card.seller.portal.service.OrderService;
 import com.google.common.collect.Maps;
+import org.apache.shiro.codec.Base64;
+import org.apache.shiro.crypto.hash.Sha256Hash;
+import org.apache.shiro.util.ByteSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,7 +63,7 @@ public class MemberController {
         return "member/orderManage";
     }
 
-    @RequestMapping(value = "/search", method = RequestMethod.POST)
+    @RequestMapping(value = "/searchOrder", method = RequestMethod.POST)
     @ResponseBody
     public Map<String, Object> search(@RequestBody SearchPortalOrderRequest request) {
         Map<String, Object> jsonObject = Maps.newHashMap();
@@ -85,6 +89,7 @@ public class MemberController {
     }
 
     @RequestMapping(value = "/saveProfile", method = RequestMethod.POST)
+    @ResponseBody
     public int saveProfile(HttpServletRequest request) {
         String memberName = SecurityContext.getAccount();
         Member member = memberService.getMemberByName(memberName);
@@ -94,7 +99,9 @@ public class MemberController {
     }
 
     private void setProfile(Member member, HttpServletRequest request) {
-        //TODO set profile
+        member.setRealName(request.getParameter("realName"));
+        member.setIdentity(request.getParameter("identity"));
+        member.setPhone(request.getParameter("phone"));
     }
 
     @RequestMapping(value = "/toModifyPwd", method = RequestMethod.GET)
@@ -108,6 +115,8 @@ public class MemberController {
         String memberName = SecurityContext.getAccount();
         Member member = memberService.getMemberByName(memberName);
         String realPwd = member.getPwd();
+        ByteSource bytes = ByteSource.Util.bytes(Base64.decode(member.getSalt()));
+        pwd = new Sha256Hash(pwd, bytes, 1024).toBase64();
         LOGGER.info("pwd is {} and the relpwd is {}", pwd, realPwd);
         if (!pwd.equals(realPwd)) {
             return MemberConstants.PWD_ERROR;
@@ -133,11 +142,27 @@ public class MemberController {
 
     @RequestMapping(value = "/depositManage", method = RequestMethod.GET)
     public String depositManage(Map<String, Object> viewObject) {
+        SearchPortalDepositRequest searchPortalDepositRequest = new SearchPortalDepositRequest();
         String memberName = SecurityContext.getAccount();
         Member member = memberService.getMemberByName(memberName);
-        List<Deposit> deposits = depositService.getDepositsByMemberId(member.getId());
+        searchPortalDepositRequest.setMemberId(member.getId());
+        Long total = depositService.getDepositsTotal(searchPortalDepositRequest);
+        List<Deposit> deposits = depositService.getDeposits(searchPortalDepositRequest);
         viewObject.put("deposits", deposits);
+        viewObject.put("total", total);
         return "member/depositManage";
+    }
+
+    @RequestMapping(value = "/searchDeposit", method = RequestMethod.POST)
+    @ResponseBody
+    public Map<String, Object> search(@RequestBody SearchPortalDepositRequest request) {
+        Map<String, Object> jsonObject = Maps.newHashMap();
+        List<Deposit> deposits = depositService.getDeposits(request);
+        jsonObject.put("deposits", deposits);
+        Long totalNumber = depositService.getDepositsTotal(request);
+        jsonObject.put("totalNumber", totalNumber);
+        jsonObject.put("fetchSize", request.getPageSize());
+        return jsonObject;
     }
 
 }

@@ -3,14 +3,14 @@
         用户充值
     </p>
     <div class="member-change">
-        <form action="">
+        <form action="${absoluteContextPath}/payment/deposit" method="post">
             <table>
                 <tr>
                     <td class="member-change-label">
                         充值金额（元）：
                     </td>
                     <td>
-                        <input type="text"/>&nbsp;最多输入两位小数
+                        <input name="total" type="text"/>&nbsp;最多输入两位小数
                     </td>
                 </tr>
                 <tr>
@@ -18,9 +18,8 @@
                         充值方式：
                     </td>
                     <td>
-                        <select name="" id="">
-                            <option value="支付宝即时到账">支付宝即时到账</option>
-                            <option value="银行转账">银行转账</option>
+                        <select name="payType" id="payTpe">
+                            <option value="CHINAPAY">银行转账</option>
                         </select>
                     </td>
                 </tr>

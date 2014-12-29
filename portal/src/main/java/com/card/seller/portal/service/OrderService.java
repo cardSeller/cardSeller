@@ -4,6 +4,7 @@ import com.card.seller.dao.OrderDao;
 import com.card.seller.domain.DateUtil;
 import com.card.seller.domain.Orders;
 import com.card.seller.domain.OrdersManageSearch;
+import com.card.seller.portal.domain.SearchPortalDepositRequest;
 import com.card.seller.portal.domain.SearchPortalOrderRequest;
 import com.google.common.collect.Maps;
 import org.apache.commons.lang3.StringUtils;
@@ -58,5 +59,4 @@ public class OrderService {
         return builder.toString();
 
     }
-
 }
