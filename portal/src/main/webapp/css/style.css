@@ -1061,6 +1061,9 @@ a{
 }
 .reputation p{
     padding-top:40px;
+    text-indent: 28px;
+    color: #333;
+    line-height: 24px;
 }
 .qa-list dt{
     background: url(../images/q-icon.png) no-repeat;
@@ -1080,7 +1083,7 @@ a{
     display: none;
 }
 .prevent-fooled{
-    color: #666;
+    color: #333;
     line-height: 24px;
 }
 .paragraph{
