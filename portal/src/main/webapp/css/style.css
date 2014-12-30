@@ -762,6 +762,7 @@ a{
     cursor: pointer;
     border: 0;
     padding: 0;
+    display: block;
 }
 .member-change .member-change-save:hover{
     color: #fff;
@@ -1021,5 +1022,21 @@ a{
     text-decoration: none;
     background-color:#ffa000;
 }
-
-
+.input-captcha{
+    padding: 4px 6px;
+    height: 22px;
+    line-height: 22px;
+    width: 100px;
+    border:solid 1px #cfcfcf;
+    margin-right: 6px;
+}
+.register-captcha a{
+    color: #f69005;
+}
+.sr-only{
+    overflow: hidden;
+    text-indent: -9999px;
+    width: 0;
+    height: 0;
+    font-size: 0;
+}

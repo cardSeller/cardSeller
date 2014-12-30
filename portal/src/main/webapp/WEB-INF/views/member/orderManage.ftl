@@ -44,8 +44,8 @@
             </#list>
             </tbody>
         </table>
-        <div class="pager-box right">
-            <div id="pager" class="pager-control"></div>
+        <div class="pager-box">
+            <div id="pager" class="right"></div>
         </div>
     </div>
     <div id="noOrdersList" class="alert alert-danger displayNone">

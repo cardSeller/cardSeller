@@ -11,20 +11,18 @@ function pagination(result, total, pagesize) {
         var nextstr = "";
         var pagestr = "";
         if (pageNumber == pageIndex) {
-            prevstr = "<li><a href='javascript:void(0)' onclick='prev()'><span class='glyphicon glyphicon-chevron-left'></span></a></li>";
-            nextstr = "<li class=\"disabled\"><a href=\"javascript:void(0);\"><span class='glyphicon glyphicon-chevron-right'></span></a></li>";
+            prevstr = "<li class='pagination-list-prev'><a href='javascript:void(0)' onclick='prev()'><span class='pagination-list-prev'></span></a></li>";
         } else if (pageIndex == 1) {
-            prevstr = "<li class=\"disabled\"><a href=\"javascript:void(0);\"><span class='glyphicon glyphicon-chevron-left'></span></a></li>";
-            nextstr = "<li><a href='javascript:void(0)' onclick='next()'><span class='glyphicon glyphicon-chevron-right'></span></a></li>";
+            nextstr = "<li class='pagination-list-next'><a href='javascript:void(0)' onclick='next()'><span class='pagination-list-next'></span></a></li>";
         } else {
-            prevstr = "<li><a href='javascript:void(0)' onclick='prev()'><span class='glyphicon glyphicon-chevron-left'></span></a></li>";
-            nextstr = "<li><a href='javascript:void(0)' onclick='next()'><span class='glyphicon glyphicon-chevron-right'></span></a></li>";
+            prevstr = "<li class='pagination-list-prev'><a href='javascript:void(0)' onclick='prev()'><span class='pagination-list-prev'></span></a></li>";
+            nextstr = "<li class='pagination-list-next'><a href='javascript:void(0)' onclick='next()'><span class='pagination-list-next'></span></a></li>";
         }
         if (pageNumber > 8) {
             var pagetemp = "";
             for (var i = 1; i <= pageNumber; i++) {
                 if (i == pageIndex) {
-                    pagetemp += "<li class=\"active\"><a href=\"javascript:void(0)\">" + i + "<span class=\"sr-only\">(current)</span></a></li>";
+                    pagetemp += "<li class=\"selected\"><a href=\"javascript:void(0)\">" + i + "<span class=\"sr-only\">(current)</span></a></li>";
                 } else if (i < pageIndex) {
                     var count = 2;
                     if (pageIndex == pageNumber) {
@@ -59,14 +57,14 @@ function pagination(result, total, pagesize) {
         } else {
             for (var i = 1; i <= pageNumber; i++) {
                 if (i == pageIndex) {
-                    pagestr += "<li class=\"active\"><a href=\"javascript:void(0)\">" + i + "<span class=\"sr-only\">(current)</span></a></li>";
+                    pagestr += "<li class=\"selected\"><a href=\"javascript:void(0)\">" + i + "<span class=\"sr-only\">(current)</span></a></li>";
                 } else {
                     pagestr += "<li><a href='javascript:void(0)' onclick='currentPage(" + i + ")'>" + i + "</a></li>";
                 }
             }
         }
-        var inputSearch = "<div class='page-number-search left'><input class='form-control' type=\"text\" id=\"inputSearchNumber\"/></div><a class='btn btn-primary' href=\"javascript:inputSearch(" + pageNumber + ");\">确&nbsp;定</a>";
-        $("#pager").html("<ul class=\"pagination left\">" + prevstr + pagestr + nextstr + "</ul>" + inputSearch);
+        var inputSearch = "<div class='pagination-jump left'><input type=\"text\" id=\"inputSearchNumber\"/><a href=\"javascript:inputSearch(" + pageNumber + ");\">确&nbsp;定</a></div>";
+        $("#pager").html("<ul class=\"pagination-list left\">" + prevstr + pagestr + nextstr + "</ul>" + inputSearch);
     }
     if (result != null && result.length > 0) {
         var sInnerHtml = [];

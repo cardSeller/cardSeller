@@ -1,3 +1,4 @@
+<div class="container">
 <div class="wrap">
     <div class="member clearfix">
         <div class="member-nav left">

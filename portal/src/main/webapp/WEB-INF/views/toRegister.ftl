@@ -20,11 +20,9 @@
                         <div id="regErrorUserAffirm" class="prompt-msg"></div>
                     </div>
                     <p class="reg-title"><span>*</span>验证码</p>
-                    <div class="register-captcha">
-                        <img class="login-verification-img" id="captchaImg" src="${absoluteContextPath}/getCaptcha"
-                             alt="imageCode">&nbsp;看不清？<a
-                            href="javascript:reloadCaptcha();">换一张</a>
-                        <input class="long-text-input" id="imageCode" placeholder="请输入验证码"/>
+                    <div class="register-captcha clearfix">
+                        <img class="login-verification-img" id="captchaImg" src="${absoluteContextPath}/getCaptcha" alt="imageCode">&nbsp;看不清？<a href="javascript:reloadCaptcha();">换一张</a>
+                        <input class="input-captcha left" id="imageCode" placeholder="请输入验证码"/>
                         <div id="regErrorCaptcha" class="prompt-msg"></div>
                     </div>
                     <div class="register-btn">
