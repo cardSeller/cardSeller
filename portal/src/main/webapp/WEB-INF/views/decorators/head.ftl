@@ -3,7 +3,7 @@
     <div class="wrap">
         <a class="sign-up" href="${absoluteContextPath}/toRegister">注册</a>
         <a class="sign-in" href="${absoluteContextPath}/login">登录</a>
-        <a class="deter-fraud" href="#">防骗指南</a>
+        <a class="deter-fraud" href="${absoluteContextPath}/prevent-fooled.html">防骗指南</a>
     </div>
 </div>
 </@shiro.guest>

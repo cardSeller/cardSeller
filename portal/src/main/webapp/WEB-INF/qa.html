@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <title>会员中心</title>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../js/datepicker-cn.js"></script>
+</head>
+<body>
+<div class="top-bar">
+    <div class="wrap">
+        <p><span class="member-mail">2495127574@qq.com</span> ，您好！</p>
+        <a class="top-bar-member" href="#">用户中心</a>
+        <a class="top-bar-quit" href="#">退出</a>
+        <a class="deter-fraud" href="#">防骗指南</a>
+    </div>
+</div>
+<div class="header">
+    <div class="wrap clearfix">
+        <h1 class="logo-box">
+            <a href="#" class="logo">快充商城</a>
+        </h1>
+        <ul class="header-nav right">
+            <li>
+                <a href="#">首页</a>
+            </li>
+            <li>
+                <a href="#">订单查询</a>
+            </li>
+            <li>
+                <a href="#">网站声明</a>
+            </li>
+            <li>
+                <a href="#">常见问题</a>
+            </li>
+            <li>
+                <a href="#">联系我们</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="container">
+    <div class="wrap">
+        <div class="q-and-a">
+            <h1>常见问题<span>Frequently Asked Questions</span></h1>
+            <dl class="qa-list">
+                <dt>我被骗购买的游戏产品，我要如何追回损失？</dt>
+                <dd>建议你报警处理，因为卡密一旦销售出去我们就无法追回的。</dd>
+                <dt>支付成功后没有收到货怎么办？</dt>
+                <dd>联系我司客服人员，让她们帮你处理。</dd>
+                <dt>可以转发一下邮件吗？</dt>
+                <dd>不行，因为我们没有权限转发。</dd>
+                <dt>卡密产品可以退货吗？</dt>
+                <dd>卡密是产品无质量问题是不可以退换货的。</dd>
+                <dt>卡密错误怎么办？</dt>
+                <dd>请发送我司客服邮箱。</dd>
+                <dt>你们公司有刷信誉吗？</dt>
+                <dd>我们公司没有刷信誉。</dd>
+                <dt>邮箱填写错误怎么办？</dt>
+                <dd>填写错误请使用订单号和加你设置的密码在我们公司网站的订单查询进行查询。</dd>
+            </dl>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="wrap">
+        <ul class="footer-list clearfix">
+            <li class="footer-item footer-item-1">支持多种，支付方式</li>
+            <li class="footer-item footer-item-2">安全服务，保障资金</li>
+            <li class="footer-item footer-item-3">7*24小时，专属客服</li>
+            <li class="footer-item footer-item-4">权威认证，安全可信</li>
+        </ul>
+        <p>Copyright(C) 2014-2014 快充商城 版权所有，并保留所有权利。</p>
+        <p>ICP备案证书号：闽ICP备14016293号</p>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        $(".qa-list dt").click(function(){
+            $(this).next().toggle();
+        });
+    });
+</script>
+</body>
+</html>

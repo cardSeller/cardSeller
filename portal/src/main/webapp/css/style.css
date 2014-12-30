@@ -1040,3 +1040,55 @@ a{
     height: 0;
     font-size: 0;
 }
+.reputation,
+.q-and-a,
+.prevent-fooled{
+    padding: 30px 40px 80px 40px;
+    background-color: #fff;
+    border: solid 1px #ccc;
+}
+.reputation h1,
+.q-and-a h1,
+.prevent-fooled h1{
+    color: #335498;
+    font-size: 18px;
+}
+.reputation h1 span,
+.q-and-a h1 span,
+.prevent-fooled h1 span{
+    font-size: 12px;
+    display: block;
+}
+.reputation p{
+    padding-top:40px;
+}
+.qa-list dt{
+    background: url(../images/q-icon.png) no-repeat;
+    padding-left: 28px;
+    min-height: 22px;
+    line-height: 22px;
+    margin-top: 40px;
+    cursor:pointer;
+}
+.qa-list dd{
+    background: url(../images/a-icon.png) no-repeat;
+    padding-left: 28px;
+    margin-top:14px;
+    min-height: 22px;
+    line-height: 22px;
+    color: #999;
+    display: none;
+}
+.prevent-fooled{
+    color: #666;
+    line-height: 24px;
+}
+.paragraph{
+    text-indent: 28px;
+    padding-top:6px;
+}
+.section{
+    padding-top: 30px;
+}
+
+
