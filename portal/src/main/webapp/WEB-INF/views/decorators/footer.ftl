@@ -7,6 +7,6 @@
             <li class="footer-item footer-item-4">权威认证，安全可信</li>
         </ul>
         <p>Copyright(C) 2014-2014 快充商城 版权所有，并保留所有权利。</p>
-        <p>ICP备案证书号：闽ICP备14016293号</p>
+        <p>ICP备案证书号：闽ICP备14022075号</p>
     </div>
 </div>

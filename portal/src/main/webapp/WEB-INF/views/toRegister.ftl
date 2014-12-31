@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <title>注册</title>
+</head>
+<body>
 <div class="container">
     <div class="wrap">
         <div class="register-box clearfix">
@@ -37,3 +44,5 @@
     </div>
 </div>
 <script type="text/javascript" src="${absoluteContextPath}/js/register.js"></script>
+</body>
+</html>

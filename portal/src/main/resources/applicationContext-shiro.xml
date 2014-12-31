@@ -20,8 +20,8 @@
                 /logout = logout
                 /login = authc
                 /login/success = authc
-                /user/** = authc
                 /order/** = authc
+                /item/** = authc
                 /payment/** = authc
                 /member/** = authc
                 /** = anon

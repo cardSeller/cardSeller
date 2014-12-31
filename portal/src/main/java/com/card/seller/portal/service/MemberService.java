@@ -77,4 +77,10 @@ public class MemberService {
     public void updateMember(Member member) {
         memberDao.update(member);
     }
+
+    @Transactional
+    public void balance(Member member, BigDecimal total) {
+        member.setBalance(member.getBalance().subtract(total));
+        memberDao.update(member);
+    }
 }

@@ -60,6 +60,7 @@ public class MemberController {
         }
         viewObject.put("total", total);
         viewObject.put("orders", orders);
+        viewObject.put("member", member);
         return "member/orderManage";
     }
 
@@ -105,7 +106,10 @@ public class MemberController {
     }
 
     @RequestMapping(value = "/toModifyPwd", method = RequestMethod.GET)
-    public String toModifyPwd() {
+    public String toModifyPwd(Map<String, Object> viewObject) {
+        String memberName = SecurityContext.getAccount();
+        Member member = memberService.getMemberByName(memberName);
+        viewObject.put("member", member);
         return "member/toModifyPwd";
     }
 
@@ -136,7 +140,10 @@ public class MemberController {
     }
 
     @RequestMapping(value = "/toDeposit", method = RequestMethod.GET)
-    public String toDeposit() {
+    public String toDeposit(Map<String, Object> viewObject) {
+        String memberName = SecurityContext.getAccount();
+        Member member = memberService.getMemberByName(memberName);
+        viewObject.put("member", member);
         return "member/toDeposit";
     }
 
@@ -150,6 +157,7 @@ public class MemberController {
         List<Deposit> deposits = depositService.getDeposits(searchPortalDepositRequest);
         viewObject.put("deposits", deposits);
         viewObject.put("total", total);
+        viewObject.put("member", member);
         return "member/depositManage";
     }
 

@@ -2,6 +2,7 @@ package com.card.seller.portal.service;
 
 import com.card.seller.dao.OrderDao;
 import com.card.seller.domain.DateUtil;
+import com.card.seller.domain.OrderStatus;
 import com.card.seller.domain.Orders;
 import com.card.seller.domain.OrdersManageSearch;
 import com.card.seller.portal.domain.SearchPortalDepositRequest;
@@ -12,6 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -58,5 +61,32 @@ public class OrderService {
         }
         return builder.toString();
 
+    }
+
+    @Transactional
+    public void saveOrder(String orderNumber, Long memberId, Long itemId, Long itemPriceId, BigDecimal total, Integer count, OrderStatus orderStatus, Date orderDate) {
+        Orders orders = new Orders();
+        orders.setOrderNumber(orderNumber);
+        orders.setMemberId(memberId);
+        orders.setItemId(itemId);
+        orders.setItemPriceId(itemPriceId);
+        orders.setTotal(total);
+        orders.setItemCount(count);
+        orders.setOrderStatus(orderStatus);
+        orders.setOrderDate(orderDate);
+        orderDao.save(orders);
+    }
+
+
+    @Transactional
+    public void updateOrderStatus(String orderNumber, OrderStatus orderStatus) {
+        Orders orders = orderDao.get(orderNumber);
+        orders.setOrderStatus(orderStatus);
+        orderDao.update(orders);
+    }
+
+    @Transactional
+    public Orders getOrderByOrderNumber(String orderNumber) {
+        return orderDao.get(orderNumber);
     }
 }

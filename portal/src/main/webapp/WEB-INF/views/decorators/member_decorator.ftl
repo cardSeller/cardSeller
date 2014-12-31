@@ -3,7 +3,9 @@
 <html>
 <head lang="zh">
     <meta charset="UTF-8">
-    <title>快充商城</title>
+    <title>
+        <sitemesh:write property="title"/>
+    </title>
     <link rel="stylesheet" href="${absoluteContextPath}/css/style.css"/>
     <script type="text/javascript" src="${absoluteContextPath}/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="${absoluteContextPath}/js/jquery-ui.min.js"></script>
@@ -18,6 +20,7 @@
         if (window != top)
             top.location.href = location.href;
     </script>
+    <sitemesh:write property="head"/>
 </head>
 <body>
 <#include "head.ftl"/>

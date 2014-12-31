@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <title>会员中心-修改个人信息</title>
+</head>
+<body>
 <div class="member-container left">
     <p class="member-title">
         修改个人信息
@@ -51,3 +58,4 @@
     </div>
 </div>
 <script type="text/javascript" src="${absoluteContextPath}/js/profile.js"></script>
+</body>

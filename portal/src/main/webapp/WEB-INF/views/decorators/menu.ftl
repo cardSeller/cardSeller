@@ -4,10 +4,10 @@
         <div class="member-nav left">
             <div class="member-info">
                 <div class="member-avatar">
-                    <img src="../images/avatar.jpg" alt=""/>
+                    <img src="${absoluteContextPath}/images/avatar.jpg" alt=""/>
                 </div>
                 <p class="member-id"><#if Session["sv"]??>${Session["sv"].name!}</#if></p>
-                <p class="member-balance">我的余额：<strong><#if Session["sv"]??>${Session["sv"].balance!}</#if></strong>元</p>
+                <p class="member-balance">我的余额：<strong><#if member??>${member.balance?c}</#if></strong>元</p>
                 <p class="member-nav-recharge">
                     <a href="${absoluteContextPath}/member/toDeposit">充值</a>
                 </p>

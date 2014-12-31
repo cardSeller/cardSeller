@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <title>会员中心-充值记录</title>
+    <script type="text/javascript" src="${absoluteContextPath}/js/datepicker-cn.js"></script>
+</head>
+<body>
 <div class="member-container left">
     <p class="member-title">
         充值记录
@@ -66,3 +74,4 @@
         });
     });
 </script>
+</body>

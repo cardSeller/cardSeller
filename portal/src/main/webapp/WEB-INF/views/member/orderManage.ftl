@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <title>会员中心-订单记录</title>
+    <script type="text/javascript" src="${absoluteContextPath}/js/datepicker-cn.js"></script>
+</head>
+<body>
 <div class="member-container left">
     <p class="member-title">
         购买记录
@@ -9,7 +17,7 @@
             <label for="to">-</label>
             <input class="time-to" type="text" id="to" name="orderTimeTo" placeholder="选择时间">
             <input type="hidden" id="pageIndex" name="pageIndex" value="1"/>
-            <input type="hidden" id="pageSize" name="pageSize" value="2"/>
+            <input type="hidden" id="pageSize" name="pageSize" value="8"/>
             <input type="hidden" id="memberId" name="memberId" value="<#if Session["sv"]??>${Session["sv"].id!}</#if>">
             <input type="hidden" id="total" value="${total?c}"/>
             <a href="javascript:searchOrders();" class="search-btn" href="#">搜索</a>
@@ -74,3 +82,5 @@
         });
     });
 </script>
+</body>
+</html>
