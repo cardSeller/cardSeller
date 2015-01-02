@@ -17,7 +17,7 @@ public class SearchPortalDepositRequest {
 
     private int pageIndex = 1;
 
-    private int pageSize = 2;
+    private int pageSize = 8;
 
     public Date getDepositTimeFrom() {
         return depositTimeFrom;

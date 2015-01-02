@@ -48,9 +48,10 @@ function getOrdersCallBack(data) {
             result.push(resultList[i].member.name);
             result.push(resultList[i].item.name);
             result.push(resultList[i].itemPrice.faceValue);
+            result.push(resultList[i].itemPrice.price);
             result.push(resultList[i].itemCount);
             result.push(resultList[i].total);
-            result.push(format(new Date(resultList[i].orderDate), 'yyyy-MM-dd HH:mm:ss'));
+            result.push(format(new Date(resultList[i].orderDate), 'yyyy-MM-dd hh:mm:ss'));
             result.push(resultList[i].orderStatus);
             if(resultList[i].orderStatus == '已付款') {
                 result.push("<a href='" + golbalRootUrl + "/order/process/" + resultList[i].orderNumber + "' onclick=\"if(confirm('确定已经发货了给" + resultList[i].member.name + "?')==false)return false;\">交易完成</a>");

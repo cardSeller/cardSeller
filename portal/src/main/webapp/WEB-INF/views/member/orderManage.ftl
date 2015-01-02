@@ -35,6 +35,7 @@
                 <th>实付总金额(￥)</th>
                 <th>交易日期</th>
                 <th>状态</th>
+                <th>操作</th>
             </tr>
             </thead>
             <tbody id="resultList">
@@ -48,6 +49,9 @@
                 <td>${order.total?c}</td>
                 <td>${order.orderDate}</td>
                 <td><p class="recharge-history-wait">${order.orderStatus!}</p></td>
+                <#if order.orderStatus == '待付款'>
+                    <td><a href="javascript:payOrder('${order.orderNumber!}','${order.item.id?c}','${order.itemPrice.id?c}','${order.total?c}','${order.itemCount?c}');">付款</a></td>
+                </#if>
             </tr>
             </#list>
             </tbody>

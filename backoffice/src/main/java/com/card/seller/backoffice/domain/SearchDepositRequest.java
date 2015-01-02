@@ -7,11 +7,11 @@ import java.util.Date;
  * Date:14-12-21
  * Time:下午6:20
  */
-public class SearchOrderRequest {
+public class SearchDepositRequest {
 
-    private Date orderTimeFrom;
+    private Date depositTimeFrom;
 
-    private Date orderTimeTo;
+    private Date depositTimeTo;
 
     private String memberName;
 
@@ -19,20 +19,20 @@ public class SearchOrderRequest {
 
     private int pageSize = 8;
 
-    public Date getOrderTimeFrom() {
-        return orderTimeFrom;
+    public Date getDepositTimeFrom() {
+        return depositTimeFrom;
     }
 
-    public void setOrderTimeFrom(Date orderTimeFrom) {
-        this.orderTimeFrom = orderTimeFrom;
+    public void setDepositTimeFrom(Date depositTimeFrom) {
+        this.depositTimeFrom = depositTimeFrom;
     }
 
-    public Date getOrderTimeTo() {
-        return orderTimeTo;
+    public Date getDepositTimeTo() {
+        return depositTimeTo;
     }
 
-    public void setOrderTimeTo(Date orderTimeTo) {
-        this.orderTimeTo = orderTimeTo;
+    public void setDepositTimeTo(Date depositTimeTo) {
+        this.depositTimeTo = depositTimeTo;
     }
 
     public String getMemberName() {

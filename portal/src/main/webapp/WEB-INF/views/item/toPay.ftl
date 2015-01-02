@@ -19,7 +19,7 @@
                 <input type="hidden" name="orderNumber" value="${orderNumber!}"/>
                 <div class="p-detail-box clearfix">
                     <div class="p-detail-img left">
-                        <img src="${absoluteContextPath}/images/${item.imageUrl}" alt="${item.name!}"/>
+                        <img src="${absoluteContextPath}/images/products/${item.imageUrl}" alt="${item.name!}"/>
                         <p class="p-detail-title text-center">${item.name!}</p>
                     </div>
                     <div class="buy-affirm left">

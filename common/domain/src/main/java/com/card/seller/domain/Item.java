@@ -26,6 +26,8 @@ public class Item extends IdEntity {
     private String initial;
     //商品面值和价格
     private List<ItemPrice> itemPriceList;
+    //商品位置position为home的是在首页可为空
+    private String position;
 
     public String getName() {
         return name;
@@ -66,5 +68,13 @@ public class Item extends IdEntity {
 
     public void setItemPriceList(List<ItemPrice> itemPriceList) {
         this.itemPriceList = itemPriceList;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
     }
 }

@@ -154,7 +154,7 @@ public class MemberController {
         Member member = memberService.getMemberByName(memberName);
         searchPortalDepositRequest.setMemberId(member.getId());
         Long total = depositService.getDepositsTotal(searchPortalDepositRequest);
-        List<Deposit> deposits = depositService.getDeposits(searchPortalDepositRequest);
+        List<DepositManageSearch> deposits = depositService.getDeposits(searchPortalDepositRequest);
         viewObject.put("deposits", deposits);
         viewObject.put("total", total);
         viewObject.put("member", member);
@@ -165,7 +165,7 @@ public class MemberController {
     @ResponseBody
     public Map<String, Object> search(@RequestBody SearchPortalDepositRequest request) {
         Map<String, Object> jsonObject = Maps.newHashMap();
-        List<Deposit> deposits = depositService.getDeposits(request);
+        List<DepositManageSearch> deposits = depositService.getDeposits(request);
         jsonObject.put("deposits", deposits);
         Long totalNumber = depositService.getDepositsTotal(request);
         jsonObject.put("totalNumber", totalNumber);

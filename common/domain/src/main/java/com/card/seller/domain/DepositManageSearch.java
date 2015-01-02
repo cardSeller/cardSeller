@@ -1,5 +1,6 @@
 package com.card.seller.domain;
 
+import javax.persistence.Transient;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -19,6 +20,13 @@ public class DepositManageSearch {
     private Date depositDate;
 
     private String depositStatus;
+
+    private String depositType;
+
+    private String depositTypeEN;
+
+    private Member member;
+
 
     public Long getId() {
         return id;
@@ -58,5 +66,30 @@ public class DepositManageSearch {
 
     public void setDepositStatus(String depositStatus) {
         this.depositStatus = depositStatus;
+    }
+
+    public String getDepositType() {
+        return DepositType.valueOf(depositType).getChineseDescription();
+    }
+
+    public void setDepositType(String depositType) {
+        this.depositType = depositType;
+    }
+
+    @Transient
+    public Member getMember() {
+        return member;
+    }
+
+    public void setMember(Member member) {
+        this.member = member;
+    }
+
+    public String getDepositTypeEN() {
+        return depositTypeEN;
+    }
+
+    public void setDepositTypeEN(String depositTypeEN) {
+        this.depositTypeEN = depositTypeEN;
     }
 }

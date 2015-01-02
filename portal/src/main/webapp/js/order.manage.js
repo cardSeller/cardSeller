@@ -28,7 +28,10 @@ function getOrdersCallBack(data) {
             result.push(resultList[i].itemCount);
             result.push(resultList[i].total);
             result.push(format(new Date(resultList[i].orderDate), 'yyyy-MM-dd hh:mm:ss'));
-            result.push(resultList[i].orderStatus);
+            result.push("<p class=\"recharge-history-wait\">" + resultList[i].orderStatus + "</p>");
+            if(resultList[i].orderStatus == "待付款") {
+                result.push("<a href=\"javascript:payOrder('" + resultList[i].orderNumber + "','" +resultList[i].item.id + "','" + resultList[i].itemPrice.id + "','" + resultList[i].total + "','" + resultList[i].itemCount + "');\">付款</a>");
+            }
             resultReturnList.push(result);
         }
         pagination(resultReturnList, data.totalNumber, data.fetchSize);
@@ -57,4 +60,34 @@ function search() {
             alertErrorMsgPopups("查询订单出错");
         }
     });
+}
+
+function payOrder(orderNumber,itemId,itemPriceId,total,count) {
+    var data = {};
+    data.orderNumber = orderNumber;
+    data.itemId = itemId;
+    data.itemPriceId = itemPriceId;
+    data.total = total;
+    data.count = count;
+    postcall(golbalRootUrl + "/item/submitOrder", data);
+}
+
+function postcall(url,params){
+    var tempform = document.createElement("form");
+    tempform.action = url;
+    tempform.method = "post";
+    tempform.style.display="none";
+    for (var x in params) {
+        var opt = document.createElement("input");
+        opt.name = x;
+        opt.setAttribute("value",params[x]);
+        tempform.appendChild(opt);
+    }
+
+    var opt = document.createElement("input");
+    opt.type = "submit";
+    opt.name = "postsubmit";
+    tempform.appendChild(opt);
+    document.body.appendChild(tempform);
+    tempform.submit();
 }

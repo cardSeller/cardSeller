@@ -24,6 +24,9 @@
             <column name="image_url" type="varchar(128)">
                 <constraints nullable="false" />
             </column>
+            <column name="position" type="varchar(32)">
+                <constraints nullable="true"/>
+            </column>
         </createTable>
     </changeSet>
     <changeSet id="prod.data" author="minj">
@@ -44,6 +47,41 @@
             <column name="name" value="汉舟一卡通"/>
             <column name="initial" value="H"/>
             <column name="image_url" value="hzykt.jpg"/>
+        </insert>
+        <insert tableName="item">
+            <column name="id" value="4"/>
+            <column name="name" value="盛大直充"/>
+            <column name="initial" value="S"/>
+            <column name="image_url" value="sdzc.jpg"/>
+            <column name="position" value="HOME"/>
+        </insert>
+        <insert tableName="item">
+            <column name="id" value="5"/>
+            <column name="name" value="Q币直充"/>
+            <column name="initial" value="Q"/>
+            <column name="image_url" value="qq.jpg"/>
+            <column name="position" value="HOME"/>
+        </insert>
+        <insert tableName="item">
+            <column name="id" value="6"/>
+            <column name="name" value="中国移动卡密"/>
+            <column name="initial" value="Z"/>
+            <column name="image_url" value="zgyd.jpg"/>
+            <column name="position" value="HOME"/>
+        </insert>
+        <insert tableName="item">
+            <column name="id" value="7"/>
+            <column name="name" value="中国联通卡密"/>
+            <column name="initial" value="Z"/>
+            <column name="image_url" value="zglt.jpg"/>
+            <column name="position" value="HOME"/>
+        </insert>
+        <insert tableName="item">
+            <column name="id" value="8"/>
+            <column name="name" value="中国电信卡密"/>
+            <column name="initial" value="Z"/>
+            <column name="image_url" value="zgdx.jpg"/>
+            <column name="position" value="HOME"/>
         </insert>
     </changeSet>
 </databaseChangeLog>

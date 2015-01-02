@@ -1,5 +1,6 @@
 package com.card.seller.portal.listener;
 
+import com.card.seller.domain.HCZFPaymentUtil;
 import com.card.seller.domain.PaymentUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,11 +19,16 @@ public class PortalListener implements ServletContextListener {
 
     public static final String PAYMENT_PROPERTIES = "payment.properties";
 
+    public static final String HCZF_PAYMENT_PROPERTIES = "hczf.properties";
+
+    public static final String HCZF_PROPERTIES = "hczf.properties";
+
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         try {
             LOGGER.info("init PaymentUtil start.");
             PaymentUtil.init(PAYMENT_PROPERTIES);
+            HCZFPaymentUtil.init(HCZF_PAYMENT_PROPERTIES);
             LOGGER.info("init PaymentUtil end.");
         } catch (Exception e) {
             LOGGER.error(e.getMessage(), e);

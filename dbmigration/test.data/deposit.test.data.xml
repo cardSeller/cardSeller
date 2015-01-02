@@ -15,6 +15,7 @@
             <column name="total" value="1000"/>
             <column name="deposit_date" value="2014-11-10 15:06:16"/>
             <column name="deposit_status" value="DS"/>
+            <column name="deposit_type" value="HCZF"/>
         </insert>
     </changeSet>
 </databaseChangeLog>

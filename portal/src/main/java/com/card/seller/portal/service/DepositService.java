@@ -1,9 +1,8 @@
 package com.card.seller.portal.service;
 
 import com.card.seller.dao.DepositDao;
-import com.card.seller.domain.DateUtil;
-import com.card.seller.domain.Deposit;
-import com.card.seller.domain.DepositStatus;
+import com.card.seller.dao.MemberDao;
+import com.card.seller.domain.*;
 import com.card.seller.portal.domain.SearchPortalDepositRequest;
 import com.card.seller.portal.domain.SearchPortalOrderRequest;
 import com.google.common.collect.Maps;
@@ -25,23 +24,29 @@ public class DepositService {
     @Autowired
     private DepositDao depositDao;
 
+    @Autowired
+    private MemberDao memberDao;
+
     @Transactional
     public void saveDeposit(Deposit deposit) {
         depositDao.save(deposit);
     }
 
     @Transactional
-    public List<Deposit> getDeposits(SearchPortalDepositRequest searchPortalDepositRequest) {
+    public List<DepositManageSearch> getDeposits(SearchPortalDepositRequest searchPortalDepositRequest) {
         Map<String, Object> params = Maps.newHashMap();
         String query = queryString(searchPortalDepositRequest, params);
         return depositDao.getDeposits(query, params, (searchPortalDepositRequest.getPageIndex() - 1) * searchPortalDepositRequest.getPageSize(), searchPortalDepositRequest.getPageSize());
     }
 
     @Transactional
-    public void chinapayVerify(String depositId) {
+    public void depositVerify(String depositId) {
         Deposit deposit = depositDao.get(Long.valueOf(depositId));
         deposit.setDepositStatus(DepositStatus.DS);
         depositDao.update(deposit);
+        Member member = memberDao.get(deposit.getMemberId());
+        member.setBalance(member.getBalance().add(deposit.getTotal()));
+        memberDao.update(member);
     }
 
 

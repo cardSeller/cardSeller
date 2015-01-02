@@ -61,7 +61,6 @@
     });
         <#if shiroLoginFailure??>
             <#if shiroLoginFailure?contains('UnknownAccountException')>
-            alert("aaaa");
 			$('#loginErrorUserName').show();
 			$('#loginErrorUserName').html("<p>用户不存在</p>");
 			$("#password").val("");

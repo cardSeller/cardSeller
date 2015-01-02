@@ -26,6 +26,8 @@ public class Deposit extends IdEntity {
 
     private DepositStatus depositStatus;
 
+    private DepositType depositType;
+
     private Member member;
 
     public Long getMemberId() {
@@ -69,5 +71,15 @@ public class Deposit extends IdEntity {
 
     public void setMember(Member member) {
         this.member = member;
+    }
+
+    @Enumerated(value = EnumType.STRING)
+    @Column(name = "deposit_type", length = 32, nullable = false)
+    public DepositType getDepositType() {
+        return depositType;
+    }
+
+    public void setDepositType(DepositType depositType) {
+        this.depositType = depositType;
     }
 }

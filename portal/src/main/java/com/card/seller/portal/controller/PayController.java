@@ -4,6 +4,8 @@ import chinapay.PrivateKey;
 import chinapay.SecureLink;
 import com.card.seller.domain.*;
 import com.card.seller.portal.domain.CallbackBean;
+import com.card.seller.portal.domain.HCZFCallbackBean;
+import com.card.seller.portal.domain.MD5;
 import com.card.seller.portal.domain.PayEnum;
 import com.card.seller.portal.service.*;
 import org.slf4j.Logger;
@@ -15,7 +17,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.List;
 
 /**
  * Created by minjie
@@ -49,26 +50,26 @@ public class PayController {
     }
 
     @RequestMapping(value = "deposit", method = RequestMethod.POST)
-    public String deposit(@RequestParam(value = "payType") String payType, @RequestParam(value = "total") BigDecimal total, HttpServletRequest request) {
+    public String deposit(@RequestParam(value = "depositId", required = false) Long depositId, @RequestParam(value = "payType") String payType, @RequestParam(value = "total") BigDecimal total, HttpServletRequest request) {
         String memberName = SecurityContext.getAccount();
         Member member = memberService.getMemberByName(memberName);
-        Deposit deposit = new Deposit();
-        deposit.setMemberId(member.getId());
-        deposit.setTotal(total);
-        deposit.setDepositDate(new Date());
-        deposit.setDepositStatus(DepositStatus.NP);
-        depositService.saveDeposit(deposit);
         PayEnum payEnum = PayEnum.getPayEnumByPayType(payType);
-        return payEnum.getPayContext().process(deposit.getId().toString(), total, request, paymentLog);
-    }
-
-    @RequestMapping(value = "pay", method = RequestMethod.POST)
-    public String pay(@RequestParam(value = "total") BigDecimal total) {
-        return "paySuccess";
+        if(depositId == null) {
+            Deposit deposit = new Deposit();
+            deposit.setMemberId(member.getId());
+            deposit.setTotal(total);
+            deposit.setDepositDate(new Date());
+            deposit.setDepositStatus(DepositStatus.NP);
+            deposit.setDepositType(DepositType.getDepositTypeByPayType(payType));
+            depositService.saveDeposit(deposit);
+            return payEnum.getPayContext().process(deposit.getId().toString(), total, request, paymentLog);
+        } else {
+            return payEnum.getPayContext().process(depositId.toString(), total, request, paymentLog);
+        }
     }
 
     /**
-     * 应答回调
+     * 银联应答回调
      */
     @ResponseBody
     @RequestMapping(value = "/getBgReturn", method = RequestMethod.POST)
@@ -96,7 +97,7 @@ public class PayController {
         try {  //1001成功 //1004失败
             LOGGER.info("getBgReturn res : {}", res);
             if (res && "1001".equals(callbackBean.getStatus())) {
-                depositService.chinapayVerify(callbackBean.getOrderno());
+                depositService.depositVerify(callbackBean.getOrderno());
             } else {
                 callbackBean.setStatus("1004");
             }
@@ -105,6 +106,28 @@ public class PayController {
             LOGGER.info("VerifyTransResponse failure !", e);
         }
         paymentLog.log(callbackBean.getOrderno(), PaymentLog.CHINAPAY, callbackBean.toString());
+    }
+
+    /**
+     * 汇潮支付应答回调
+     */
+    @ResponseBody
+    @RequestMapping(value = "/hczfNotify", method = RequestMethod.POST)
+    public String hczfNotify(HttpServletRequest req, @ModelAttribute HCZFCallbackBean hczfCallbackBean) {
+        MD5 md5 = new MD5();
+        String md5src = hczfCallbackBean.getBillNo()+"&"+hczfCallbackBean.getAmount()+"&"+hczfCallbackBean.getSucceed()+"&"+HCZFPaymentUtil.MD5_KEY;
+        String md5sign; //MD5加密后的字符串
+        md5sign = md5.getMD5ofStr(md5src);//MD5检验结果
+        if(md5sign.equals(hczfCallbackBean.getSignMD5info())) {
+            if("88".equals(hczfCallbackBean.getSucceed())) {
+                depositService.depositVerify(hczfCallbackBean.getBillNo());
+                paymentLog.log(hczfCallbackBean.getBillNo(), PaymentLog.HCZF, hczfCallbackBean.toString());
+                return "ok";
+            }
+        } else {
+            LOGGER.error("hczf md5 error the return signMD5info is {} and the md5Info we generate is {}", hczfCallbackBean.getSignMD5info(), md5sign);
+        }
+        return "fail";
     }
 
 }

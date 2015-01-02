@@ -27,13 +27,13 @@
                 <a href="${absoluteContextPath}">首页</a>
             </li>
             <li>
-                <a href="#">订单查询</a>
+                <a href="${absoluteContextPath}/member/orderManage">订单查询</a>
             </li>
             <li>
-                <a href="#">网站声明</a>
+                <a href="${absoluteContextPath}/manifesto">网站声明</a>
             </li>
             <li>
-                <a href="#">常见问题</a>
+                <a href="${absoluteContextPath}/qa">常见问题</a>
             </li>
             <li>
                 <a href="#">联系我们</a>

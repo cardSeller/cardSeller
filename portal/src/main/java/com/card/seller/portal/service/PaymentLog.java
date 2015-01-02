@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class PaymentLog {
 
     public final static String CHINAPAY = "1";
-    public final static String ALIPAY = "2";
+    public final static String HCZF = "2";
 
     @Autowired
     private OrdersPayMentLogDao ordersPayMentLogDao;

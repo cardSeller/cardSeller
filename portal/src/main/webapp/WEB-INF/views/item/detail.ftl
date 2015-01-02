@@ -17,7 +17,7 @@
             </div>
             <div class="p-detail-box clearfix">
                 <div class="p-detail-img left">
-                    <img src="${absoluteContextPath}/images/${item.imageUrl}" alt="${item.name!}"/>
+                    <img src="${absoluteContextPath}/images/products/${item.imageUrl}" alt="${item.name!}"/>
                 </div>
                 <form id="submitOrderForm" action="${absoluteContextPath}/item/submitOrder" method="post">
                     <input type="hidden" id="itemId" name="itemId" value="${item.id}">

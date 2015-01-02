@@ -23,9 +23,9 @@ public class DepositDao extends HibernateSupportDao<Deposit, Long> {
         return findByQuery("from " + Deposit.class.getName() + " where memberId=:memberId", map);
     }
 
-    public List<Deposit> getDeposits(String queryString, Map<String, Object> params, int offset, int fetchSize) {
+    public List<DepositManageSearch> getDeposits(String queryString, Map<String, Object> params, int offset, int fetchSize) {
         StringBuilder builder = new StringBuilder();
-        builder.append("select d.id as id,d.member_id as memberId,d.total as total,d.deposit_date as depositDate,d.deposit_status as depositStatus ");
+        builder.append("select d.id as id,d.member_id as memberId,d.total as total,d.deposit_date as depositDate,d.deposit_status as depositStatus,d.deposit_type as depositType,d.deposit_type as depositTypeEN,null as member ");
         builder.append("from deposit d ");
         builder.append("inner join member m on m.id=d.member_id ");
         builder.append("where 1=1 ");
@@ -36,7 +36,7 @@ public class DepositDao extends HibernateSupportDao<Deposit, Long> {
 
     public Long getDepositTotal(String queryString, Map<String, Object> params) {
         StringBuilder builder = new StringBuilder();
-        builder.append("select d.id as id,d.member_id as memberId,d.total as total,d.deposit_date as depositDate,d.deposit_status as depositStatus ");
+        builder.append("select d.id as id,d.member_id as memberId,d.total as total,d.deposit_date as depositDate,d.deposit_status as depositStatus,d.deposit_type as depositType,d.deposit_type as depositTypeEN,null as member ");
         builder.append("from deposit d ");
         builder.append("inner join member m on m.id=d.member_id ");
         builder.append("where 1=1 ");

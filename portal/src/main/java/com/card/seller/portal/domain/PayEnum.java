@@ -7,7 +7,8 @@ package com.card.seller.portal.domain;
  */
 public enum PayEnum {
 
-    CHINAPAY("CHINAPAY", "银联", "CHINAPAY", new PayContext(new ChinaPayProcess()));
+    CHINAPAY("CHINAPAY", "银联", "CHINAPAY", new PayContext(new ChinaPayProcess())),
+    HCZF("HCZF", "汇潮支付", "HCZF", new PayContext(new HCZFProcess()));
 
     private String payType;
     private String chineseDescription;

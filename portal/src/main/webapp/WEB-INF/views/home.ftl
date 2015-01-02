@@ -18,45 +18,37 @@
             <li>
                 <a href="#">按字母检索 A--H</a>
                 <div class="drop-menu clearfix">
-                    <p class="drop-menu-item">
-                        <span class="serial-num">C</span><a href="#">畅游直充</a>
-                        <span class="serial-num">C</span><a href="#">畅游直充</a>
-                        <span class="serial-num">C</span><a href="#">畅游直充</a>
-                        <span class="serial-num">C</span><a href="#">畅游直充</a>
-                        <span class="serial-num">C</span><a href="#">畅游直充</a>
-                        <span class="serial-num">C</span><a href="#">畅游直充</a>
-                    </p>
-                    <p class="drop-menu-item">
-                        <span class="serial-num">D</span><a href="#">电魂一卡通</a>
-                    </p>
-                    <p class="drop-menu-item">
-                        <span class="serial-num">E</span><a href="#">广游直充</a>
-                        <span class="serial-num">F</span><a href="#">畅游直充</a>
-                    </p>
-                    <p class="drop-menu-item">
-                        <span class="serial-num">C</span><a href="#">畅游直充</a>
-                        <span class="serial-num">C</span><a href="#">畅游直充</a>
-                        <span class="serial-num">C</span><a href="#">畅游直充</a>
-                    </p>
+                    <#list ahMap?keys as initial>
+                        <p class="drop-menu-item">
+                            <#list ahMap[initial] as item>
+                                <span class="serial-num">${item.initial!}</span><a href="${absoluteContextPath}/item/detail/${item.id?c}">${item.name!}</a>
+                            </#list>
+                        </p>
+                    </#list>
                 </div>
             </li>
             <li>
                 <a href="#">按字母检索 I--P</a>
                 <div class="drop-menu clearfix">
-                    <p class="drop-menu-item">
-                        <span class="serial-num">C</span><a href="#">电魂一卡通</a>
-                    </p>
+                    <#list ipMap?keys as initial>
+                        <p class="drop-menu-item">
+                            <#list ipMap[initial] as item>
+                                <span class="serial-num">${item.initial!}</span><a href="${absoluteContextPath}/item/detail/${item.id?c}">${item.name!}</a>
+                            </#list>
+                        </p>
+                    </#list>
                 </div>
             </li>
             <li>
                 <a href="#">按字母检索 Q--Z</a>
                 <div class="drop-menu clearfix">
-                    <p class="drop-menu-item">
-                        <span class="serial-num">C</span><a href="#">广游直充</a>
-                    </p>
-                    <p class="drop-menu-item">
-                        <span class="serial-num">C</span><a href="#">电魂一卡通</a>
-                    </p>
+                    <#list qzMap?keys as initial>
+                        <p class="drop-menu-item">
+                            <#list qzMap[initial] as item>
+                                <span class="serial-num">${item.initial!}</span><a href="${absoluteContextPath}/item/detail/${item.id?c}">${item.name!}</a>
+                            </#list>
+                        </p>
+                    </#list>
                 </div>
             </li>
         </ul>
@@ -65,93 +57,17 @@
 <div class="p-box">
     <div class="wrap relative">
         <ul class="p-list clearfix" id="p-list">
-            <li class="p-item">
-                <a class="p-url" href="http://www.baidu.com/">
-                    <div class="p-pic">
-                        <img src="${absoluteContextPath}/images/products/changyou.jpg" alt="畅游"/>
-                    </div>
-                    <p class="p-name">畅游直充</p>
-                </a>
-            </li>
-            <li class="p-item">
-                <a class="p-url" href="http://www.google.com/">
-                    <div class="p-pic">
-                        <img src="${absoluteContextPath}/images/products/qq.jpg" alt="腾讯QQ卡"/>
-                    </div>
-                    <p class="p-name">腾讯QQ卡</p>
-                </a>
-            </li>
-            <li class="p-item">
-                <a class="p-url" href="#">
-                    <div class="p-pic">
-                        <img src="${absoluteContextPath}/images/products/junwang.jpg" alt="骏网一卡通"/>
-                    </div>
-                    <p class="p-name">骏网一卡通</p>
-                </a>
-            </li>
-            <li class="p-item">
-                <a class="p-url" href="#">
-                    <div class="p-pic">
-                        <img src="${absoluteContextPath}/images/products/zgdx.jpg" alt="中国电信全国通用"/>
-                    </div>
-                    <p class="p-name">中国电信全国通用</p>
-                </a>
-            </li>
-            <li class="p-item">
-                <a class="p-url" href="#">
-                    <div class="p-pic">
-                        <img src="${absoluteContextPath}/images/products/zglt.jpg" alt="中国联通全国通用"/>
-                    </div>
-                    <p class="p-name">中国联通全国通用</p>
-                </a>
-            </li>
-            <li class="p-item">
-                <a class="p-url" href="#">
-                    <div class="p-pic">
-                        <img src="${absoluteContextPath}/images/products/juren.jpg" alt="巨人一卡通"/>
-                    </div>
-                    <p class="p-name">巨人一卡通</p>
-                </a>
-            </li>
-            <li class="p-item">
-                <a class="p-url" href="#">
-                    <div class="p-pic">
-                        <img src="${absoluteContextPath}/images/products/sdo.jpg" alt="盛大一卡通"/>
-                    </div>
-                    <p class="p-name">盛大一卡通</p>
-                </a>
-            </li>
+            <#list homeItems as item>
+                <li class="p-item">
+                    <a class="p-url" href="${absoluteContextPath}/item/detail/${item.id?c}">
+                        <div class="p-pic">
+                            <img src="${absoluteContextPath}/images/products/${item.imageUrl!}" alt="${item.name!}"/>
+                        </div>
+                        <p class="p-name">${item.name!}</p>
+                    </a>
+                </li>
+            </#list>
         </ul>
-        <div class="quick-buy" id="quick-buy">
-            <p class="quick-buy-title">快速充值</p>
-            <div class="quick-kind">
-                <p class="quick-kind-btn" id="openbtn1">请选择游戏</p>
-                <ul class="quick-kind-list">
-                    <li>巨人一卡通</li>
-                    <li>盛大一卡通</li>
-                    <li>中国联通全国通用</li>
-                    <li>中国电信全国通用</li>
-                    <li>巨人一卡通</li>
-                    <li>盛大一卡通</li>
-                    <li>中国联通全国通用</li>
-                    <li>中国电信全国通用</li>
-                </ul>
-            </div>
-            <div class="quick-value">
-                <p class="quick-value-btn" id="openbtn2">请选择面值</p>
-                <ul class="quick-value-list">
-                    <li>50元</li>
-                    <li>100元</li>
-                    <li>150元</li>
-                    <li>200元</li>
-                    <li>250</li>
-                    <li>300</li>
-                    <li>350</li>
-                    <li>400</li>
-                </ul>
-            </div>
-            <a class="quick-submit" href="#">购买</a>
-        </div>
     </div>
 </div>
 <div class="bottom-banner wrap">

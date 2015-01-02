@@ -48,4 +48,14 @@ public class ItemService {
     public Item getItemById(Long itemId) {
         return itemDao.get(itemId);
     }
+
+    @Transactional
+    public List<Item> getHomeItems() {
+        return itemDao.getItemsByPosition("HOME");
+    }
+
+    @Transactional
+    public List<Item> getItemsByInitial(String begin, String end) {
+        return itemDao.getItemsByInitial(begin, end);
+    }
 }

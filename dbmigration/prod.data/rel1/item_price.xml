@@ -48,5 +48,71 @@
             <column name="face_value" value="100"/>
             <column name="price" value="100.00"/>
         </insert>
+        <insert tableName="item_price">
+            <column name="id" value="5"/>
+            <column name="item_id" value="4"/>
+            <column name="face_value" value="1"/>
+            <column name="price" value="1.05"/>
+        </insert>
+        <insert tableName="item_price">
+            <column name="id" value="6"/>
+            <column name="item_id" value="5"/>
+            <column name="face_value" value="100"/>
+            <column name="price" value="105"/>
+        </insert>
+        <insert tableName="item_price">
+            <column name="id" value="7"/>
+            <column name="item_id" value="5"/>
+            <column name="face_value" value="200"/>
+            <column name="price" value="210"/>
+        </insert>
+        <insert tableName="item_price">
+            <column name="id" value="8"/>
+            <column name="item_id" value="6"/>
+            <column name="face_value" value="30"/>
+            <column name="price" value="33"/>
+        </insert>
+        <insert tableName="item_price">
+            <column name="id" value="9"/>
+            <column name="item_id" value="6"/>
+            <column name="face_value" value="50"/>
+            <column name="price" value="55"/>
+        </insert>
+        <insert tableName="item_price">
+            <column name="id" value="10"/>
+            <column name="item_id" value="6"/>
+            <column name="face_value" value="100"/>
+            <column name="price" value="109.9"/>
+        </insert>
+        <insert tableName="item_price">
+            <column name="id" value="11"/>
+            <column name="item_id" value="7"/>
+            <column name="face_value" value="30"/>
+            <column name="price" value="33"/>
+        </insert>
+        <insert tableName="item_price">
+            <column name="id" value="12"/>
+            <column name="item_id" value="7"/>
+            <column name="face_value" value="50"/>
+            <column name="price" value="55"/>
+        </insert>
+        <insert tableName="item_price">
+            <column name="id" value="13"/>
+            <column name="item_id" value="7"/>
+            <column name="face_value" value="100"/>
+            <column name="price" value="109.9"/>
+        </insert>
+        <insert tableName="item_price">
+            <column name="id" value="14"/>
+            <column name="item_id" value="8"/>
+            <column name="face_value" value="50"/>
+            <column name="price" value="55"/>
+        </insert>
+        <insert tableName="item_price">
+            <column name="id" value="15"/>
+            <column name="item_id" value="8"/>
+            <column name="face_value" value="100"/>
+            <column name="price" value="109.9"/>
+        </insert>
     </changeSet>
 </databaseChangeLog>

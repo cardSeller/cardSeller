@@ -48,7 +48,7 @@ public class ItemController {
     }
 
     @RequestMapping(value = "/submitOrder", method = RequestMethod.POST)
-    public String submitOrder(@RequestParam("itemId") Long itemId, @RequestParam("itemPriceId") Long itemPriceId, @RequestParam("total") BigDecimal total, @RequestParam("count") Integer count, Map<String, Object> viewObject) {
+    public String submitOrder(@RequestParam(value = "orderNumber", required = false) String orderNumber, @RequestParam("itemId") Long itemId, @RequestParam("itemPriceId") Long itemPriceId, @RequestParam("total") BigDecimal total, @RequestParam("count") Integer count, Map<String, Object> viewObject) {
         String memberName = SecurityContext.getAccount();
         Member member = memberService.getMemberByName(memberName);
         viewObject.put("member", member);
@@ -58,8 +58,10 @@ public class ItemController {
         viewObject.put("itemPrice", itemPrice);
         viewObject.put("count", count);
         viewObject.put("total", total);
-        String orderNumber = generateService.generateDepositNumber();
-        orderService.saveOrder(orderNumber, member.getId(), itemId, itemPriceId, total, count, OrderStatus.NP, new Date());
+        if(orderNumber == null) {
+            orderNumber = generateService.generateOrderNumber();
+            orderService.saveOrder(orderNumber, member.getId(), itemId, itemPriceId, total, count, OrderStatus.NP, new Date());
+        }
         viewObject.put("orderNumber", orderNumber);
         return "item/toPay";
     }

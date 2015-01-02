@@ -17,7 +17,7 @@
             <label for="to">-</label>
             <input class="time-to" type="text" id="to" name="depositTimeTo" placeholder="选择时间">
             <input type="hidden" id="pageIndex" name="pageIndex" value="1"/>
-            <input type="hidden" id="pageSize" name="pageSize" value="2"/>
+            <input type="hidden" id="pageSize" name="pageSize" value="8"/>
             <input type="hidden" id="memberId" name="memberId" value="<#if Session["sv"]??>${Session["sv"].id!}</#if>">
             <input type="hidden" id="total" value="${total?c}"/>
             <a class="search-btn" href="javascript:searchDeposits();">搜索</a>
@@ -30,7 +30,9 @@
                 <th>订单号</th>
                 <th>充值金额（元）</th>
                 <th>交易日期</th>
+                <th>支付方式</th>
                 <th>状态</th>
+                <th>操作</th>
             </tr>
             </thead>
             <tbody id="resultList">
@@ -39,7 +41,11 @@
                 <td>${deposit.id?c}</td>
                 <td>${deposit.total?c}</td>
                 <td>${deposit.depositDate}</td>
+                <td>${deposit.depositType}</td>
                 <td><p class="recharge-history-wait">${deposit.depositStatus}</p></td>
+                <#if deposit.depositStatus == '待付款'>
+                    <td><a href="javascript:pay('${deposit.id?c}','${deposit.depositTypeEN}','${deposit.total?c}');">付款</a></td>
+                </#if>
             </tr>
             </#list>
             </tbody>
