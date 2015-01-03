@@ -58,7 +58,6 @@ function saveRegisterInfo() {
         }
     }
     if(checkRegNameCode == 0 && checkImageCode == 0) {
-        alert("success");
         $("#register-form").submitAjax({
             callback: function (data) {
                 if(data == 0) {
