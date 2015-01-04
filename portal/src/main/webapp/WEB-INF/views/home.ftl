@@ -2,11 +2,7 @@
 <#assign shiro=JspTaglibs["/WEB-INF/taglib/shiro.tld"] />
 <html>
 <head lang="zh">
-    <meta charset="UTF-8">
     <title>快充商城</title>
-    <link rel="stylesheet" href="${absoluteContextPath}/css/style.css"/>
-    <script type="text/javascript" src="${absoluteContextPath}/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="${absoluteContextPath}/js/form.js"></script>
 </head>
 <body>
 <div class="c-nav">
@@ -54,7 +50,7 @@
         </ul>
     </div>
 </div>
-<div class="p-box">
+<div class="p-box container">
     <div class="wrap relative">
         <ul class="p-list clearfix" id="p-list">
             <#list homeItems as item>
@@ -69,9 +65,9 @@
             </#list>
         </ul>
     </div>
-</div>
-<div class="bottom-banner wrap">
-    <img src="${absoluteContextPath}/images/bottom-banner.jpg" alt="不刷信誉!!不招兼职!!"/>
+    <div class="bottom-banner wrap">
+        <img src="${absoluteContextPath}/images/bottom-banner.jpg" alt="不刷信誉!!不招兼职!!"/>
+    </div>
 </div>
 <script type="text/javascript">
     var openbtn1 = document.getElementById("openbtn1");

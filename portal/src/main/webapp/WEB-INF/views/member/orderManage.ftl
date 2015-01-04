@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head lang="zh">
-    <meta charset="UTF-8">
     <title>会员中心-订单记录</title>
     <script type="text/javascript" src="${absoluteContextPath}/js/datepicker-cn.js"></script>
 </head>

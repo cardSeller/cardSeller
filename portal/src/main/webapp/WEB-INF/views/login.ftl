@@ -34,7 +34,7 @@
             </fieldset>
         </form>
         <div class="login-reg left">
-            <p>还没有账号？<a href="#">立即注册</a></p>
+            <p>还没有账号？<a href="${absoluteContextPath}/toRegister">立即注册</a></p>
         </div>
     </div>
 </div>

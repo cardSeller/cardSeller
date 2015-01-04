@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head lang="zh">
-    <meta charset="UTF-8">
     <title>会员中心-充值记录</title>
     <script type="text/javascript" src="${absoluteContextPath}/js/datepicker-cn.js"></script>
 </head>
@@ -54,7 +53,7 @@
             <div id="pager" class="pager-control"></div>
         </div>
     </div>
-    <div id="noDepositList" class="alert alert-danger displayNone">
+    <div id="noDepositList" class="no-result">
         没有符合条件的记录，请重试。
     </div>
 </div>

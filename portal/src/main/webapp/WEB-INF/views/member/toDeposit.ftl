@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head lang="zh">
-    <meta charset="UTF-8">
     <title>会员中心-充值</title>
 </head>
 <body>

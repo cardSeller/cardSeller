@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head lang="zh">
-    <meta charset="UTF-8">
     <title>快充商城-确认订单</title>
 </head>
 <body>
@@ -36,7 +35,7 @@
                             <li>订单号：${orderNumber!}<p>（请记好订单号，以备查询）</p></li>
                             <li class="buy-affirm-price">订单总价：<span>￥${total?c}</span></li>
                             <li class="buy-affirm-balance">您的余额：${member.balance?c}元</li>
-                            <#if member.balance lt total>您的余额不够支付此订单，请点此<a href="${absoluteContextPath}/member/toDeposit">充值</a></#if>
+                            <#if member.balance lt total><li class="balance-error">您的余额不够支付此订单，请点此<a href="${absoluteContextPath}/member/toDeposit">充值</a></li></#if>
                             <li class="buy-affirm-tips">请确认左边订单信息无误后，再进行支付</li>
                         </ul>
                         <div class="buy-btn-box clearfix">

@@ -977,11 +977,19 @@ a{
     line-height: 40px;
     padding-left: 40px;
 }
-.buy-affirm-info{}
 .buy-affirm-info li{
     padding: 6px 0;
     line-height: 22px;
     color: #666;
+}
+.buy-affirm-info .balance-error{
+    background-color: #ffd3d3;
+    border: solid 1px #ee9999;
+    padding: 6px 4px;
+    color: #333;
+}
+.buy-affirm-info .balance-error a{
+    color: #d83224;
 }
 .buy-affirm{
     padding-left: 30px;
@@ -1042,20 +1050,23 @@ a{
 }
 .reputation,
 .q-and-a,
-.prevent-fooled{
+.prevent-fooled,
+.contact-us{
     padding: 30px 40px 80px 40px;
     background-color: #fff;
     border: solid 1px #ccc;
 }
 .reputation h1,
 .q-and-a h1,
-.prevent-fooled h1{
+.prevent-fooled h1,
+.contact-us h1{
     color: #335498;
     font-size: 18px;
 }
 .reputation h1 span,
 .q-and-a h1 span,
-.prevent-fooled h1 span{
+.prevent-fooled h1 span,
+.contact-us h1 span{
     font-size: 12px;
     display: block;
 }
@@ -1093,5 +1104,11 @@ a{
 .section{
     padding-top: 30px;
 }
-
+.no-result{
+    color:#d83224;
+    padding-left: 40px;
+}
+.contact-us p{
+    padding-top: 20px;
+}
 

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head lang="zh">
-    <meta charset="UTF-8">
     <title>注册</title>
 </head>
 <body>

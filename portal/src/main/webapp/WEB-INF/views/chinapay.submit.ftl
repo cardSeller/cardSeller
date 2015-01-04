@@ -3,7 +3,8 @@
     <title>网银支付</title>
 </head>
 <body>
-<div style="height: 40px;padding-top:200px;width: 330px;position: absolute;left:50%;top:160px; margin-left: -200px; background: url(${absoluteContextPath}/images/payingBg.png) no-repeat;">
+<div class="container" style="min-height: 600px; background-color: #fff;">
+    <div style="height:320px;padding-top:300px;width:400px;position: absolute;left:50%;top:200px; margin-left: -200px; background:url(${absoluteContextPath}/images/paying.jpg) no-repeat;"></div>
 </div>
 <#if error??>
 <#else>

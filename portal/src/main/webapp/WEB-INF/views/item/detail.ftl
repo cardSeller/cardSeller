@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head lang="zh">
-    <meta charset="UTF-8">
     <title>快充商城-商品详情</title>
 </head>
 <body>
@@ -44,7 +43,7 @@
                             </li>
                         </ul>
                         <div class="buy-btn-box clearfix">
-                            <a class="buy-btn" onclick='$("#submitOrderForm").submit()'>立即充值</a>
+                            <a href="javascript:void(0);" class="buy-btn" onclick='$("#submitOrderForm").submit()'>立即充值</a>
                             <p id="totalP" class="p-total">合计：￥${price?c}</p>
                         </div>
                     </div>

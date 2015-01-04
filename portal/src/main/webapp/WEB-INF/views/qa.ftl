@@ -21,3 +21,10 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $(function(){
+        $(".qa-list dt").click(function(){
+            $(this).next().toggle();
+        });
+    });
+</script>
