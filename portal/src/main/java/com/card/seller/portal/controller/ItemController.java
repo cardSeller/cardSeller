@@ -69,9 +69,11 @@ public class ItemController {
     @RequestMapping(value = "/payOrder", method = RequestMethod.POST)
     public String payOrder(@RequestParam("orderNumber") String orderNumber) {
         Orders orders = orderService.getOrderByOrderNumber(orderNumber);
-        orderService.updateOrderStatus(orderNumber, OrderStatus.HP);
         Member member = memberService.getMemberById(orders.getMemberId());
-        memberService.balance(member, orders.getTotal());
+        if(orders.getTotal().compareTo(member.getBalance()) <= 0) {
+            orderService.updateOrderStatus(orderNumber, OrderStatus.HP);
+            memberService.balance(member, orders.getTotal());
+        }
         return "redirect:/member/orderManage";
     }
 }
