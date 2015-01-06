@@ -64,7 +64,7 @@ function pay(depositId,payType,total) {
     data.depositId = depositId;
     data.payType = payType;
     data.total = total;
-    postcall(golbalRootUrl + "/payment/deposit", data);
+    postcall("http://pay.coofun.cc/payment/deposit", data);
 }
 
 function postcall(url,params){

@@ -70,41 +70,7 @@
     </div>
 </div>
 <script type="text/javascript">
-    var openbtn1 = document.getElementById("openbtn1");
-    var openbtn2 = document.getElementById("openbtn2")
-    document.onclick = function (event) {
-        var e = event || window.event; //兼容ie和非ie的event
-        var aim = e.srcElement || e.target; //兼容ie和非ie的事件源
-        if (aim != openbtn1 && aim != openbtn2) {
-            $(".quick-kind-list,.quick-value-list").hide();
-        }
-    }
     $(function(){
-        $("#c-nav li").hover(function(){
-            $("#c-nav .drop-menu").hide();
-            $(this).find(".drop-menu").show();
-        },function(){
-            $("#c-nav .drop-menu").hide();
-        });
-        $("#p-list").find(".p-item").eq(2).css({"margin-right":"100px"});
-        $(".quick-kind-btn").click(function(){
-            $(".quick-value-list").hide();
-            $(this).next().toggle();
-        });
-        $(".quick-value-btn").click(function(){
-            $(".quick-kind-list").hide();
-            $(this).next().toggle();
-        });
-        $(".quick-kind-list").find("li").click(function(){
-            var thisVal = $(this).text();
-            $(".quick-kind-btn").text(thisVal).addClass("selected");
-            $(this).parent().hide();
-        });
-        $(".quick-value-list").find("li").click(function(){
-            var thisVal = $(this).text();
-            $(".quick-value-btn").text(thisVal).addClass("selected");
-            $(this).parent().hide();
-        });
         $(".p-item").hover(function(){
             var thisName = $(this).find(".p-name").text();
             var thisUrl = $(this).find(".p-url").attr("href");

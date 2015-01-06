@@ -9,7 +9,7 @@
         用户充值
     </p>
     <div class="member-change">
-        <form action="${absoluteContextPath}/payment/deposit" method="post">
+        <form action="http://pay.coofun.cc/payment/deposit" method="post">
             <table>
                 <tr>
                     <td class="member-change-label">

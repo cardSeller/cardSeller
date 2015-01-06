@@ -75,4 +75,9 @@ public class HomeController {
     public String qa() {
         return "/qa";
     }
+
+    @RequestMapping("/contact")
+    public String contact() {
+        return "/contact";
+    }
 }
