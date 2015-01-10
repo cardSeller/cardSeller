@@ -71,6 +71,12 @@
 </div>
 <script type="text/javascript">
     $(function(){
+        $("#c-nav li").hover(function(){
+            $("#c-nav .drop-menu").hide();
+            $(this).find(".drop-menu").show();
+        },function(){
+            $("#c-nav .drop-menu").hide();
+        });
         $(".p-item").hover(function(){
             var thisName = $(this).find(".p-name").text();
             var thisUrl = $(this).find(".p-url").attr("href");
