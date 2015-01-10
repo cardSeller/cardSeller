@@ -3,6 +3,11 @@
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/backoffice" />
+    <file type="web" url="file://$PROJECT_DIR$/portal" />
+  </component>
+  <component name="IdProvider" IDEtalkID="081BA29AABEF3C79C9A5645DE888452D" />
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
@@ -33,4 +38,3 @@
     <option name="mySupportsUserInfoFilter" value="true" />
   </component>
 </project>
-
