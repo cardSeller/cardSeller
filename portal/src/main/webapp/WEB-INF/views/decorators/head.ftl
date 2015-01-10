@@ -13,7 +13,7 @@
         <p><span class="member-mail"><#if Session["sv"]??>${Session["sv"].name!}</#if></span> ，您好！</p>
         <a class="top-bar-member" href="${absoluteContextPath}/member/orderManage">用户中心</a>
         <a class="top-bar-quit" href="${absoluteContextPath}/logout">退出</a>
-        <a class="deter-fraud" href="#">防骗指南</a>
+        <a class="deter-fraud" href="${absoluteContextPath}/manifesto">防骗指南</a>
     </div>
 </div>
 </@shiro.user>

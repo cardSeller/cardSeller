@@ -142,7 +142,7 @@ a{
     line-height: 34px;
 }
 .top-bar-quit{
-    border-left:solid 1px #fff;
+    border-left:solid 1px #7b9bdc;
     padding: 0 16px 0 18px;
     margin-left: 10px;
 }
@@ -171,7 +171,7 @@ a{
 }
 .deter-fraud{
     color: #8faeef;
-    border-left: solid 1px #fff;
+    border-left: solid 1px #7b9bdc;
     padding-left:18px;
     margin: 8px 0;
     width: 60px;
@@ -901,6 +901,7 @@ a{
     font-size: 30px;
     color: #f69006;
     padding:10px 0;
+    font-weight: bold;
 }
 .p-options li{
     padding: 10px 0;
@@ -1062,6 +1063,7 @@ a{
 .contact-us h1{
     color: #335498;
     font-size: 18px;
+    font-weight: bold;
 }
 .reputation h1 span,
 .q-and-a h1 span,
@@ -1069,6 +1071,7 @@ a{
 .contact-us h1 span{
     font-size: 12px;
     display: block;
+    font-weight: normal;
 }
 .reputation p{
     padding-top:40px;
