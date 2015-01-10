@@ -26,7 +26,7 @@
                     <td>
                         <select name="payType" id="payTpe">
                             <option value="CHINAPAY">银行转账</option>
-                            <option value="HCZF">汇潮支付</option>
+                            <option value="HCZF">汇潮支付建设银行限额5000</option>
                         </select>
                     </td>
                 </tr>
