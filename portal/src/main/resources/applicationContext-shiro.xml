@@ -21,7 +21,10 @@
                 /login = authc
                 /login/success = authc
                 /order/** = authc
+                /item/detail/* = anon
                 /item/** = authc
+                /payment/getBgReturn = anon
+                /payment/hczfNotify = anon
                 /payment/** = authc
                 /member/** = authc
                 /** = anon

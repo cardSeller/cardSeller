@@ -71,8 +71,8 @@ public class PayController {
     /**
      * 银联应答回调
      */
-    @ResponseBody
     @RequestMapping(value = "/getBgReturn", method = RequestMethod.POST)
+    @ResponseBody
     public void getBgReturn(HttpServletRequest req, @ModelAttribute CallbackBean callbackBean) {
         callbackBean.setClientIP(AnalyzeIpUtils.getIpAddr(req));
         boolean buildOK = false;
@@ -111,13 +111,16 @@ public class PayController {
     /**
      * 汇潮支付应答回调
      */
-    @ResponseBody
     @RequestMapping(value = "/hczfNotify", method = RequestMethod.POST)
+    @ResponseBody
     public String hczfNotify(HttpServletRequest req, @ModelAttribute HCZFCallbackBean hczfCallbackBean) {
+        LOGGER.info("hczfCallbackBean : " + hczfCallbackBean.toString());
         MD5 md5 = new MD5();
         String md5src = hczfCallbackBean.getBillNo()+"&"+hczfCallbackBean.getAmount()+"&"+hczfCallbackBean.getSucceed()+"&"+HCZFPaymentUtil.MD5_KEY;
         String md5sign; //MD5加密后的字符串
         md5sign = md5.getMD5ofStr(md5src);//MD5检验结果
+        LOGGER.info("md5sign : " + md5sign);
+        LOGGER.info("hczfCallbackBean.getSignMD5info() : " + hczfCallbackBean.getSignMD5info());
         if(md5sign.equals(hczfCallbackBean.getSignMD5info())) {
             if("88".equals(hczfCallbackBean.getSucceed())) {
                 depositService.depositVerify(hczfCallbackBean.getBillNo());

@@ -89,7 +89,7 @@
 
     <target name="8.upgrade.db" depends="3.prepare" description="Update database.">
         <echo message="upgrade database."/>
-        <migrateDb script.dir="${target.dir}/prod.data/rel1" dropfirst="false" />
+        <migrateDb script.dir="${target.dir}/prod.data/rel2" dropfirst="false" />
     </target>
 
 

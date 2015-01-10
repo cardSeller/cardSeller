@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9 http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+    <preConditions>
+        <dbms type="postgresql" />
+    </preConditions>
+    <changeSet id="prod.data" author="minj">
+        <insert tableName="item">
+            <column name="id" value="9"/>
+            <column name="name" value="DOTA2"/>
+            <column name="initial" value="D"/>
+            <column name="image_url" value="dota2.jpg"/>
+            <column name="position" value="HOME"/>
+        </insert>
+        <insert tableName="item">
+            <column name="id" value="10"/>
+            <column name="name" value="笑傲江湖OL"/>
+            <column name="initial" value="X"/>
+            <column name="image_url" value="xajh.jpg"/>
+            <column name="position" value="HOME"/>
+        </insert>
+        <insert tableName="item">
+            <column name="id" value="11"/>
+            <column name="name" value="口袋西游"/>
+            <column name="initial" value="K"/>
+            <column name="image_url" value="kdxy.jpg"/>
+            <column name="position" value="HOME"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

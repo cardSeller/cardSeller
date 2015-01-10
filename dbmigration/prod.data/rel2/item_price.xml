@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9 http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+    <preConditions>
+        <dbms type="postgresql" />
+    </preConditions>
+    <changeSet id="prod.data" author="minj">
+        <insert tableName="item_price">
+            <column name="id" value="16"/>
+            <column name="item_id" value="9"/>
+            <column name="face_value" value="100"/>
+            <column name="price" value="100.00"/>
+        </insert>
+        <insert tableName="item_price">
+            <column name="id" value="17"/>
+            <column name="item_id" value="9"/>
+            <column name="face_value" value="50"/>
+            <column name="price" value="50.00"/>
+        </insert>
+        <insert tableName="item_price">
+            <column name="id" value="18"/>
+            <column name="item_id" value="10"/>
+            <column name="face_value" value="100"/>
+            <column name="price" value="100.00"/>
+        </insert>
+        <insert tableName="item_price">
+            <column name="id" value="19"/>
+            <column name="item_id" value="10"/>
+            <column name="face_value" value="50"/>
+            <column name="price" value="50.00"/>
+        </insert>
+        <insert tableName="item_price">
+            <column name="id" value="20"/>
+            <column name="item_id" value="11"/>
+            <column name="face_value" value="100"/>
+            <column name="price" value="100.00"/>
+        </insert>
+        <insert tableName="item_price">
+            <column name="id" value="21"/>
+            <column name="item_id" value="11"/>
+            <column name="face_value" value="50"/>
+            <column name="price" value="50.00"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
