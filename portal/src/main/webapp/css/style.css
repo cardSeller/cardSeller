@@ -1114,4 +1114,18 @@ a{
 .contact-us p{
     padding-top: 20px;
 }
-
+.pay-type p{
+    padding-bottom: 6px;
+    padding-right: 8px;
+    font-size: 12px;
+    float: left;
+}
+.pay-type a{
+    padding: 4px 6px;
+    border: solid 1px #ccc;
+    display: inline-block;
+    font-size: 14px;
+}
+.pay-type .selected a{
+   border-color: #ffa257;
+ }
